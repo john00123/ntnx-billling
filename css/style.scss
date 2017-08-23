@@ -18,7 +18,6 @@ header {
   background-color: $background-color-1;
   color: transparent;
 }
-
 //container
 .container {
   @include size(100%, 100%);
@@ -27,7 +26,6 @@ header {
   margin: 8px auto;
   padding: 20px;
 }
-
 //actions
 .actions {
   align-items: flex-start;
@@ -44,11 +42,9 @@ header {
     margin-bottom: 0;
   }
 }
-
 /* ==========================================================================
 Cards
 ========================================================================== */
-
 .deck {
   @include size(auto, 100%);
   @include flex(flex-start, space-between, row);
@@ -69,14 +65,13 @@ Cards
     font-weight: 300;
   }
 
-  &::before{
-    top:calc(65% + 1.5px);
+  &::before {
+    top: calc(65% + 1.5px);
   }
 
-  &::after{
-    top:calc(65% - 2px);
+  &::after {
+    top: calc(65% - 2px);
   }
-
 }
 
 .card-title {
@@ -87,30 +82,29 @@ Cards
 }
 
 .card-body {
-
   padding: 23px 20px;
-
 }
-
 /* ==========================================================================
 Graph
 ========================================================================== */
-
-.graph{
+.graph {
   width: 90%;
-  .card-title{
+
+  .card-title {
     @include flex(center, space-between, '');
-    h4 span{
-      color:$font-color-3;
+
+    h4 span {
+      color: $font-color-3;
       margin-right: 10px;
     }
   }
 }
 
-.graph-body{
+.graph-body {
   @iclude size(auto, 100%);
   padding: 20px;
-  svg{
+
+  svg {
     width: 100%;
   }
 }
