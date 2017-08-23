@@ -1,0 +1,228 @@
+html {
+  font: 300 14px/10px "nutanix_soft", san-serif;
+  text-rendering: optimizeSpeed;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F2F4F6;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: "";
+  background-color: #22272E;
+  color: transparent;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 8px auto;
+  padding: 20px;
+}
+
+.actions {
+  align-items: flex-start;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.actions .primary {
+  border-radius: 4px;
+  vertical-align: baseline;
+  text-align: center;
+  display: inline-block;
+  padding: 11px 15px;
+  color: #FFFFFF;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  border: none;
+  text-decoration: none;
+  background-color: #22A5F7;
+  margin-right: 13px;
+  margin-bottom: 0;
+}
+
+.actions .primary:hover {
+  color: #FFFFFF;
+  cursor: pointer;
+  background-color: #2282E3;
+}
+
+.actions .primary:active {
+  color: #FFFFFF;
+  background-color: #2068CA;
+}
+
+.actions .secondary {
+  border: 1px solid #B8BFCA;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: none;
+  margin-bottom: 0;
+}
+
+.actions .secondary:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.actions .secondary:active {
+  color: #8FD1FE;
+}
+
+.actions .secondary:hover {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* ==========================================================================
+Cards
+========================================================================== */
+.deck {
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #B8BFCA;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: none;
+  position: relative;
+  width: calc(33% - 9px);
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.card:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.card:active {
+  color: #8FD1FE;
+}
+
+.card:hover {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.card::before, .card::after {
+  height: 6px;
+  width: 1.5px;
+  box-sizing: border-box;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  content: '';
+  display: block;
+  position: absolute;
+  opacity: 0;
+  right: 20px;
+  border-radius: 3px;
+  z-index: 3;
+  transform: translateX(-10px);
+  background-color: #22A5F7;
+}
+
+.card::before {
+  transform: rotate(45deg);
+}
+
+.card::after {
+  transform: rotate(-45deg);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card p {
+  margin-top: 12px;
+  color: #627386;
+  font-weight: 300;
+}
+
+.card::before {
+  top: calc(65% + 1.5px);
+}
+
+.card::after {
+  top: calc(65% - 2px);
+}
+
+.card-title {
+  padding: 5px 20px;
+  color: #22272E;
+  border-bottom: 1px solid #F2F4F6;
+  line-height: 30px;
+}
+
+.card-body {
+  padding: 23px 20px;
+}
+
+/* ==========================================================================
+Graph
+========================================================================== */
+.graph {
+  width: 100%;
+}
+
+.graph .card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: "";
+}
+
+.graph .card-title h4 span {
+  color: #7C8D9F;
+  margin-right: 10px;
+}
+
+.graph-body {
+  @iclude size(auto, 100%);
+  padding: 20px;
+}
+
+.graph-body svg {
+  width: 100%;
+}

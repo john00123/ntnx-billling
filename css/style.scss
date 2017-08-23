@@ -1,0 +1,116 @@
+//Comment for compiler
+@import '../../_ntnx/variables';
+@import '../../_ntnx/mixins';
+
+html {
+  @include font;
+  background-color: $light-grey-3;
+}
+
+body {
+  @include size(100%, 100%);
+}
+
+header {
+  @include size(60px, 100%);
+  @include padding();
+  @include flex(center, space-between, '');
+  background-color: $background-color-1;
+  color: transparent;
+}
+
+//container
+.container {
+  @include size(100%, 100%);
+  @include flex(center, center, column);
+  max-width: 1280px;
+  margin: 8px auto;
+  padding: 20px;
+}
+
+//actions
+.actions {
+  align-items: flex-start;
+  @include size(auto, 100%);
+
+  .primary {
+    @include primary;
+    margin-right: $small + 3px;
+    margin-bottom: 0;
+  }
+
+  .secondary {
+    @include secondary-alt;
+    margin-bottom: 0;
+  }
+}
+
+/* ==========================================================================
+Cards
+========================================================================== */
+
+.deck {
+  @include size(auto, 100%);
+  @include flex(flex-start, space-between, row);
+  flex-wrap: wrap;
+}
+
+.card {
+  @include secondary-alt;
+  @include arrow();
+  width: calc(33% - 9px);
+  font: $h3-alt;
+  padding: 0;
+  margin: $medium 0 0;
+  // &:hover p { color: $blue-3; }
+  p {
+    margin-top: 12px;
+    color: $font-color-2;
+    font-weight: 300;
+  }
+
+  &::before{
+    top:calc(65% + 1.5px);
+  }
+
+  &::after{
+    top:calc(65% - 2px);
+  }
+
+}
+
+.card-title {
+  @include padding(5px, 20px);
+  color: $font-color-1;
+  border-bottom: 1px solid $border-color-3;
+  line-height: 30px;
+}
+
+.card-body {
+
+  padding: 23px 20px;
+
+}
+
+/* ==========================================================================
+Graph
+========================================================================== */
+
+.graph{
+  width: 100%;
+  .card-title{
+    @include flex(center, space-between, '');
+    h4 span{
+      color:$font-color-3;
+      margin-right: 10px;
+    }
+  }
+}
+
+.graph-body{
+  @iclude size(auto, 100%);
+  padding: 20px;
+  svg{
+    width: 100%;
+  }
+}
