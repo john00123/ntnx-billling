@@ -1,0 +1,194 @@
+
+@import "variables";
+
+
+//Font rendering
+@mixin font{
+	font: $p-alt;
+	text-rendering: optimizeSpeed;
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+}
+
+//Size
+@mixin size ($h, $w) {
+	height: $h;
+	width: $w;
+	box-sizing: border-box;
+}
+@mixin padding($t:20px, $s:20px){
+	padding: $t $s;
+}
+@mixin flex($a, $j, $d) {
+	display: flex;
+	align-items: $a;
+	justify-content: $j;
+	flex-direction: $d;
+}
+
+//button style
+@mixin primary {
+	border-radius: 4px;
+	vertical-align: baseline;
+	text-align: center;
+	display: inline-block;
+	padding: 11px 15px;
+	color: $white;
+	font: $a;
+	border: none;
+	text-decoration: none;
+	background-color: $blue-1;
+
+	&:hover {
+		color:$white;
+		cursor: pointer;
+		background-color: $dark-blue-3;
+	}
+
+	&:active {
+		color:$white;
+		background-color: $dark-blue-2;
+	}
+}
+
+@mixin secondary {
+	border: 1px solid $border-color-1;
+	border-radius: 4px;
+	padding: 11px 15px;
+	color: $font-color-1;
+	font: $a;
+	text-decoration: none;
+	background-color: $white;
+
+	&:hover {
+		color: $blue-1;
+		cursor: pointer;
+	}
+
+	&:active {
+		color: $blue-3;
+	}
+}
+
+@mixin secondary-alt {
+	@include secondary;
+	@include transition(box-shadow);
+		border: none;
+		&:hover{ @include shadow();}
+}
+
+@mixin link() {
+	color: $blue-1;
+	font: $p-alt;
+	text-decoration: none;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+
+//tooltip
+@mixin tooltip($c,$w) {
+	position: relative;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	color: $font-color-1;
+	font: $p;
+
+	&:hover {
+		cursor: context-menu;
+	}
+
+	&:hover::before {
+		display: block;
+	}
+
+	&:hover::after {
+		display: block;
+	}
+
+	&::after {
+		content: $c;
+		top: 25px;
+		width: $w;
+		display: none;
+		position: absolute;
+		@include secondary;
+		z-index: 2;
+		padding: 15px 20px;
+		@include shadow;
+	}
+
+	&::before {
+		content: '';
+		top: 22.5px;
+		left: 20px;
+		@include size(8px, 8px);
+		display: none;
+		box-shadow: -1.2px -1.2px 0 $border-color-1;
+		position: absolute;
+		background-color: $white;
+		border-radius: 1px 0 0 0;
+		z-index: 3;
+		transform: rotate(45deg);
+	}
+}
+
+//add for dark overwrite
+@mixin tooltip-dark {
+		&::before {
+    box-shadow:none;
+		@include size(10px, 10px);
+    background-color: $dark-grey-1;
+  	}
+
+	  &::after {
+	  background-color: $dark-grey-1;
+	  color:white;
+	  border:none;
+	  }
+}
+
+//shadow
+@mixin shadow {
+	box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02),
+	0 3px 3px 0 rgba(0, 0, 0, 0.02),
+	0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+@mixin transition ($a) {
+	transition: $a 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+//arrow
+@mixin arrow ($h:6px, $w:1.5px){
+	position: relative;
+
+	&::before, &::after {
+	@include size($h, $w);
+	@include transition (transform);
+	content: '';
+	display: block;
+	position: absolute;
+	opacity: 0;
+	right: 20px;
+	border-radius: 3px;
+	z-index: 3;
+	transform: translateX(-10px);
+	background-color: $blue-1;
+	}
+	&::before{
+		transform: rotate(45deg);
+	}
+	&::after{
+		transform: rotate(-45deg);
+	}
+	&:hover::before {
+		opacity: 1;
+	}
+	&:hover::after {
+		opacity: 1;
+	}
+}
