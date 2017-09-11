@@ -40,7 +40,10 @@ header {
 }
 
 .actions {
-  align-items: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
   height: auto;
   width: 100%;
   box-sizing: border-box;
@@ -48,17 +51,13 @@ header {
 
 .actions .primary {
   border-radius: 4px;
-  vertical-align: baseline;
-  text-align: center;
-  display: inline-block;
   padding: 11px 15px;
   color: #FFFFFF;
   font: 400 14px/10px "nutanix_soft", san-serif;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
-  margin-right: 13px;
-  margin-bottom: 0;
+  margin-right: 10px;
 }
 
 .actions .primary:hover {
@@ -70,6 +69,13 @@ header {
 .actions .primary:active {
   color: #FFFFFF;
   background-color: #2068CA;
+}
+
+.actions .primary span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
 }
 
 .actions .secondary {
@@ -92,6 +98,13 @@ header {
 
 .actions .secondary:active {
   color: #8FD1FE;
+}
+
+.actions .secondary span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
 }
 
 .actions .secondary:hover {
@@ -136,6 +149,13 @@ Cards
 
 .card:active {
   color: #8FD1FE;
+}
+
+.card span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
 }
 
 .card:hover {
