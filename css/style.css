@@ -1,3 +1,9 @@
+span {
+  line-height: 10px;
+  height: 10px;
+  display: block;
+}
+
 html {
   font: 300 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
@@ -11,6 +17,14 @@ body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+}
+
+h4 {
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  line-height: 9pt;
+  display: block;
+  height: 10px;
+  font-weight: 500;
 }
 
 header {
@@ -50,6 +64,7 @@ header {
 }
 
 .actions .primary {
+  margin: 0;
   border-radius: 4px;
   padding: 11px 15px;
   color: #FFFFFF;
@@ -86,6 +101,7 @@ header {
   font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
   background-color: #FFFFFF;
+  margin: 0;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
   margin-bottom: 0;
@@ -111,6 +127,13 @@ header {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
 }
 
+.actions .secondary span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
 /* ==========================================================================
 Cards
 ========================================================================== */
@@ -133,6 +156,7 @@ Cards
   font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
   background-color: #FFFFFF;
+  margin: 0;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
   position: relative;
@@ -160,6 +184,13 @@ Cards
 
 .card:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.card span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
 }
 
 .card::before, .card::after {
@@ -209,10 +240,16 @@ Cards
 }
 
 .card-title {
-  padding: 5px 20px;
+  padding: 14px 20px;
   color: #22272E;
   border-bottom: 1px solid #F2F4F6;
-  line-height: 30px;
+}
+
+.card-title .balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .card-body {
@@ -223,26 +260,66 @@ Cards
 Graph
 ========================================================================== */
 .graph {
-  width: 90%;
+  width: 100%;
 }
 
 .graph .card-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: "";
+  flex-direction: row;
 }
 
-.graph .card-title h4 span {
+.graph .card-title span {
+  font: 400 14px/10px "nutanix_soft", san-serif;
   color: #7C8D9F;
   margin-right: 10px;
 }
 
 .graph-body {
-  @iclude size(auto, 100%);
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
   padding: 20px;
 }
 
 .graph-body svg {
   width: 100%;
+}
+
+/* ==========================================================================
+Table
+========================================================================== */
+.table {
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+}
+
+th {
+  font: 500 14px/10px "nutanix_soft", san-serif;
+}
+
+th, td {
+  height: 40px;
+  text-align: left;
+  padding-left: 20px;
+  line-height: 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #F2F4F6;
+}
+
+th:last-child, td:last-child {
+  text-align: right;
+  padding-right: 20px;
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 100%;
+  }
+  .container {
+    min-width: 320px;
+  }
 }

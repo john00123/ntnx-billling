@@ -2,6 +2,12 @@
 @import '../../_ntnx/variables';
 @import '../../_ntnx/mixins';
 
+span{
+  line-height: 10px;
+  height: 10px;
+  display: block;
+}
+
 html {
   @include font;
   background-color: $light-grey-3;
@@ -9,6 +15,14 @@ html {
 
 body {
   @include size(100%, 100%);
+}
+
+h4{
+  font:$h3-alt;
+  line-height: 9pt;
+  display: block;
+  height: 10px;
+  font-weight: 500;
 }
 
 header {
@@ -77,25 +91,28 @@ Cards
 }
 
 .card-title {
-  @include padding(5px, 20px);
+  @include padding(14px, 20px);
   color: $font-color-1;
   border-bottom: 1px solid $border-color-3;
-  line-height: 30px;
+  .balance{
+    @include flex(center, space-between, row);
+  }
 }
 
 .card-body {
   padding: 23px 20px;
 }
+
 /* ==========================================================================
 Graph
 ========================================================================== */
 .graph {
-  width: 90%;
+  width: 100%;
 
   .card-title {
-    @include flex(center, space-between, '');
-
-    h4 span {
+    @include flex(center, space-between, row);
+    span {
+      font: $h3-alt;
       color: $font-color-3;
       margin-right: 10px;
     }
@@ -103,10 +120,46 @@ Graph
 }
 
 .graph-body {
-  @iclude size(auto, 100%);
+  @include size(auto, 100%);
   padding: 20px;
 
   svg {
     width: 100%;
+  }
+}
+
+/* ==========================================================================
+Table
+========================================================================== */
+.table{
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+}
+th{
+  font:$h3;
+}
+
+th, td{
+  height: 40px;
+  text-align: left;
+  padding-left: 20px;
+  line-height: 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid $border-color-3;
+}
+
+th:last-child, td:last-child{
+  text-align: right;
+  padding-right: 20px;
+}
+
+@media (max-width: 800px) {
+  .card{
+    width: 100%;
+  }
+  .container{
+    min-width: 320px;
   }
 }

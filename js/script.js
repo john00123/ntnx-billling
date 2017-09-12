@@ -11,7 +11,7 @@ function dragon() {
   // function
   while (cards> 0){
     $('.deck').append(
-      "<div class='card'><div class='card-title'>"+cardInfo[index]+"</div>" +
+      "<div class='card'><div class='card-title'><h4>"+cardInfo[index]+"</h4></div>" +
         "<div class='card-body'><h4>"+ cardBody[index]+"<h4>\
         <p>"+cardSecondary[index]+"</p>\
         </div>\
