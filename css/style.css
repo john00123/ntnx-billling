@@ -314,7 +314,6 @@ th, td {
 th:last-child, td:last-child {
   text-align: right;
   padding-right: 20px;
-  position: relative;
 }
 
 td kbd {
@@ -322,21 +321,22 @@ td kbd {
   color: #B8BFCA;
   height: 10px;
   display: inline-block;
+  position: relative;
 }
 
 td kbd::before {
   color: #B8BFCA;
   content: '•';
   position: absolute;
-  top: 10px;
+  top: -5px;
 }
 
 td kbd::after {
   color: #B8BFCA;
   content: '•';
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 5px;
+  right: 0px;
 }
 
 td kbd:hover, td kbd:hover::before, td kbd:hover::After {
