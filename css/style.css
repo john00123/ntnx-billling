@@ -286,6 +286,7 @@ Graph
 
 .graph-body svg {
   width: 100%;
+  opacity: 0.3;
 }
 
 /* ==========================================================================
@@ -299,7 +300,13 @@ Table
 }
 
 th {
-  font: 500 14px/10px "nutanix_soft", san-serif;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+  color: #627386;
+  font-weight: 500;
+}
+
+th:not(:last-child) {
+  border-right: 1px solid #F2F4F6;
 }
 
 th, td {
@@ -313,35 +320,55 @@ th, td {
 
 th:last-child, td:last-child {
   text-align: right;
+  vertical-align: middle;
   padding-right: 20px;
+  width: 120px;
+}
+
+tr:hover {
+  background-color: #F6FBFE;
+  cursor: pointer;
+}
+
+td:last-child {
+  margin-left: -50px;
+  position: relative;
+  right: 15px;
 }
 
 td kbd {
   margin-left: 10px;
-  color: #B8BFCA;
-  height: 12px;
-  display: inline-block;
-  position: relative;
+  color: #7C8D9F;
+  position: absolute;
+  font-size: 11px;
+  height: 8px;
+  width: 20px;
+  right: 5px;
 }
 
 td kbd::before {
-  color: #B8BFCA;
+  color: #7C8D9F;
   content: '•';
   position: absolute;
-  top: -5px;
+  top: -4px;
 }
 
 td kbd::after {
-  color: #B8BFCA;
+  color: #7C8D9F;
   content: '•';
   position: absolute;
-  top: 5px;
+  top: 4px;
   right: 0px;
 }
 
-td kbd:hover, td kbd:hover::before, td kbd:hover::After {
+td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   color: #22A5F7;
   cursor: pointer;
+}
+
+.table-header:hover {
+  background-color: white;
+  cursor: initial;
 }
 
 @media (max-width: 800px) {

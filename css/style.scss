@@ -125,6 +125,7 @@ Graph
 
   svg {
     width: 100%;
+    opacity: 0.3
   }
 }
 
@@ -138,8 +139,14 @@ Table
   border-radius: 4px;
 }
 th{
-  font:$h3;
+  font:$h4;
+  color:$font-color-2;
+  font-weight: 500;
 }
+th:not(:last-child){
+  border-right: 1px solid $border-color-3;
+}
+
 
 th, td{
   height: 40px;
@@ -152,35 +159,54 @@ th, td{
 
 th:last-child, td:last-child{
   text-align: right;
+  vertical-align: middle;
   padding-right: 20px;
+  width: 120px;
+}
+tr:hover{
+  background-color: $semi-white-blue;
+  cursor: pointer;
+
+}
+
+td:last-child{
+  margin-left: -50px;
+  position: relative;
+  right: 15px;
 }
 
 td kbd{
   margin-left: 10px;
-  color:$border-color-1;
-  height: 12px;
-  display: inline-block;
-  position:relative;
+  color:$grey-2;
+  position:absolute;
+  font-size: 11px;
+  height: 8px;
+  width: 20px;
+  right: 5px;
 
   &::before{
-    color:$border-color-1;
+    color:$grey-2;
     content: '•';
     position: absolute;
-    top:-5px;
+    top:-4px;
   }
   &::after{
-    color:$border-color-1;
+    color:$grey-2;
     content: '•';
     position: absolute;
-    top:5px;
+    top:4px;
     right:0px;
   }
-  &:hover, &:hover::before, &:hover::After{
+  &:hover, &:hover::before, &:hover::after{
     color:$blue-1;
     cursor: pointer;
   }
 }
 
+.table-header:hover{
+  background-color: white;
+  cursor: initial;
+}
 @media (max-width: 800px) {
 
   .card {
