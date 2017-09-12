@@ -74,7 +74,7 @@ Cards
   font: $h3-alt;
   padding: 0;
   margin: $medium 0 0;
-  // &:hover p { color: $blue-3; }
+
   p {
     margin-top: 12px;
     color: $font-color-2;
@@ -156,9 +156,11 @@ th:last-child, td:last-child{
 }
 
 @media (max-width: 800px) {
-  .card{
+
+  .card {
     width: 100%;
   }
+
   .container{
     min-width: 320px;
   }

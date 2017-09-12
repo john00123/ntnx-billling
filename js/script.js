@@ -22,14 +22,6 @@ function dragon() {
   }
 }
 
-
-dragon();
-
-
-// $(document).ready(function() {
-//   var cards = 3;
-//   while (cards > 0){
-//     $('.cards').append("<b>Appended text</b>");
-//     cards --;
-//   }
-// });
+$(document).ready(function() {
+  dragon();
+});
