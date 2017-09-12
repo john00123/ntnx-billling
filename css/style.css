@@ -1,3 +1,4 @@
+@charset "UTF-8";
 span {
   line-height: 10px;
   height: 10px;
@@ -313,6 +314,34 @@ th, td {
 th:last-child, td:last-child {
   text-align: right;
   padding-right: 20px;
+  position: relative;
+}
+
+td kbd {
+  margin-left: 10px;
+  color: #B8BFCA;
+  height: 10px;
+  display: inline-block;
+}
+
+td kbd::before {
+  color: #B8BFCA;
+  content: '•';
+  position: absolute;
+  top: 10px;
+}
+
+td kbd::after {
+  color: #B8BFCA;
+  content: '•';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+td kbd:hover, td kbd:hover::before, td kbd:hover::After {
+  color: #22A5F7;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
