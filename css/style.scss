@@ -161,6 +161,7 @@ td kbd{
   color:$border-color-1;
   height: 10px;
   display: inline-block;
+  
   &::before{
     color:$border-color-1;
     content: '•';
