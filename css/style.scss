@@ -240,7 +240,9 @@ Graph
     z-index: -1;
   }
 }
-
+.click{
+  background-color: $blue-1;
+}
 .graph-body {
   @include size(auto, 100%);
   padding: 20px;

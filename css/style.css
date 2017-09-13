@@ -420,6 +420,10 @@ Graph
   z-index: -1;
 }
 
+.click {
+  background-color: #22A5F7;
+}
+
 .graph-body {
   height: auto;
   width: 100%;
