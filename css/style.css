@@ -233,6 +233,10 @@ Cards
   font-weight: 300;
 }
 
+.card p:hover {
+  cursor: col-resize;
+}
+
 .card::before {
   top: calc(65% + 1.5px);
 }
@@ -317,6 +321,7 @@ Graph
   justify-content: flex-start;
   flex-direction: row;
   overflow-x: scroll;
+  overflow-y: hidden;
   position: relative;
 }
 
