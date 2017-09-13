@@ -117,6 +117,65 @@ Graph
       margin-right: 10px;
     }
   }
+  &::before, &::after{
+    display: none;
+  }
+  ul{
+
+    min-width: 30px;
+  }
+  ul:hover{
+    cursor: default;
+
+  }
+  li{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color:initial;
+    cursor: default;
+    &:hover{
+    color:initial;
+    cursor: default;
+    }
+  }
+}
+
+.trend{
+  @include flex(flex-end, flex-start, row);
+  overflow-x: scroll;
+}
+
+.x-values{
+  @include flex(flex-end, space-between,row);
+  height: 100%;
+  flex-grow: 1;
+  border-top: 1px solid $border-color-3;
+  padding-top: 10px;
+
+  p{
+    margin: 0 10px;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      height: 180px;
+      width: 1px;
+      background-color: $border-color-3;
+      bottom: 20px;
+      left: 50%;
+    }
+    &::after{
+      content:'';
+      height: 4px;
+      width: 4px;
+      border-radius: 4px;
+      background-color: white;
+      border: 1px solid $blue-1;
+      position: absolute;
+      bottom:100px;
+      left: calc(50% - 2px);
+    }
+  }
 }
 
 .graph-body {
@@ -128,6 +187,7 @@ Graph
     opacity: 0.3
   }
 }
+
 
 /* ==========================================================================
 Table
@@ -154,6 +214,7 @@ th, td{
   padding-left: 20px;
   line-height: 10px;
   vertical-align: middle;
+  font-weight: 400;
   border-bottom: 1px solid $border-color-3;
 }
 

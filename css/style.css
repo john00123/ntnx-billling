@@ -277,6 +277,76 @@ Graph
   margin-right: 10px;
 }
 
+.graph::before, .graph::after {
+  display: none;
+}
+
+.graph ul {
+  min-width: 30px;
+}
+
+.graph ul:hover {
+  cursor: default;
+}
+
+.graph li {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: initial;
+  cursor: default;
+}
+
+.graph li:hover {
+  color: initial;
+  cursor: default;
+}
+
+.trend {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.x-values {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100%;
+  flex-grow: 1;
+  border-top: 1px solid #F2F4F6;
+  padding-top: 10px;
+}
+
+.x-values p {
+  margin: 0 10px;
+  position: relative;
+}
+
+.x-values p::before {
+  content: '';
+  position: absolute;
+  height: 180px;
+  width: 1px;
+  background-color: #F2F4F6;
+  bottom: 20px;
+  left: 50%;
+}
+
+.x-values p::after {
+  content: '';
+  height: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #22A5F7;
+  position: absolute;
+  bottom: 100px;
+  left: calc(50% - 2px);
+}
+
 .graph-body {
   height: auto;
   width: 100%;
@@ -315,6 +385,7 @@ th, td {
   padding-left: 20px;
   line-height: 10px;
   vertical-align: middle;
+  font-weight: 400;
   border-bottom: 1px solid #F2F4F6;
 }
 
