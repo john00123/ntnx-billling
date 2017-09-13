@@ -233,10 +233,6 @@ Cards
   font-weight: 300;
 }
 
-.card p:hover {
-  cursor: col-resize;
-}
-
 .card::before {
   top: calc(65% + 1.5px);
 }
@@ -328,7 +324,7 @@ Graph
 .trend::before {
   position: absolute;
   content: '';
-  width: 1300px;
+  width: 1140px;
   height: 1px;
   background-color: #22A5F7;
   top: calc(50% + 2px);
@@ -354,8 +350,20 @@ Graph
 .x-values p {
   font-size: 12px;
   font-weight: 400;
-  margin: 0 15px;
+  margin: 0 12.5px;
   position: relative;
+}
+
+.x-values p:hover {
+  color: #22272E;
+}
+
+.x-values p:hover::before {
+  background-color: #D5DAE0;
+}
+
+.x-values p:hover::after {
+  border-color: #2068CA;
 }
 
 .x-values p::before {
@@ -365,7 +373,10 @@ Graph
   width: 1px;
   background-color: #F2F4F6;
   bottom: 20px;
-  left: 50%;
+  left: calc(40% - 6px);
+  background-clip: padding-box;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
 }
 
 .x-values p::after {
@@ -378,6 +389,35 @@ Graph
   position: absolute;
   bottom: 100px;
   left: calc(50% - 2px);
+  z-index: 2;
+}
+
+.tooltip-graph {
+  position: absolute;
+  background-color: #22272E;
+  border-radius: 4px;
+  top: -150px;
+  right: -36px;
+  z-index: 99;
+  line-height: 10px;
+  padding: 11px 15px;
+  color: white;
+  font-weight: 500;
+}
+
+.tooltip-graph::after {
+  height: 12px;
+  width: 12px;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 41%;
+  border-radius: 2px;
+  background-color: inherit;
+  transform: rotate(45deg);
+  z-index: -1;
 }
 
 .graph-body {

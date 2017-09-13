@@ -80,9 +80,6 @@ Cards
     margin-top: 12px;
     color: $font-color-2;
     font-weight: 300;
-    &:hover{
-      cursor: col-resize;
-    }
   }
 
   &::before {
@@ -158,7 +155,7 @@ Graph
   &::before{
     position: absolute;
     content: '';
-    width: 1300px;
+    width: 1140px;
     height: 1px;
     background-color: $blue-1;
     top:calc(50% + 2px);
@@ -180,8 +177,17 @@ Graph
   p{
     font-size: 12px;
     font-weight: 400;
-    margin: 0 15px;
+    margin: 0 12.5px;
     position: relative;
+    &:hover{
+      color: $font-color-1;
+      &::before{
+        background-color: $border-color-2;
+      }
+      &::after{
+        border-color: $dark-blue-2;
+      }
+    }
     &::before{
       content: '';
       position: absolute;
@@ -189,7 +195,10 @@ Graph
       width: 1px;
       background-color: $border-color-3;
       bottom: 20px;
-      left: 50%;
+      left: calc(40% - 6px);
+      background-clip: padding-box;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
     }
     &::after{
       content:'';
@@ -201,7 +210,34 @@ Graph
       position: absolute;
       bottom:100px;
       left: calc(50% - 2px);
+      z-index: 2;
+
     }
+  }
+}
+
+.tooltip-graph{
+  position: absolute;
+  background-color: $background-color-1;
+  border-radius: 4px;
+  top:-150px;
+  right:-36px;
+  z-index: 99;
+  line-height: 10px;
+  padding: 11px 15px;
+  color: white;
+  font-weight: 500;
+  &::after{
+    @include size(12px, 12px);
+    content: '';
+    display: block;
+    position: absolute;
+    top:22px;
+    left: 41%;
+    border-radius: 2px;
+    background-color:inherit;
+    transform: rotate(45deg);
+    z-index: -1;
   }
 }
 
@@ -254,7 +290,6 @@ th:last-child, td:last-child{
 tr:hover{
   background-color: $semi-white-blue;
   cursor: pointer;
-
 }
 
 td:last-child{
@@ -295,8 +330,9 @@ td kbd{
   background-color: white;
   cursor: initial;
 }
-@media (max-width: 800px) {
 
+
+@media (max-width: 800px) {
   .card {
     width: 100%;
   }
