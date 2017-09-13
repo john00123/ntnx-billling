@@ -143,6 +143,16 @@ Graph
 .trend{
   @include flex(flex-end, flex-start, row);
   overflow-x: scroll;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 1140px;
+    height: 1px;
+    background-color: $blue-1;
+    top:calc(50% + 2px);
+    left: 50px;
+  }
 }
 
 .x-values{
@@ -166,8 +176,8 @@ Graph
     }
     &::after{
       content:'';
-      height: 4px;
-      width: 4px;
+      height: 3px;
+      width: 3px;
       border-radius: 4px;
       background-color: white;
       border: 1px solid $blue-1;

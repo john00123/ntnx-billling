@@ -307,6 +307,17 @@ Graph
   justify-content: flex-start;
   flex-direction: row;
   overflow-x: scroll;
+  position: relative;
+}
+
+.trend::before {
+  position: absolute;
+  content: '';
+  width: 1140px;
+  height: 1px;
+  background-color: #22A5F7;
+  top: calc(50% + 2px);
+  left: 50px;
 }
 
 .x-values {
@@ -337,8 +348,8 @@ Graph
 
 .x-values p::after {
   content: '';
-  height: 4px;
-  width: 4px;
+  height: 3px;
+  width: 3px;
   border-radius: 4px;
   background-color: white;
   border: 1px solid #22A5F7;
