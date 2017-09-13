@@ -121,17 +121,18 @@ Graph
     display: none;
   }
   ul{
-
-    min-width: 30px;
+    min-width:30px;
   }
   ul:hover{
     cursor: default;
 
   }
   li{
+    font-size: 12px;
+    font-weight: 400;
     margin-top: 10px;
     margin-bottom: 30px;
-    color:initial;
+    color:$font-color-2;
     cursor: default;
     &:hover{
     color:initial;
@@ -140,6 +141,11 @@ Graph
   }
 }
 
+.all-values{
+  @include flex(flex-end, flex-start, row);
+}
+
+
 .trend{
   @include flex(flex-end, flex-start, row);
   overflow-x: scroll;
@@ -147,23 +153,29 @@ Graph
   &::before{
     position: absolute;
     content: '';
-    width: 1140px;
+    width: 1300px;
     height: 1px;
     background-color: $blue-1;
     top:calc(50% + 2px);
-    left: 50px;
+    left: 20px;
+  }
+  ul{
+    opacity:0;
   }
 }
 
 .x-values{
-  @include flex(flex-end, space-between,row);
+  @include flex(flex-end, flex-start,row);
   height: 100%;
   flex-grow: 1;
   border-top: 1px solid $border-color-3;
   padding-top: 10px;
+  margin-left: -30px;
 
   p{
-    margin: 0 10px;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 15px;
     position: relative;
     &::before{
       content: '';

@@ -290,15 +290,24 @@ Graph
 }
 
 .graph li {
+  font-size: 12px;
+  font-weight: 400;
   margin-top: 10px;
   margin-bottom: 30px;
-  color: initial;
+  color: #627386;
   cursor: default;
 }
 
 .graph li:hover {
   color: initial;
   cursor: default;
+}
+
+.all-values {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 
 .trend {
@@ -313,26 +322,33 @@ Graph
 .trend::before {
   position: absolute;
   content: '';
-  width: 1140px;
+  width: 1300px;
   height: 1px;
   background-color: #22A5F7;
   top: calc(50% + 2px);
-  left: 50px;
+  left: 20px;
+}
+
+.trend ul {
+  opacity: 0;
 }
 
 .x-values {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: row;
   height: 100%;
   flex-grow: 1;
   border-top: 1px solid #F2F4F6;
   padding-top: 10px;
+  margin-left: -30px;
 }
 
 .x-values p {
-  margin: 0 10px;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 15px;
   position: relative;
 }
 
