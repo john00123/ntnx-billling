@@ -152,6 +152,7 @@ Graph
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
+  direction:rtl;
   &::before{
     position: absolute;
     content: '';
@@ -159,7 +160,7 @@ Graph
     height: 1px;
     background-color: $blue-1;
     top:calc(50% + 2px);
-    left: 20px;
+    right: 40px;
   }
   ul{
     opacity:0;
@@ -240,9 +241,11 @@ Graph
     z-index: -1;
   }
 }
+
 .click{
   background-color: $blue-1;
 }
+
 .graph-body {
   @include size(auto, 100%);
   padding: 20px;

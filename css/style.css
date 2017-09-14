@@ -319,6 +319,7 @@ Graph
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
+  direction: rtl;
 }
 
 .trend::before {
@@ -328,7 +329,7 @@ Graph
   height: 1px;
   background-color: #22A5F7;
   top: calc(50% + 2px);
-  left: 20px;
+  right: 40px;
 }
 
 .trend ul {
