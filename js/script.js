@@ -4,6 +4,12 @@ const cardData ={
   cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016'],
 }
 
+const billingData ={
+  Months
+  :['December','November','October','September','August','July','June','May','April','March','February','January'],
+  Ammounts :['2023.00','2827.00','3100.00','2908.00','2789.03','2499.00','3154.79','3200.00','3170.00','3048.43','2999.03','3317.32'],
+}
+
 function dragon() {
   var cards = cardData.cardInfo.length;
   var index = 0;
@@ -33,6 +39,7 @@ function chartData(){
     }
     $('.x-values').append("<p>"+ i +"</p>");
   }
+
   $('.x-values p').mouseenter(function(){
     $(this).append("<kbd class='tooltip-graph'>$3780.00</kbd>");
   })
@@ -51,7 +58,22 @@ function chartData(){
   })
 }
 
+function tableData(){
+
+  for(let i=0; i<billingData.Ammounts.length; i++){
+    $('tbody').append(
+      `<tr>
+        <td>2017 / ${billingData.Months[i]}</td>
+        <td>$ ${billingData.Ammounts[i]}
+        <kbd>•</kbd>
+        </td>
+    </tr>`);
+  }
+}
+
+
 $(document).ready(function() {
   dragon();
   chartData();
+  tableData();
 });
