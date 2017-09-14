@@ -227,10 +227,12 @@ Cards
 .img {
   height: 120px;
   width: 120px;
-  border-radius: 50%;
-  background-color: #36D068;
+  border-radius: 6px;
+  background-image: url("../img/icon.png");
+  background-color: pink;
+  background-size: cover;
   display: flex;
-  margin: 0 auto 20px auto;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 800px) {
