@@ -1,5 +1,5 @@
 const cardData ={
-  cardInfo : ['Account type','Payment type','Tax documents'],
+  cardInfo : ['Profile','Account','Authentication & Users'],
   cardBody :['Pay as you go','Credit Card','221-222-333-44'],
   cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016'],
 }
@@ -26,5 +26,5 @@ function dragon() {
 }
 
 $(document).ready(function() {
-  dragon();
+  // dragon();
 });
