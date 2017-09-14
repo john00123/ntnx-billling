@@ -329,7 +329,7 @@ Graph
   height: 1px;
   background-color: #22A5F7;
   top: calc(50% + 2px);
-  right: 40px;
+  right: 30px;
 }
 
 .trend ul {
@@ -345,7 +345,7 @@ Graph
   flex-grow: 1;
   border-top: 1px solid #F2F4F6;
   padding-top: 10px;
-  margin-left: -30px;
+  margin-right: -20px;
 }
 
 .x-values p {

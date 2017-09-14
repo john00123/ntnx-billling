@@ -35,7 +35,7 @@ function cardsData() {
 // adds points to the chart and hover behavior
 function chartData(){
   var july=31;
-  for(i = 1; i <= july; i ++){
+  for(i = 31; i >= 1; i--){
     if (i <= 9){ i = '0'+ i; }
     $('.x-values').append("<p>"+ i +"</p>");
   }
