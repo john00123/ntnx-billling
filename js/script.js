@@ -25,33 +25,6 @@ function dragon() {
   }
 }
 
-function chartData(){
-  var july=31;
-  for(i=01; i<=july; i++){
-    if (i<=9){
-      i = '0'+i;
-    }
-    $('.x-values').append("<p>"+ i +"</p>");
-  }
-  $('.x-values p').mouseenter(function(){
-    $(this).append("<kbd class='tooltip-graph'>$3780.00</kbd>");
-  })
-
-  $('.x-values p').mouseleave(function(){
-    $(this).find('kbd').remove();
-  })
-
-  $('.x-values p').click(function(){
-    $('.click').remove();
-    $(this).append("<span class='tooltip-graph click'>$3780.00</span>");
-  })
-
-  $('.trend').mouseleave(function(){
-    $('.click').remove();
-  })
-}
-
 $(document).ready(function() {
   dragon();
-  chartData();
 });
