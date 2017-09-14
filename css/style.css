@@ -466,6 +466,20 @@ th, td {
   border-bottom: 1px solid #F2F4F6;
 }
 
+th code, td code {
+  background-color: #EDF7FE;
+  border-radius: 2px;
+  padding: 1px 5px;
+  color: #22A5F7;
+  font-size: 12px;
+  margin-right: 7px;
+}
+
+th a, td a {
+  color: #7C8D9F;
+  margin-left: 5px;
+}
+
 th:last-child, td:last-child {
   text-align: right;
   vertical-align: middle;

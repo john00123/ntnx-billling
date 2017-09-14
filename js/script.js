@@ -6,11 +6,12 @@ const cardData ={
 
 const billingData ={
   Months
-  :['December','November','October','September','August','July','June','May','April','March','February','January'],
-  Ammounts :['2023.00','2827.00','3100.00','2908.00','2789.03','2499.00','3154.79','3200.00','3170.00','3048.43','2999.03','3317.32'],
+  :['December <a>(Due)</a>','November','October','September','August','July','June','May','April','March','February','January'],
+  Ammounts :['3780.00','2827.00','3100.00','2908.00','2789.03','2499.00','3154.79','3200.00','3170.00','3048.43','2999.03','3317.32'],
 }
 
-function dragon() {
+// creates cards
+function cardsData() {
   var cards = cardData.cardInfo.length;
   var index = 0;
   // function
@@ -31,22 +32,20 @@ function dragon() {
   }
 }
 
+// adds points to the chart and hover behavior
 function chartData(){
   var july=31;
-  for(i=01; i<=july; i++){
-    if (i<=9){
-      i = '0'+i;
-    }
+  for(i = 1; i <= july; i ++){
+    if (i <= 9){ i = '0'+ i; }
     $('.x-values').append("<p>"+ i +"</p>");
   }
 
-  $('.x-values p').mouseenter(function(){
-    $(this).append("<kbd class='tooltip-graph'>$3780.00</kbd>");
-  })
-
-  $('.x-values p').mouseleave(function(){
-    $(this).find('kbd').remove();
-  })
+  $('.x-values p').hover(function(){
+    $(this).append(`<kbd class='tooltip-graph'>
+    $${billingData.Ammounts[0]}</kbd>`);
+    }, function(){
+    $(this).find('kbd').remove();}
+  );
 
   $('.x-values p').click(function(){
     $('.click').remove();
@@ -58,22 +57,23 @@ function chartData(){
   })
 }
 
+// adds data to the table and graphs
 function tableData(){
-
   for(let i=0; i<billingData.Ammounts.length; i++){
     $('tbody').append(
       `<tr>
-        <td>2017 / ${billingData.Months[i]}</td>
+        <td><code>2017</code> ${billingData.Months[i]}</td>
         <td>$ ${billingData.Ammounts[i]}
         <kbd>•</kbd>
         </td>
     </tr>`);
   }
+
+  $('.balance').append(`$${billingData.Ammounts[0]}`);
 }
 
-
 $(document).ready(function() {
-  dragon();
+  cardsData();
   chartData();
   tableData();
 });
