@@ -24,6 +24,14 @@ h4{
   display: block;
   height: 10px;
   font-weight: 500;
+  code{
+    font-weight: 400;
+    color:$font-color-3;
+    padding-left: 10px;
+    kbd{
+      margin: 0 7px;
+    }
+  }
 }
 
 header {
@@ -71,7 +79,7 @@ Cards
 .card {
   @include secondary-alt;
   @include arrow();
-  width: calc(33% - 9px);
+  width: calc(25% - 13px);
   font: $h3-alt;
   padding: 0;
   margin: $medium 0 0;
@@ -112,7 +120,7 @@ Graph
 
   .card-title {
     @include flex(center, space-between, row);
-    span {
+    kbd {
       font: $h3-alt;
       color: $font-color-3;
       margin-right: 10px;
@@ -349,13 +357,32 @@ td kbd{
   cursor: initial;
 }
 
+@media (max-width: 1024px) {
+  .deck {
+    .card {
+      width: calc(50% - 10px);
+    }
+  }
+}
 
-@media (max-width: 800px) {
-  .card {
-    width: 100%;
+
+
+@media (max-width: 600px) {
+  .deck {
+    .card {
+      width: 100%;
+    }
   }
 
   .container{
     min-width: 320px;
   }
+
+
+}
+
+@media (max-width: 420px) {
+  h4 code{display: none;}
+  td a{display: none;}
+  td code{display: none;}
 }

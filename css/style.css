@@ -29,6 +29,16 @@ h4 {
   font-weight: 500;
 }
 
+h4 code {
+  font-weight: 400;
+  color: #7C8D9F;
+  padding-left: 10px;
+}
+
+h4 code kbd {
+  margin: 0 7px;
+}
+
 header {
   height: 60px;
   width: 100%;
@@ -162,7 +172,7 @@ Cards
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
   position: relative;
-  width: calc(33% - 9px);
+  width: calc(25% - 13px);
   font: 400 14px/10px "nutanix_soft", san-serif;
   padding: 0;
   margin: 20px 0 0;
@@ -272,7 +282,7 @@ Graph
   flex-direction: row;
 }
 
-.graph .card-title span {
+.graph .card-title kbd {
   font: 400 14px/10px "nutanix_soft", san-serif;
   color: #7C8D9F;
   margin-right: 10px;
@@ -534,11 +544,29 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   cursor: initial;
 }
 
-@media (max-width: 800px) {
-  .card {
+@media (max-width: 1024px) {
+  .deck .card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .deck .card {
     width: 100%;
   }
   .container {
     min-width: 320px;
+  }
+}
+
+@media (max-width: 420px) {
+  h4 code {
+    display: none;
+  }
+  td a {
+    display: none;
+  }
+  td code {
+    display: none;
   }
 }
