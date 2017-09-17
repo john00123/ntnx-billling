@@ -12,6 +12,7 @@ html {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   background-color: #F2F4F6;
+  overflow-x: hidden;
 }
 
 body {
@@ -63,6 +64,7 @@ header {
   max-width: 1280px;
   margin: 8px auto;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 .actions {
@@ -544,6 +546,113 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   cursor: initial;
 }
 
+/* ==========================================================================
+Popup
+========================================================================== */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: "";
+  display: none;
+}
+
+.popup {
+  height: 600px;
+  width: 500px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.first-layer {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  opacity: 0;
+}
+
+.appear {
+  animation: appear;
+  animation-delay: 0.1s;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.back-layer {
+  animation: back-layer;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.show {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: "";
+  animation: show;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.second-layer {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  opacity: 0;
+  height: 600px;
+  position: absolute;
+  top: calc(50vh - 300px);
+  left: calc(50vw - 250px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+Animation
+========================================================================== */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes back-layer {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translate3d(0, -55px, 0) scale(0.9);
+  }
+}
+
+/* ==========================================================================
+Media Queries
+========================================================================== */
 @media (max-width: 1024px) {
   .deck .card {
     width: calc(50% - 10px);

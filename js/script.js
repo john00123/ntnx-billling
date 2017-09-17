@@ -72,6 +72,21 @@ function tableData(){
   $('.balance').append(`$${billingData.Ammounts[0]}`);
 }
 
+
+$('.first-layer').click(function() {
+  $('.first-layer').addClass('back-layer');
+  setInterval(function(){
+    $('.second-layer').addClass('appear');
+  },100);
+});
+
+
+$('.deck:eq(0)').click(function(){
+  $('.overlay').addClass('show');
+  $('.first-layer').addClass('appear');
+});
+
+
 $(document).ready(function() {
   cardsData();
   chartData();
