@@ -600,6 +600,10 @@ Popup
   height: 600px;
   width: 500px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: "";
   background-color: white;
   border-radius: 4px;
   z-index: 10;
@@ -645,6 +649,10 @@ Popup
   top: calc(50vh - 300px);
   left: calc(50vw - 250px);
   pointer-events: none;
+}
+
+.count {
+  font-size: 30px;
 }
 
 /* ==========================================================================

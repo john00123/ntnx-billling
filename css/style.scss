@@ -405,6 +405,7 @@ Popup
 
 .popup{
   @include size(600px, 500px);
+  @include flex(center, center, '');
   background-color: white;
   border-radius: 4px;
   z-index: 10;
@@ -449,6 +450,10 @@ Popup
   pointer-events: none;
 }
 
+
+.count{
+  font-size: 30px;
+}
 /* ==========================================================================
 Animation
 ========================================================================== */
