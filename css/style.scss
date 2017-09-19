@@ -318,11 +318,14 @@ tr:hover{
   background-color: $semi-white-blue;
   cursor: pointer;
 }
-
 td:last-child{
   margin-left: -50px;
   position: relative;
   right: 15px;
+}
+
+th:not(:first-child), td:not(:first-child){
+  width: 120px;
 }
 
 
@@ -357,6 +360,11 @@ td kbd{
 .table-header:hover{
   background-color: white;
   cursor: initial;
+}
+
+.usage td:last-child{
+  right: 0;
+  margin-left: 0;
 }
 
 /* ==========================================================================

@@ -511,6 +511,10 @@ td:last-child {
   right: 15px;
 }
 
+th:not(:first-child), td:not(:first-child) {
+  width: 120px;
+}
+
 td kbd {
   margin-left: 10px;
   color: #7C8D9F;
@@ -544,6 +548,11 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 .table-header:hover {
   background-color: white;
   cursor: initial;
+}
+
+.usage td:last-child {
+  right: 0;
+  margin-left: 0;
 }
 
 /* ==========================================================================

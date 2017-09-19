@@ -1,13 +1,24 @@
 const cardData ={
-  cardInfo : ['Current plan','Payment type','Tax documents','Redeemed Codes'],
-  cardBody :['Pay as you go','Credit Card','221-222-333-44', '$1500.00'],
-  cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', '1 Promo code consumed'],
+  cardInfo : ['Current plan','Payment type','Tax documents','Available Credit'],
+  cardBody :['Pay as you go','Credit Card','221-222-333-44', '$5000.00'],
+  cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Add credits'],
 }
 
 const billingData ={
   Months
-  :['December <a>(Due)</a>','November','October','September','August','July','June','May','April','March','February','January'],
-  Ammounts :['3780.00','2827.00','3100.00','2908.00','2789.03','2499.00','3154.79','3200.00','3170.00','3048.43','2999.03','3317.32'],
+  :['December','November','October','February  <a>Trial</a>','January <a>Trial</a>'],
+  Ammounts :['3780.00','2827.00','3100.00','2908.00','0.00','0.00'],
+}
+
+const usageData ={
+  Title:['CPU hours','Data encryption','Support fees'],
+  Numbers :['15000','1000','-'],
+  Ammounts :['750.00','600.00','135.00'],
+}
+
+const creditData ={
+  Months:['September','January'],
+  Ammounts :['3000.00','2000.00'],
 }
 
 // creates cards
@@ -58,19 +69,37 @@ function chartData(){
 }
 
 // adds data to the table and graphs
+
 function tableData(){
   for(let i=0; i<billingData.Ammounts.length; i++){
-    $('tbody').append(
+    $('.prev-bills').append(
       `<tr>
         <td><code>2017</code> ${billingData.Months[i]}</td>
-        <td>$ ${billingData.Ammounts[i]}
-        <kbd>•</kbd>
-        </td>
+        <td>$ ${billingData.Ammounts[i]}<kbd>•</kbd></td>
     </tr>`);
   }
 
   $('.balance').append(`$${billingData.Ammounts[0]}`);
+  for(let i=0; i<creditData.Ammounts.length; i++){
+    $('.prev-creds').append(
+      `<tr>
+        <td><code>2017</code> ${creditData.Months[i]}</td>
+        <td><code>+</code> $ ${creditData.Ammounts[i]}<kbd>•</kbd></td>
+    </tr>`);
+  }
+
+  for(let i=0; i<usageData.Ammounts.length; i++){
+    $('.usage').append(
+      `<tr>
+        <td> ${usageData.Title[i]}</td>
+        <td> ${usageData.Numbers[i]}</td>
+        <td> $ ${usageData.Ammounts[i]}</td>
+    </tr>`);
+  }
 }
+
+
+
 
 
 $('.first-layer').click(function() {
