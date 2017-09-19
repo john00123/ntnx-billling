@@ -99,9 +99,6 @@ function tableData(){
 }
 
 
-
-
-
 $('.first-layer').click(function() {
   $('.first-layer').addClass('back-layer');
   setInterval(function(){
@@ -113,6 +110,18 @@ $('.first-layer').click(function() {
 $('.deck:eq(0)').click(function(){
   $('.overlay').addClass('show');
   $('.first-layer').addClass('appear');
+  $('.count').each(function () {
+      $(this).prop('Counter',0).animate({
+          Counter: $(this).text()
+      }, {
+          duration: 800,
+          easing: 'swing',
+          step: function (now) {
+              $(this).text(Math.ceil(now));
+          }
+      });
+  });
+
 });
 
 
