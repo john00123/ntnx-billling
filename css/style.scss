@@ -328,6 +328,9 @@ th:not(:first-child), td:not(:first-child){
   width: 100px;
 }
 
+td{
+  white-space: nowrap;
+}
 
 td kbd{
   margin-left: 10px;
