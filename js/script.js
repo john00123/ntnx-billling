@@ -21,11 +21,9 @@ function selectAll(){
     if($(".checkBox").prop('checked')){
       $('#maindrop').removeAttr('disabled');
     }
-    else{
-      $('#maindrop').attr('disabled');
-    }
   });
 };
+
 
 
 $(document).ready(function() {
