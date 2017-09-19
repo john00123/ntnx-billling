@@ -7,7 +7,7 @@ const cardData ={
 const billingData ={
   Months
   :['December','November','October','February  <a>Trial</a>','January <a>Trial</a>'],
-  Ammounts :['3780.00','2827.00','3100.00','2908.00','0.00','0.00'],
+  Ammounts :['3780.00','2827.00','3100.00','0.00','0.00'],
 }
 
 const usageData ={
