@@ -107,7 +107,14 @@ header {
   line-height: 9pt;
 }
 
-.actions .secondary {
+.actions .primary:hover {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.actions select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 1px solid #B8BFCA;
   border-radius: 4px;
   padding: 11px 15px;
@@ -118,335 +125,47 @@ header {
   margin: 0;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
-  margin-bottom: 0;
+  font-size: 14px;
+  height: 34px;
+  width: 78px;
+  text-align: center;
 }
 
-.actions .secondary:hover {
+.actions select:hover {
   color: #22A5F7;
   cursor: pointer;
 }
 
-.actions .secondary:active {
+.actions select:active {
   color: #8FD1FE;
 }
 
-.actions .secondary span {
+.actions select span {
   height: 10px;
   display: block;
   font-weight: 500;
   line-height: 9pt;
 }
 
-.actions .secondary:hover {
+.actions select:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
 }
 
-.actions .secondary span {
+.actions select span {
   height: 10px;
   display: block;
   font-weight: 500;
   line-height: 9pt;
 }
 
-/* ==========================================================================
-Cards
-========================================================================== */
-.deck {
-  height: auto;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
+select[disabled] {
+  color: #9AA5B5;
+  border-color: transparent;
+  pointer-events: none;
 }
 
-.card {
-  border: 1px solid #B8BFCA;
-  border-radius: 4px;
-  padding: 11px 15px;
-  color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  text-decoration: none;
-  background-color: #FFFFFF;
-  margin: 0;
-  transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: none;
-  position: relative;
-  width: calc(25% - 13px);
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  padding: 0;
-  margin: 20px 0 0;
-}
-
-.card:hover {
-  color: #22A5F7;
-  cursor: pointer;
-}
-
-.card:active {
-  color: #8FD1FE;
-}
-
-.card span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
-.card:hover {
-  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
-}
-
-.card span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
-.card::before, .card::after {
-  height: 6px;
-  width: 1.5px;
-  box-sizing: border-box;
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  content: '';
-  display: block;
-  position: absolute;
-  opacity: 0;
-  right: 20px;
-  border-radius: 3px;
-  z-index: 3;
-  transform: translateX(-10px);
-  background-color: #22A5F7;
-}
-
-.card::before {
-  transform: rotate(45deg);
-}
-
-.card::after {
-  transform: rotate(-45deg);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card:hover::after {
-  opacity: 1;
-}
-
-.card p {
-  margin-top: 12px;
-  color: #627386;
-  font-weight: 300;
-}
-
-.card::before {
-  top: calc(65% + 1.5px);
-}
-
-.card::after {
-  top: calc(65% - 2px);
-}
-
-.card-title {
-  padding: 14px 20px;
-  color: #22272E;
-  border-bottom: 1px solid #F2F4F6;
-}
-
-.card-title .balance {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.card-body {
-  padding: 23px 20px;
-}
-
-/* ==========================================================================
-Graph
-========================================================================== */
-.graph {
-  width: 100%;
-}
-
-.graph .card-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.graph .card-title kbd {
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  color: #7C8D9F;
+input[type='checkbox'] {
   margin-right: 10px;
-}
-
-.graph::before, .graph::after {
-  display: none;
-}
-
-.graph ul {
-  min-width: 30px;
-}
-
-.graph ul:hover {
-  cursor: default;
-}
-
-.graph li {
-  font-size: 12px;
-  font-weight: 400;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  color: #627386;
-  cursor: default;
-}
-
-.graph li:hover {
-  color: initial;
-  cursor: default;
-}
-
-.all-values {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  flex-direction: row;
-}
-
-.trend {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  flex-direction: row;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  position: relative;
-  direction: rtl;
-}
-
-.trend::before {
-  position: absolute;
-  content: '';
-  width: 1140px;
-  height: 1px;
-  background-color: #22A5F7;
-  top: calc(50% + 2px);
-  right: 30px;
-}
-
-.trend ul {
-  opacity: 0;
-}
-
-.x-values {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  flex-direction: row;
-  height: 100%;
-  flex-grow: 1;
-  border-top: 1px solid #F2F4F6;
-  padding-top: 10px;
-  margin-right: -20px;
-}
-
-.x-values p {
-  font-size: 12px;
-  font-weight: 400;
-  margin: 0 12.5px;
-  position: relative;
-}
-
-.x-values p:hover {
-  color: #22272E;
-}
-
-.x-values p:hover::before {
-  background-color: #D5DAE0;
-}
-
-.x-values p:hover::after {
-  border-color: #2068CA;
-}
-
-.x-values p::before {
-  content: '';
-  position: absolute;
-  height: 180px;
-  width: 1px;
-  background-color: #F2F4F6;
-  bottom: 20px;
-  left: calc(40% - 6px);
-  background-clip: padding-box;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-}
-
-.x-values p::after {
-  content: '';
-  height: 3px;
-  width: 3px;
-  border-radius: 4px;
-  background-color: white;
-  border: 1px solid #22A5F7;
-  position: absolute;
-  bottom: 100px;
-  left: calc(50% - 2px);
-  z-index: 2;
-}
-
-.tooltip-graph {
-  position: absolute;
-  background-color: #22272E;
-  border-radius: 4px;
-  top: -150px;
-  right: -36px;
-  z-index: 99;
-  line-height: 10px;
-  padding: 11px 15px;
-  color: white;
-  font-weight: 500;
-}
-
-.tooltip-graph::after {
-  height: 12px;
-  width: 12px;
-  box-sizing: border-box;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 22px;
-  left: 41%;
-  border-radius: 2px;
-  background-color: inherit;
-  transform: rotate(45deg);
-  z-index: -1;
-}
-
-.click {
-  background-color: #22A5F7;
-}
-
-.graph-body {
-  height: auto;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-}
-
-.graph-body svg {
-  width: 100%;
-  opacity: 0.3;
 }
 
 /* ==========================================================================

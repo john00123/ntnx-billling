@@ -61,209 +61,32 @@ header {
   .primary {
     @include primary;
     margin-right: 10px;
+    &:hover{
+      @include shadow;
+    }
   }
 
-  .secondary {
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     @include secondary-alt;
-    margin-bottom: 0;
+    font-size: 14px;
+    height: 34px;
+    width: 78px;
+    text-align: center;
   }
 }
 
-/* ==========================================================================
-Cards
-========================================================================== */
-.deck {
-  @include size(auto, 100%);
-  @include flex(flex-start, space-between, row);
-  flex-wrap: wrap;
+select[disabled]{
+  color:$font-color-4;
+  border-color: transparent;
+  pointer-events: none;
 }
 
-.card {
-  @include secondary-alt;
-  @include arrow();
-  width: calc(25% - 13px);
-  font: $h3-alt;
-  padding: 0;
-  margin: $medium 0 0;
-
-  p {
-    margin-top: 12px;
-    color: $font-color-2;
-    font-weight: 300;
-  }
-
-  &::before {
-    top: calc(65% + 1.5px);
-  }
-
-  &::after {
-    top: calc(65% - 2px);
-  }
-}
-
-.card-title {
-  @include padding(14px, 20px);
-  color: $font-color-1;
-  border-bottom: 1px solid $border-color-3;
-  .balance{
-    @include flex(center, space-between, row);
-  }
-}
-
-.card-body {
-  padding: 23px 20px;
-}
-
-/* ==========================================================================
-Graph
-========================================================================== */
-.graph {
-  width: 100%;
-
-  .card-title {
-    @include flex(center, space-between, row);
-    kbd {
-      font: $h3-alt;
-      color: $font-color-3;
-      margin-right: 10px;
-    }
-  }
-  &::before, &::after{
-    display: none;
-  }
-  ul{
-    min-width:30px;
-  }
-  ul:hover{
-    cursor: default;
-
-  }
-  li{
-    font-size: 12px;
-    font-weight: 400;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    color:$font-color-2;
-    cursor: default;
-    &:hover{
-    color:initial;
-    cursor: default;
-    }
-  }
-}
-
-.all-values{
-  @include flex(flex-end, flex-start, row);
-}
-
-
-.trend{
-  @include flex(flex-end, flex-start, row);
-  overflow-x: scroll;
-  overflow-y: hidden;
-  position: relative;
-  direction:rtl;
-  &::before{
-    position: absolute;
-    content: '';
-    width: 1140px;
-    height: 1px;
-    background-color: $blue-1;
-    top:calc(50% + 2px);
-    right: 30px;
-  }
-  ul{
-    opacity:0;
-  }
-}
-
-.x-values{
-  @include flex(flex-end, flex-start,row);
-  height: 100%;
-  flex-grow: 1;
-  border-top: 1px solid $border-color-3;
-  padding-top: 10px;
-  margin-right:-20px;
-
-  p{
-    font-size: 12px;
-    font-weight: 400;
-    margin: 0 12.5px;
-    position: relative;
-    &:hover{
-      color: $font-color-1;
-      &::before{
-        background-color: $border-color-2;
-      }
-      &::after{
-        border-color: $dark-blue-2;
-      }
-    }
-    &::before{
-      content: '';
-      position: absolute;
-      height: 180px;
-      width: 1px;
-      background-color: $border-color-3;
-      bottom: 20px;
-      left: calc(40% - 6px);
-      background-clip: padding-box;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-    }
-    &::after{
-      content:'';
-      height: 3px;
-      width: 3px;
-      border-radius: 4px;
-      background-color: white;
-      border: 1px solid $blue-1;
-      position: absolute;
-      bottom:100px;
-      left: calc(50% - 2px);
-      z-index: 2;
-
-    }
-  }
-}
-
-.tooltip-graph{
-  position: absolute;
-  background-color: $background-color-1;
-  border-radius: 4px;
-  top:-150px;
-  right:-36px;
-  z-index: 99;
-  line-height: 10px;
-  padding: 11px 15px;
-  color: white;
-  font-weight: 500;
-  &::after{
-    @include size(12px, 12px);
-    content: '';
-    display: block;
-    position: absolute;
-    top:22px;
-    left: 41%;
-    border-radius: 2px;
-    background-color:inherit;
-    transform: rotate(45deg);
-    z-index: -1;
-  }
-}
-
-.click{
-  background-color: $blue-1;
-}
-
-.graph-body {
-  @include size(auto, 100%);
-  padding: 20px;
-
-  svg {
-    width: 100%;
-    opacity: 0.3
-  }
+input[type='checkbox']{
+margin-right: 10px;
 }
 
 

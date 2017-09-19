@@ -18,15 +18,20 @@
 
   <article class="container">
     <div class="actions">
-      <button class="primary"><span>New Report</span></button>
-      <button class="secondary"><span>Add Credit</span></button>
+      <button class="primary"><span>Invite users</span></button>
+      <select disabled name="actions" id="maindrop"class="secondary">
+        <option disabled selected="selected" value="0">Actions</option>
+        <option value="1">Approve</option>
+        <option value="2">Change Role</option>
+        <option value="3">Remove</option>
+      </select>
     </div>
 
     <table class="table tprev-bills">
       <thead>
         <tr class='table-header'>
-          <th>Previous Bills</th>
-          <th>Ammount</th>
+          <th><input id="checkBox0" type="checkbox">Users</th>
+          <th>Role</th>
         </tr>
       </thead>
       <tbody class='prev-bills'></tbody>
