@@ -456,7 +456,25 @@ Table
   margin-top: 20px;
   width: 100%;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 6px;
+}
+
+.table:hover {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.table:hover tr:last-child {
+  border-bottom: none;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.table:hover tr:last-child td {
+  border-bottom: 1px solid transparent;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.table:hover thead tr:first-child {
+  background: none;
 }
 
 th {

@@ -274,8 +274,24 @@ Table
   margin-top: 20px;
   width: 100%;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 6px;
 }
+
+.table:hover{
+  @include shadow;
+  tr:last-child{
+    border-bottom: none;
+    border-radius: 0px 0px 4px 4px;
+    td{
+      border-bottom: 1px solid transparent;
+      border-radius: 0px 0px 4px 4px;
+    }
+  }
+  thead tr:first-child{
+    background: none;
+  }
+}
+
 th{
   font:$h4;
   color:$font-color-2;
