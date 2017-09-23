@@ -597,7 +597,7 @@ Popup
 }
 
 .popup {
-  height: 600px;
+  height: 200px;
   width: 500px;
   box-sizing: border-box;
   display: flex;

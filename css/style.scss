@@ -404,7 +404,7 @@ Popup
 }
 
 .popup{
-  @include size(600px, 500px);
+  @include size(200px, 500px);
   @include flex(center, center, '');
   background-color: white;
   border-radius: 4px;
