@@ -74,7 +74,13 @@ Cards
   font: $h3-alt;
   padding: 0;
   margin: $medium 0 0;
+  &:hover{
+    color:initial;
 
+    .card-title a{
+      opacity: 1;
+    }
+  }
   p {
     margin-top: 12px;
     color: $font-color-2;
@@ -94,11 +100,24 @@ Cards
   @include padding(14px, 20px);
   color: $font-color-1;
   border-bottom: 1px solid $border-color-3;
-  .balance{
-    @include flex(center, space-between, row);
+  @include flex(center, space-between, row);
+  a{
+    @include transition(opacity);
+    opacity: 0;
+    will-change: opacity;
+    color:$blue-1;
+
+    &:hover{
+    text-decoration: underline;
+    }
+  }
+
+}
+.auth{
+  &:hover{
+    cursor: default;
   }
 }
-
 .card-body {
   padding: 23px 20px;
 }
