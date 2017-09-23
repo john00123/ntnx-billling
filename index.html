@@ -51,12 +51,29 @@
           <h4>Authentication & Users</h4>
         </div>
         <div class='card-body'>
-          <h4>Change password</h4>
-          <p>Enable Federated Authentication</p>
-          <p>Enable Multifactor Athentication</p>
+          <h3 class='chng-pswd'>Change password</h3>
+          <h3 class='enable-fed-auth'>Enable Federated Authentication</h3>
+          <h3 class='enable-mult-auth'>Enable Multifactor Athentication</h3>
         </div>
       </div>
+    </div>
 
+    <div class="overlay">
+      <div class="popup">
+        <div class="popup-header">Change</div>
+        <div class="popup-body">
+          <label for="other">Previous Password</label>
+          <input type="password" id='old-pswd'>
+          <label for="other">New Password</label>
+          <input type="password" id='new-pswd'>
+          <label for="other">Retype new password</label>
+          <input type="password" id='retype'>
+        </div>
+        <div class="popup-footer">
+          <!-- <button class="secondary">Cancel</button> -->
+          <button class="primary">Save</button>
+        </div>
+      </div>
 
     </div>
 

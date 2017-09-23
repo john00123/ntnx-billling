@@ -240,6 +240,16 @@ Cards
   cursor: default;
 }
 
+.auth h3 {
+  color: #22A5F7;
+  line-height: 30px;
+}
+
+.auth h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .card-body {
   padding: 23px 20px;
 }
@@ -255,6 +265,197 @@ Cards
   margin-bottom: 20px;
 }
 
+/* ==========================================================================
+Popup
+========================================================================== */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.popup {
+  height: auto;
+  width: 400px;
+  box-sizing: border-box;
+}
+
+.popup-header {
+  background-color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid #F2F4F6;
+  line-height: 10px;
+}
+
+.popup-header::before, .popup-header::after {
+  content: '';
+  top: 18px;
+  height: 14px;
+  width: 2px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  right: 23px;
+  display: block;
+  position: absolute;
+  background-color: #7C8D9F;
+}
+
+.popup-header::before {
+  transform: rotate(45deg);
+}
+
+.popup-header::after {
+  transform: rotate(-45deg);
+}
+
+.popup-body {
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.popup-body input {
+  border-radius: 4px;
+  height: 32px;
+  border: 1px solid #B8BFCA;
+  width: 100%;
+  padding: 11px 10px;
+  box-sizing: border-box;
+  color: #22272E;
+  font: 300 14px/10px "nutanix_soft", san-serif;
+  position: relative;
+}
+
+.popup-body input:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.popup-body input:focus {
+  outline: none;
+  border-color: #22A5F7;
+}
+
+.popup-body input code {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.popup-body label {
+  font: 400 12px/8px "nutanix_soft", san-serif;
+  text-align: left;
+  width: 100%;
+  font-weight: 500;
+  color: #627386;
+  margin-bottom: 10px;
+}
+
+.popup-footer {
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+  height: 72px;
+  border-top: 1px solid #F2F4F6;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.popup-footer .primary {
+  margin: 0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #FFFFFF;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  border: none;
+  text-decoration: none;
+  background-color: #22A5F7;
+  border: 1px solid transparent;
+  height: 32px;
+}
+
+.popup-footer .primary:hover {
+  color: #FFFFFF;
+  cursor: pointer;
+  background-color: #2282E3;
+}
+
+.popup-footer .primary:active {
+  color: #FFFFFF;
+  background-color: #2068CA;
+}
+
+.popup-footer .primary span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.popup-footer .secondary {
+  border: 1px solid #B8BFCA;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+  height: 32px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.popup-footer .secondary:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.popup-footer .secondary:active {
+  color: #8FD1FE;
+}
+
+.popup-footer .secondary span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+/* ==========================================================================
+Media Queries
+========================================================================== */
 @media (max-width: 800px) {
   .card {
     width: 100%;

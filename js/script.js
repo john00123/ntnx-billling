@@ -18,8 +18,20 @@ function dragon() {
           <h4>${cardData.cardBody[index]}</h4>
           <p>${cardData.cardSecondary[index]}</p>
         </div>
-      </div>`
-    );
+      </div>`);
+
+      if(cards === 3){
+        $('.deck').append(
+          `<div class='card'>
+            <div class='card-title'>
+              <h4>${cardData.cardInfo[index]}</h4>
+            </div>
+            <div class='card-body'>
+              <h4>${cardData.cardBody[index]}</h4>
+              <h4>${cardData.cardSecondary[index]}</h4>
+            </div>
+          </div>`
+      )};
     cards--;
     index++;
   }
@@ -27,4 +39,7 @@ function dragon() {
 
 $(document).ready(function() {
   // dragon();
+  $('.chng-pswd').click(function(){
+    $(this).css('color','red');
+  });
 });
