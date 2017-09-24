@@ -13,17 +13,10 @@ function popAnimate(){
 
   setTimeout(function(){
     $('.popup').addClass('appear');
-
-    setTimeout(function(){
-      $('.appear').css('animation-play-state','paused');
-    },600);
   },200);
 
   $('.popup-header, .save').click(function(){
-      $('.appear').css('animation-play-state','running');
-      setTimeout(function(){
-        $('.overlay').css('animation-play-state','running');
-      },200);
+      $('.popup').addClass('disappear');
 
       setTimeout(function(){
         $('.overlay').remove();
@@ -96,7 +89,7 @@ function profile(){
         <div class="popup-header">Profile Information</div>
         <div class="popup-body">
           <label for="other">Name</label>
-          <input type="text" value='Lipa Dua'id='old-pswd'>
+          <input type="text" value='Lipa Dua' id='old-pswd'>
           <label for="other">Email</label>
           <input type="email" value='dualipa@nutanix.com' id='new-pswd'>
           <label for="other">Phone Number</label>
@@ -117,12 +110,13 @@ function account(){
   $('body').append(
     `<div class="overlay" style='opacity:0'>
       <div class="popup" style='opacity:0'>
-        <div class="popup-header">Profile Information</div>
+        <div class="popup-header">Account Information</div>
         <div class="popup-body">
-          <label for="other">Name</label>
-          <input type="text" value='Lipa Dua'id='old-pswd'>
-          <label for="other">Email</label>
-          <input type="email" value='dualipa@nutanix.com' id='new-pswd'>
+          <label for="other">Company Name</label>
+          <input type="text" value='Nutanix Corporate' id='old-pswd'>
+          <label for="other">Address</label>
+          <input type="Address" value='1740 Technology Drive' id='new-pswd' style='margin-bottom:10px'>
+          <input type="Address" value='San Jose, California, 95110, United States' id='new-pswd2' >
           <label for="other">Phone Number</label>
           <input type="Phone" value='+ 1-(408)-000-0000' id='retype'>
         </div>
@@ -140,4 +134,5 @@ function account(){
 $(document).ready(function() {
   $('.chng-pswd').click(chngPswd);
   $('.profile .card-title a').click(profile);
+  $('.account .card-title a').click(account);
 });
