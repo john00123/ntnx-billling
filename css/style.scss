@@ -2,11 +2,6 @@
 @import '../../_ntnx/variables';
 @import '../../_ntnx/mixins';
 
-span{
-  line-height: 10px;
-  height: 10px;
-  display: block;
-}
 
 html {
   @include font;
@@ -27,6 +22,12 @@ h4{
   font-weight: 500;
 }
 
+span{
+  line-height: 10px;
+  height: 10px;
+  display: block;
+}
+
 header {
   @include size(60px, 100%);
   @include padding();
@@ -43,6 +44,7 @@ header {
   margin: 8px auto;
   padding: 20px;
 }
+
 
 //actions
 .actions {
@@ -75,6 +77,7 @@ Cards
   font: $h3-alt;
   padding: 0;
   margin: $medium 0 0;
+
   &:hover{
     color:initial;
 
@@ -82,26 +85,20 @@ Cards
       opacity: 1;
     }
   }
+
   p {
     margin-top: 12px;
     color: $font-color-2;
     font-weight: 300;
   }
-
-  &::before {
-    top: calc(65% + 1.5px);
-  }
-
-  &::after {
-    top: calc(65% - 2px);
-  }
 }
 
 .card-title {
-  @include padding(14px, 20px);
+  @include flex(center, space-between, row);
+  padding: 14px 20px;
   color: $font-color-1;
   border-bottom: 1px solid $border-color-3;
-  @include flex(center, space-between, row);
+
   a{
     @include transition(opacity);
     opacity: 0;
@@ -114,38 +111,32 @@ Cards
   }
 
 }
+
+.card-body {
+  padding: 20px;
+}
+
+
 .auth{
   &:hover{
     cursor: default;
   }
-  h3{
-    color:$blue-1;
-    line-height: 30px;
-    &:hover{
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    code{
-      color:$font-color-4;
-      margin-left: 10px;
-      text-decoration: none;
-    }
-  }
 
-}
-.card-body {
-  padding: 23px 20px;
+  h3{
+    @include link;
+    line-height: 10px;
+    &:not(:last-of-type){ margin-bottom: 20px; }
+  }
 }
 
 .img{
   height: 120px;
   width: 120px;
-  border-radius: 6px;
+  border-radius: 4px;
   background-image: url('../img/icon.png');
   background-color: pink;
   background-size: cover;
   display:flex;
-  // margin: 0 auto 20px auto;
   margin-bottom: 20px;
 }
 
@@ -154,13 +145,11 @@ Cards
 Popup
 ========================================================================== */
 .overlay{
-  background-color: rgba(0,0,0,0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
   @include size(100vh, 100vw);
-  overflow: hidden;
   @include flex(center, center, column);
+  @include absolute();
+  background-color: rgba(0,0,0,0.4);
+  overflow: hidden;
 }
 
 .popup{
@@ -169,12 +158,11 @@ Popup
 }
 
 .popup-header{
-  background-color: white;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  @include flex(center, center ,row);
   @include size(auto, 100%);
   position:relative;
-  @include flex(center, center ,row);
+  background-color: white;
+  border-radius: 4px 4px 0 0;
   padding: 20px;
   font-size: 14px;
   font-weight: 500;
@@ -191,12 +179,10 @@ Popup
 
   &::before, &::after{
   content:'';
-  top: 18px;
+  @include absolute(18px,'',23px);
   @include size(14px, 2px);
   border-radius: 3px;
-  right: 23px;
   display: block;
-  position: absolute;
   background-color: $font-color-3;
   }
 
@@ -211,9 +197,9 @@ Popup
 .popup-body{
   @include size(auto,100%);
   @include flex(center, flex-start, column);
+  @include inputs;
   padding: 30px 20px;
   background-color: white;
-  box-sizing: border-box;
 
   h1{
     font: $h3;
@@ -221,38 +207,7 @@ Popup
     margin-bottom: 10px;
     margin-top: -8px;
   }
-  input{
-    border-radius: 4px;
-    height: 32px;
-    border: 1px solid $border-color-1;
-    width: 100%;
-    padding: 11px 10px;
-    box-sizing: border-box;
-    color:$font-color-1;
-    font:$p-alt;
-    position: relative;
-    &:not(:last-child){
-      margin-bottom: 20px;
-    }
-    &:focus{
-       outline: none;
-       border-color:$blue-1;
-    }
-    code{
-      position: absolute;
-      top: 0;
-      right: 10px;
-    }
-  }
 
-  label{
-    font:$h4;
-    text-align: left;
-    width: 100%;
-    font-weight: 500;
-    color: $font-color-2;
-    margin-bottom: 10px;
-  }
 
   p{
     line-height: 1.5;
@@ -260,20 +215,23 @@ Popup
     color: $font-color-2;
   }
 }
+
 .popup-footer{
-  border-radius: 0 0 4px 4px;
-  width: 100%;
-  height: 72px;
+  @include flex(center,flex-end,row);
+  @include size(72px, 100%);
+  border-radius:
+  0   0
+  4px 4px;
   border-top: 1px solid $border-color-3;
   background-color: white;
   padding: 20px;
-  box-sizing: border-box;
-  @include flex(center,flex-end,row);
+
   .primary{
     @include primary;
     border: 1px solid transparent;
     height: 32px;
   }
+
   .secondary{
     @include secondary;
     height: 32px;
