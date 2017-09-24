@@ -473,16 +473,14 @@ Popup
 .appear {
   animation: appear;
   animation-delay: 0.1s;
-  animation-duration: 1.2s;
+  animation-duration: 600ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .disappear {
-  animation: appear;
-  animation-delay: 0.1s;
-  animation-duration: 1.2s;
-  animation-direction: reverse;
+  animation: disappear;
+  animation-duration: 600ms;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -495,6 +493,17 @@ Popup
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: initial;
+    transform: initial;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
   }
 }
 
