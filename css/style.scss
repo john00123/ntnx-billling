@@ -11,6 +11,8 @@ span{
 html {
   @include font;
   background-color: $light-grey-3;
+  -webkit-font-smoothing: subpixel-antialiased;
+
 }
 
 body {
@@ -283,20 +285,18 @@ Popup
 
 @keyframes appear {
   0%{
+
     opacity: 0;
-    animation-play-state: running;
     transform: translate3d(0, 50px, 0);
   }
 
   50%{
     opacity: 1;
-    animation-play-state: paused;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0px, 0);
   }
 
   100%{
     opacity: 0;
-    animation-play-state: initial;
     transform: translate3d(0, 50px, 0);
   }
 

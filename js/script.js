@@ -89,6 +89,55 @@ function chngPswd(){
 }
 
 
+function profile(){
+  $('body').append(
+    `<div class="overlay" style='opacity:0'>
+      <div class="popup" style='opacity:0'>
+        <div class="popup-header">Profile Information</div>
+        <div class="popup-body">
+          <label for="other">Name</label>
+          <input type="text" value='Lipa Dua'id='old-pswd'>
+          <label for="other">Email</label>
+          <input type="email" value='dualipa@nutanix.com' id='new-pswd'>
+          <label for="other">Phone Number</label>
+          <input type="Phone" value='+ 1-(408)-000-0000' id='retype'>
+        </div>
+        <div class="popup-footer">
+          <!-- <button class="secondary">Cancel</button> -->
+          <button class="primary save">Save</button>
+        </div>
+      </div>
+    </div>`
+  );
+  popAnimate();
+}
+
+
+function account(){
+  $('body').append(
+    `<div class="overlay" style='opacity:0'>
+      <div class="popup" style='opacity:0'>
+        <div class="popup-header">Profile Information</div>
+        <div class="popup-body">
+          <label for="other">Name</label>
+          <input type="text" value='Lipa Dua'id='old-pswd'>
+          <label for="other">Email</label>
+          <input type="email" value='dualipa@nutanix.com' id='new-pswd'>
+          <label for="other">Phone Number</label>
+          <input type="Phone" value='+ 1-(408)-000-0000' id='retype'>
+        </div>
+        <div class="popup-footer">
+          <!-- <button class="secondary">Cancel</button> -->
+          <button class="primary save">Save</button>
+        </div>
+      </div>
+    </div>`
+  );
+  popAnimate();
+}
+
+
 $(document).ready(function() {
   $('.chng-pswd').click(chngPswd);
+  $('.profile .card-title a').click(profile);
 });
