@@ -159,7 +159,10 @@ Popup
 
 .popup{
   @include size(auto,400px);
+  border-radius: 4px;
+  @include shadow;
 }
+
 .popup-header{
   background-color: white;
   border-top-left-radius: 4px;
@@ -170,8 +173,16 @@ Popup
   padding: 20px;
   font-size: 14px;
   font-weight: 500;
-    border-bottom: 1px solid $border-color-3;
+  border-bottom: 1px solid $border-color-3;
   line-height: 10px;
+
+  &:hover::before, &:hover::after{
+    background-color:$font-color-1;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
 
   &::before, &::after{
   content:'';
@@ -183,6 +194,7 @@ Popup
   position: absolute;
   background-color: $font-color-3;
   }
+
   &::before{
     transform: rotate(45deg);
   }
@@ -190,6 +202,7 @@ Popup
     transform: rotate(-45deg);
   }
 }
+
 .popup-body{
   @include size(auto,100%);
   @include flex(center, flex-start, column);
@@ -252,7 +265,55 @@ Popup
 
 }
 
+.show{
+  animation: show;
+  animation-delay: 0.1s;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)
+}
 
+.appear{
+  animation: appear;
+  animation-delay: 0.1s;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+    animation-play-state: running;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  50%{
+    opacity: 1;
+    animation-play-state: paused;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100%{
+    opacity: 0;
+    animation-play-state: initial;
+    transform: translate3d(0, 50px, 0);
+  }
+
+}
+
+@keyframes show {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
 
 /* ==========================================================================
 Media Queries
