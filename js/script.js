@@ -6,21 +6,19 @@ const cardData ={
 
 function popAnimate(){
   $('.overlay').addClass('show');
-  setTimeout(function(){
-    $('.show').css('animation-play-state','paused');
-  },600);
-
 
   setTimeout(function(){
     $('.popup').addClass('appear');
   },200);
 
-  $('.popup-header, .save').click(function(){
+  $('.popup-header, .save, .secondary').click(function(){
       $('.popup').addClass('disappear');
+      $('.overlay').addClass('peek');
+      $('.overlay').removeClass('show');
 
       setTimeout(function(){
         $('.overlay').remove();
-      },1000);
+      },400);
     }
   );
 }
@@ -130,9 +128,30 @@ function account(){
   popAnimate();
 }
 
+function multifactor(){
+  $('body').append(
+    `<div class="overlay" style='opacity:0'>
+      <div class="popup" style='opacity:0'>
+        <div class="popup-header">Enable Multifactor Authentication</div>
+        <div class="popup-body">
+          <h1>Improve your account security with Multifactor Authentication</h1>
+          <p>Each time you sign in you'll need your password and a verification code sent directly to a phone.</p>
+        </div>
+        <div class="popup-footer">
+          <button class="secondary">Cancel</button>
+          <button class="primary save">Enable</button>
+        </div>
+      </div>
+    </div>`
+  );
+  popAnimate();
+}
+
+
 
 $(document).ready(function() {
   $('.chng-pswd').click(chngPswd);
   $('.profile .card-title a').click(profile);
   $('.account .card-title a').click(account);
+  $('.enable-mult-auth').click(multifactor);
 });
