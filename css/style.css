@@ -469,70 +469,60 @@ Popup
 }
 
 .show {
-  animation: show-start;
-  animation-duration: 600ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: shows 600ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms forwards;
 }
 
 .peek {
-  animation: peek;
-  animation-duration: 600ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: hides 600ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .appear {
-  animation: appear;
-  animation-delay: 0.1s;
-  animation-duration: 600ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: appear 600ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms forwards;
 }
 
 .disappear {
-  animation: disappear;
-  animation-duration: 600ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: appear 600ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
+/* ==========================================================================
+Animation
+========================================================================== */
 @keyframes appear {
-  0% {
+  from {
     opacity: 0;
     transform: scale(1.05) translate3d(0, 50px, 0);
   }
-  100% {
+  to {
     opacity: 1;
     transform: scale(1) translate3d(0, 0, 0);
   }
 }
 
 @keyframes disappear {
-  0% {
+  from {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-  100% {
+  to {
     opacity: 0;
     transform: translate3d(0, 50px, 0);
   }
 }
 
-@keyframes show-start {
-  0% {
+@keyframes shows {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
 
-@keyframes peek {
-  0% {
+@keyframes hides {
+  from {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
   }
 }
