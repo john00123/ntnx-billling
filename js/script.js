@@ -30,7 +30,7 @@ function cardsData() {
     $('.deck').append(
       `<div class='card'>
         <div class='card-title'>
-          <h4>${cardData.cardInfo[index]}</h4>
+          <h4>${cardData.cardInfo[index]}</h4><a>Edit</a>
         </div>
         <div class='card-body'>
           <h4>${cardData.cardBody[index]}</h4>
@@ -38,6 +38,19 @@ function cardsData() {
         </div>
       </div>`
     );
+
+    if (index == 3){
+      $('.card:eq(3)').html(
+        `<div class='card-title'>
+            <h4>${cardData.cardInfo[index]}</h4><a>Add Credits</a>
+          </div>
+          <div class='card-body'>
+            <h4>${cardData.cardBody[index]}</h4>
+            <p>${cardData.cardSecondary[index]}</p>
+          </div>`
+      );
+    }
+
     cards--;
     index++;
   }
@@ -98,35 +111,127 @@ function tableData(){
   }
 }
 
+// Popup
 
-$('.first-layer').click(function() {
-  $('.first-layer').addClass('back-layer');
-  setInterval(function(){
-    $('.second-layer').addClass('appear');
-  },100);
-});
+const popupData ={
+  title :[
+    'Add Credit',
+    'Account Information',
+    'Profile Information',
+    'Change Password',
+    'Setup Active Directory',
+    'Active Directory Options'
+  ],
 
+  body: [
+    `<h3 style='margin-bottom:5px'>Improve your account security with a 2 step verification process</h3><span class="count">853</span>
+    <p>Each time you sign in you'll need your password and a verification code sent directly to a phone.</p>`,
 
-$('.deck:eq(0)').click(function(){
+    `<label for="other">Company Name</label>
+    <input type="text" value='Nutanix Corporate' id='old-pswd'>
+    <label for="other">Address</label>
+    <input type="Address" value='1740 Technology Drive' id='new-pswd' style='margin-bottom:15px'>
+    <input type="Address" value='San Jose, California, 95110, United States' id='new-pswd2' >
+    <label for="other">Phone Number</label>
+    <input type="Phone" value='(408) 000 0000' id='retype'>`,
+
+    `<label for="other">Name</label>
+    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <label for="other">Email</label>
+    <input type="email" value='dualipa@nutanix.com' id='new-pswd'>
+    <label for="other">Phone Number</label>
+    <input type="Phone" value='(408) 000 0000' id='retype'>`,
+
+    `<label for="other">Previous Password</label>
+    <input type="password" id='old-pswd'>
+    <label for="other">New Password</label>
+    <input type="password" id='new-pswd'>
+    <label for="other">Retype new password</label>
+    <input type="password" id='retype'>`,
+
+    `<h3>To enable Active Directory Federation Services in <b>Nutanix Corporate</b> a <code>&nbsp;FederationMetadata.xml&nbsp;</code> file is required.</h3>\
+    <input type="file" id='file' accept=".xml">
+    <label for='path2'>Select file</label>
+    <div class='upload-file'>
+    <input class='path' readonly type='text' id='path2'></input>
+    <label class='file-button' for='file'> Choose File</label>
+    </div>
+    `,
+
+    `<h3 style='margin-bottom:5px'>Disable Federated Authentication</h3>
+    <p>Allows login with you company Active Directory credentials</p>
+    <button class="primary">Disable</button>
+    <div class='separator'></div>
+    <h3 style='margin-bottom:5px'>Remove ADFS</h3>
+    <p>Remove AD for this account, this will render all access for the AD users and groups invalid type 'DELETE' to proceed.</p>
+    <input type="text" class='confirm-deletion' id='remove'>
+    <button class="primary delete">Remove</button>`
+  ],
+
+  footer:[
+    `<button class="primary save">Enable</button>`,
+    `<button class="primary save">Save</button>`,
+    `<button class="primary save">Save</button>`,
+    `<button class="primary save">Save</button>`,
+    `<button class="primary save upload">Upload</button>`,
+    `<button class="secondary save">Done</button>`,
+  ]
+}
+
+function popAnimate(){
   $('.overlay').addClass('show');
-  $('.first-layer').addClass('appear');
-  $('.count').each(function () {
-      $(this).prop('Counter',0).animate({
-          Counter: $(this).text()
-      }, {
-          duration: 800,
-          easing: 'swing',
-          step: function (now) {
-              $(this).text(Math.ceil(now));
-          }
-      });
-  });
+  $('html').css('overflow','hidden');
+  setTimeout(function(){
+    $('.popup').addClass('appear');
+  },200);
 
-});
+  $('.popup-header, .save, .secondary').click(function(){
+      $('.popup').addClass('disappear');
+      $('.overlay').addClass('peek');
+      $('.overlay').removeClass('show');
+      $('html').css('overflow','');
+      setTimeout(function(){
+        $('.overlay').remove();
+      },400);
+    }
+  );
+}
+
+function popupContent(i){
+  $('body').append(
+    `<div class="overlay" style='opacity:0'>
+      <div class="popup" style='opacity:0'>
+        <div class="popup-header">${popupData.title[i]}</div>
+        <div class="popup-body">${popupData.body[i]}</div>
+        <div class="popup-footer">${popupData.footer[i]}</div>
+      </div>
+    </div>`
+  );
+  popAnimate();
+  countNumbers();
+}
+
+
+//counter
+function countNumbers(){
+  $('.count').click(function () {
+    $('.count').each(function () {
+      var $this = $(this);
+      $({ Counter:$this.text() }).animate(
+        { Counter:4900 }, {
+        duration: 600,
+        step: function () {
+          $this.text(Math.ceil(this.Counter)+100);
+        }
+     });
+    });
+  });
+}
 
 
 $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
+  $('.card:eq(0) a').click(function(){popupContent(0)});
 });

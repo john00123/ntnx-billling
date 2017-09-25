@@ -2,11 +2,6 @@
 @import '../../_ntnx/variables';
 @import '../../_ntnx/mixins';
 
-span{
-  line-height: 10px;
-  height: 10px;
-  display: block;
-}
 
 html {
   @include font;
@@ -33,6 +28,12 @@ h4{
       margin: 0 7px;
     }
   }
+}
+
+span{
+  line-height: 10px;
+  height: 10px;
+  display: block;
 }
 
 header {
@@ -80,33 +81,51 @@ Cards
 
 .card {
   @include secondary-alt;
-  @include arrow();
   width: calc(25% - 13px);
   font: $h3-alt;
   padding: 0;
   margin: $medium 0 0;
 
+  &:hover{
+      color:initial;
+
+      .card-title a{
+        opacity: 1;
+      }
+    }
+
   p {
     margin-top: 12px;
     color: $font-color-2;
     font-weight: 300;
-  }
 
-  &::before {
-    top: calc(65% + 1.5px);
-  }
-
-  &::after {
-    top: calc(65% - 2px);
+    code{
+      background-color: $light-blue-3;
+      color:$blue-2;
+      border-radius: 3px;
+      padding: 0 5px;
+    }
   }
 }
 
 .card-title {
-  @include padding(14px, 20px);
+  @include flex(center, space-between, row);
+  padding: 14px 20px;
   color: $font-color-1;
   border-bottom: 1px solid $border-color-3;
+
   .balance{
     @include flex(center, space-between, row);
+  }
+  a{
+    @include transition(opacity);
+    opacity: 0;
+    will-change: opacity;
+    color:$blue-1;
+
+    &:hover{
+    text-decoration: underline;
+    }
   }
 }
 
@@ -385,109 +404,237 @@ td kbd{
   right: 0;
   margin-left: 0;
 }
-
 /* ==========================================================================
 Popup
 ========================================================================== */
-
 .overlay{
+  @include size(100%, 100vw);
+  @include flex(center, center, column);
+  @include absolute();
   background-color: rgba(0,0,0,0.4);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top:0;
-  left: 0;
-  opacity: 0;
-  z-index: 10;
-  @include flex (center, center, '');
-  display: none;
+  overflow: hidden;
+  z-index: 100;
 }
 
 .popup{
-  @include size(200px, 500px);
-  @include flex(center, center, '');
-  background-color: white;
-  border-radius: 4px;
-  z-index: 10;
-}
-
-.first-layer{
+  @include size(auto,400px);
   @include shadow;
-  opacity: 0;
 }
 
-.appear{
-  animation: appear;
-  animation-delay: 0.1s;
-  animation-duration: 0.6s;
-  animation-fill-mode: forwards;
-  animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)
+.popup-header{
+  @include flex(center, center ,row);
+  @include size(auto, 100%);
+  position:relative;
+  background-color: white;
+  border-radius: 4px 4px 0 0;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid $border-color-3;
+  line-height: 10px;
+
+  &:hover::before, &:hover::after{
+    background-color:$font-color-1;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &::before, &::after{
+  content:'';
+  @include absolute(18px,'',23px);
+  @include size(14px, 2px);
+  border-radius: 3px;
+  display: block;
+  background-color: $font-color-3;
+  }
+
+  &::before{
+    transform: rotate(45deg);
+  }
+  &::after{
+    transform: rotate(-45deg);
+  }
 }
 
-.back-layer{
-  animation: back-layer;
-  animation-duration: 0.6s;
-  animation-fill-mode: forwards;
-  animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)
+.popup-body{
+  @include size(auto,100%);
+  @include flex(center, flex-start, column);
+  @include inputs;
+  padding: 30px 20px;
+  background-color: white;
+
+  h1{
+    font: $h3;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    margin-top: -8px;
+    width: 100%;
+  }
+
+  h3{
+    font: $h3;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 15px;
+    margin-top: -8px;
+    width: 100%;
+    code{
+      background-color: $light-blue-3;
+      color:$blue-2;
+      border-radius: 2px;
+    }
+  }
+
+  p{
+    line-height: 1.5;
+    margin-bottom: -6px;
+    color: $font-color-2;
+  }
+
+  input[type="file"]{
+    display: none;
+  }
+
+  .separator{
+    @include size(1px, 100%);
+    background-color: $border-color-3;
+    margin: 30px 0;
+  }
+
+  .file-button{
+    @include size(32px, 40%);
+    @include secondary;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .primary{
+    @include size(32px, 100%);
+    @include primary;
+    margin-top: 20px;
+  }
+
+  .secondary{
+    @include size(32px, 100%);
+    @include secondary;
+    margin-top: 20px;
+  }
+
+
+  input.path{
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    border-right:none;
+    border-radius: 4px 0 0 4px;
+  }
+
+  input.confirm-deletion{
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .delete{
+    border-radius: 4px;
+    border: none;
+    margin-top: 20px;
+    background-color: $red-1;
+    &:hover{
+      background-color: $dark-red-3;
+    }
+  }
+}
+
+
+
+
+.popup-footer{
+  @include flex(center,flex-end,row);
+  @include size(72px, 100%);
+  border-radius:
+  0   0
+  4px 4px;
+  border-top: 1px solid $border-color-3;
+  background-color: white;
+  padding: 20px;
+
+  .primary{
+    @include primary;
+    border: 1px solid transparent;
+    height: 32px;
+  }
+
+  .secondary{
+    @include secondary;
+    height: 32px;
+    box-sizing: border-box;
+    margin-right: 10px;
+  }
+
+}
+
+.upload-file{
+  width: 100%;
+  @include flex(center, space-between, row);
+
 }
 
 .show{
-  display: block;
-  @include flex(center, center, '');
-  animation: show;
-  animation-duration: 0.6s;
-  animation-fill-mode: forwards;
-  animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)
+  animation: shows 600ms $animation 100ms forwards;
 }
 
-.second-layer{
-  @include shadow;
-  opacity: 0;
-  height: 600px;
-  position: absolute;
-  top:calc(50vh - 300px);
-  left:calc(50vw - 250px);
-  pointer-events: none;
+.peek{
+  animation: hides 600ms $animation forwards;
+}
+
+.appear{
+  animation: appear 600ms $animation 100ms forwards;
+}
+
+.disappear{
+  animation: disappear 600ms $animation forwards;
 }
 
 
-.count{
-  font-size: 30px;
-}
 /* ==========================================================================
 Animation
 ========================================================================== */
 
 @keyframes appear {
-  0%{
+  from{
     opacity: 0;
-    transform: translate3d(0, 100px, 0);
+    transform:translate3d(0, 50px, 0);
   }
-  100%{
+
+  to{
+    opacity: 1;
+    transform:translate3d(0, 0, 0);
+  }
+}
+
+@keyframes disappear {
+  from{
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-}
 
-@keyframes show {
-  0%{
+  to{
     opacity: 0;
-  }
-  100%{
-    opacity: 1;
+    transform: translate3d(0, 50px, 0);
   }
 }
 
-@keyframes back-layer {
-  0%{
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  100%{
-    opacity: 0.6;
-    transform: translate3d(0, -55px, 0) scale(0.9);
-  }
+@keyframes shows {
+  from{ opacity: 0;}
+  to{ opacity: 1; }
 }
+
+@keyframes hides {
+  from{ opacity: 1;}
+  to{ opacity: 0;}
+}
+
 /* ==========================================================================
 Media Queries
 ========================================================================== */
