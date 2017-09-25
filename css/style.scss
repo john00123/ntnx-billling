@@ -521,7 +521,6 @@ Popup
     margin-top: 20px;
   }
 
-
   input.path{
     margin: 0;
     display: flex;
@@ -544,8 +543,27 @@ Popup
       background-color: $dark-red-3;
     }
   }
+
+  .money{
+    font:$h1;
+    font-weight: 200;
+    margin-bottom: 30px;
+    &::before{
+      content: '$';
+    }
+  }
+
 }
 
+.banner{
+  @include size(40px, 100%);
+  @include flex(center,'','');
+  padding:8px 20px;
+  line-height: 10px;
+  color: $dark-blue-3;
+  font-weight: 400;
+  background-color: $light-blue-3;
+}
 
 
 

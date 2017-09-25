@@ -42,7 +42,7 @@ function cardsData() {
     if (index == 3){
       $('.card:eq(3)').html(
         `<div class='card-title'>
-            <h4>${cardData.cardInfo[index]}</h4><a>Add Credits</a>
+            <h4>${cardData.cardInfo[index]}</h4><a>Add Funds</a>
           </div>
           <div class='card-body'>
             <h4>${cardData.cardBody[index]}</h4>
@@ -115,7 +115,7 @@ function tableData(){
 
 const popupData ={
   title :[
-    'Add Credit',
+    'Add Funds',
     'Account Information',
     'Profile Information',
     'Change Password',
@@ -124,8 +124,11 @@ const popupData ={
   ],
 
   body: [
-    `<h3 style='margin-bottom:5px'>Improve your account security with a 2 step verification process</h3><span class="count">853</span>
-    <p>Each time you sign in you'll need your password and a verification code sent directly to a phone.</p>`,
+    `<code class="count money">853</code>
+    <h3 style='margin-bottom:0px'>Reedem code</h3>
+    <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
+    <input type="text" value='' id='redeem-input'>
+    `,
 
     `<label for="other">Company Name</label>
     <input type="text" value='Nutanix Corporate' id='old-pswd'>
@@ -169,7 +172,7 @@ const popupData ={
   ],
 
   footer:[
-    `<button class="primary save">Enable</button>`,
+    `<button class="primary redeem">Redeem</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
@@ -214,7 +217,9 @@ function popupContent(i){
 
 //counter
 function countNumbers(){
-  $('.count').click(function () {
+  $('.redeem').click(function () {
+    $('#redeem-input').val('');
+    $('.popup-body').before(`<div class='banner'>$4500.00 have been credited to your account.</div>`);
     $('.count').each(function () {
       var $this = $(this);
       $({ Counter:$this.text() }).animate(
@@ -233,5 +238,5 @@ $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
-  $('.card:eq(0) a').click(function(){popupContent(0)});
+  $('.card:eq(3) a').click(function(){popupContent(0)});
 });

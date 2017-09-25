@@ -843,6 +843,31 @@ Popup
   background-color: #DF4A53;
 }
 
+.popup-body .money {
+  font: 200 29px/20px "nutanix_soft", san-serif;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+
+.popup-body .money::before {
+  content: '$';
+}
+
+.banner {
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: "";
+  flex-direction: "";
+  padding: 8px 20px;
+  line-height: 10px;
+  color: #2282E3;
+  font-weight: 400;
+  background-color: #EDF7FE;
+}
+
 .popup-footer {
   display: flex;
   align-items: center;
