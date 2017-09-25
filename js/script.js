@@ -3,6 +3,11 @@ const userData={
   Roles:['Admin','Admin','Owner','User','User','User'],
 }
 
+const adData={
+  Groups:['Medical','Technology','Finance','Engineering','Marketing','Design'],
+  Roles:['Owner','Admin','Owner','User','User','User'],
+}
+
 // adds data to the table and graphs
 
 function tableData(){
@@ -11,6 +16,14 @@ function tableData(){
       `<tr>
         <td><input class="checkBox" type="checkbox">${userData.Emails[i]}@nutanix.com</td>
         <td>${userData.Roles[i]}<kbd>•</kbd></td>
+    </tr>`);
+  }
+
+  for(let i=0; i<adData.Roles.length; i++){
+    $('.groups').append(
+      `<tr>
+        <td><input class="checkBox" type="checkbox">${adData.Groups[i]}</td>
+        <td>${adData.Roles[i]}<kbd>•</kbd></td>
     </tr>`);
   }
 }

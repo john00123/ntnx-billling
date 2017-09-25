@@ -131,7 +131,6 @@ th, td{
   padding-left: 20px;
   line-height: 10px;
   vertical-align: middle;
-  font-weight: 400;
   border-bottom: 1px solid $border-color-3;
   code{
     background-color: $light-blue-3;
@@ -169,6 +168,7 @@ th:not(:first-child), td:not(:first-child){
 
 td{
   white-space: nowrap;
+  font-weight: 400;
 }
 
 td kbd{

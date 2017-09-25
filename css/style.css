@@ -212,7 +212,6 @@ th, td {
   padding-left: 20px;
   line-height: 10px;
   vertical-align: middle;
-  font-weight: 400;
   border-bottom: 1px solid #F2F4F6;
 }
 
@@ -254,6 +253,7 @@ th:not(:first-child), td:not(:first-child) {
 
 td {
   white-space: nowrap;
+  font-weight: 400;
 }
 
 td kbd {
