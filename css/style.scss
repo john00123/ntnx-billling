@@ -45,7 +45,6 @@ header {
   padding: 20px;
 }
 
-
 //actions
 .actions {
   @include flex(center, flex-start, row);
@@ -74,6 +73,7 @@ Cards
 .card {
   @include secondary-alt;
   width: calc(50% - 9px);
+  min-height: 160px;
   font: $h3-alt;
   padding: 0;
   margin: $medium 0 0;
@@ -90,6 +90,21 @@ Cards
     margin-top: 12px;
     color: $font-color-2;
     font-weight: 300;
+    code{
+      background-color: $light-blue-3;
+      color:$blue-2;
+      border-radius: 3px;
+      padding: 0 5px;
+    }
+  }
+
+  p:first-of-type{
+    margin-top: 20px;
+  }
+
+  .link{
+    @include link;
+    font-weight: 400;
   }
 }
 
@@ -111,11 +126,14 @@ Cards
   }
 
 }
+.profile{
+  width: 100%;
+  height: auto;
+}
 
 .card-body {
   padding: 20px;
 }
-
 
 .auth{
   &:hover{
@@ -127,6 +145,10 @@ Cards
     line-height: 10px;
     &:not(:last-of-type){ margin-bottom: 20px; }
   }
+}
+
+.enable-fed-auth{
+  margin-top: 25px;
 }
 
 .img{
@@ -145,7 +167,7 @@ Cards
 Popup
 ========================================================================== */
 .overlay{
-  @include size(100vh, 100vw);
+  @include size(100%, 100vw);
   @include flex(center, center, column);
   @include absolute();
   background-color: rgba(0,0,0,0.4);
@@ -203,18 +225,87 @@ Popup
 
   h1{
     font: $h3;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 10px;
     margin-top: -8px;
+    width: 100%;
   }
 
+  h3{
+    font: $h3;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 15px;
+    margin-top: -8px;
+    width: 100%;
+    code{
+      background-color: $light-blue-3;
+      color:$blue-2;
+      border-radius: 2px;
+    }
+  }
 
   p{
     line-height: 1.5;
     margin-bottom: -6px;
     color: $font-color-2;
   }
+
+  input[type="file"]{
+    display: none;
+  }
+
+  .separator{
+    @include size(1px, 100%);
+    background-color: $border-color-3;
+    margin: 30px 0;
+  }
+
+  .file-button{
+    @include size(32px, 40%);
+    @include secondary;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .primary{
+    @include size(32px, 100%);
+    @include primary;
+    margin-top: 20px;
+  }
+
+  .secondary{
+    @include size(32px, 100%);
+    @include secondary;
+    margin-top: 20px;
+  }
+
+
+  input.path{
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    border-right:none;
+    border-radius: 4px 0 0 4px;
+  }
+
+  input.confirm-deletion{
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .delete{
+    border-radius: 4px;
+    border: none;
+    margin-top: 20px;
+    background-color: $red-1;
+    &:hover{
+      background-color: $dark-red-3;
+    }
+  }
 }
+
+
+
 
 .popup-footer{
   @include flex(center,flex-end,row);
@@ -241,6 +332,12 @@ Popup
 
 }
 
+.upload-file{
+  width: 100%;
+  @include flex(center, space-between, row);
+
+}
+
 .show{
   animation: shows 600ms $animation 100ms forwards;
 }
@@ -254,7 +351,7 @@ Popup
 }
 
 .disappear{
-  animation: appear 600ms $animation forwards;
+  animation: disappear 600ms $animation forwards;
 }
 
 
@@ -265,12 +362,12 @@ Animation
 @keyframes appear {
   from{
     opacity: 0;
-    transform: scale(1.05) translate3d(0, 50px, 0);
+    transform:translate3d(0, 50px, 0);
   }
 
   to{
     opacity: 1;
-    transform: scale(1) translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
   }
 }
 
@@ -299,6 +396,7 @@ Animation
 /* ==========================================================================
 Media Queries
 ========================================================================== */
+
 @media (max-width: 800px) {
   .card {
     width: 100%;
