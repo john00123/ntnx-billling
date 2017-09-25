@@ -47,15 +47,14 @@ const popupData ={
     <p>Allows login with you company Active Directory credentials</p>
     <button class="primary">Disable</button>
     <div class='separator'></div>
-    <h3 style='margin-bottom:5px'>Remove AD</h3>
+    <h3 style='margin-bottom:5px'>Remove ADFS</h3>
     <p>Remove AD for this account, this will render all access for the AD users and groups invalid type 'DELETE' to proceed.</p>
     <input type="text" class='confirm-deletion' id='remove'>
     <button class="primary delete">Remove</button>`
   ],
 
   footer:[
-    `<button class="secondary">Cancel</button>
-     <button class="primary save">Enable</button>`,
+    `<button class="primary save">Enable</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
