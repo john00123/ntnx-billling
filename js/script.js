@@ -5,7 +5,8 @@ const popupData ={
     'Profile Information',
     'Change Password',
     'Setup Active Directory',
-    'Active Directory Options'
+    'Active Directory Options',
+    'Group Roles'
   ],
 
   body: [
@@ -18,9 +19,9 @@ const popupData ={
     <input type="Address" value='1740 Technology Drive, San Jose CA' id='new-pswd'>`,
 
     `<label for="other">Name</label>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <input type="text" value='Istrator Admin' id='old-pswd'>
     <label for="other">Email</label>
-    <input type="email" value='dualipa@nutanix.com' id='new-pswd'>`,
+    <input type="email" value='administrator@nutanix.com' id='new-pswd'>`,
 
     `<label for="other">Previous Password</label>
     <input type="password" id='old-pswd'>
@@ -29,7 +30,7 @@ const popupData ={
     <label for="other">Retype new password</label>
     <input type="password" id='retype'>`,
 
-    `<h3>To enable Active Directory Federation Services in <b>Nutanix Corporate</b> a <code>&nbsp;FederationMetadata.xml&nbsp;</code> file is required.</h3>\
+    `<h3>To enable ADFS at Nutanix, a <code>&nbsp;FederationMetadata.xml&nbsp;</code> file is required.</h3>\
     <input type="file" id='file' accept=".xml">
     <label for='path2'>Select file</label>
     <div class='upload-file'>
@@ -45,7 +46,12 @@ const popupData ={
     <h3 style='margin-bottom:5px'>Remove ADFS</h3>
     <p>Remove AD for this account, this will render all access for the AD users and groups invalid type 'DELETE' to proceed.</p>
     <input type="text" class='confirm-deletion' id='remove'>
-    <button class="primary delete">Remove</button>`
+    <button class="primary delete">Remove</button>`,
+
+    `<label for="other">Administrators</label>
+    <input type="text" value='' id='old-pswd'>
+    <label for="other">Users</label>
+    <input type="Address" value='' id='new-pswd'>`,
   ],
 
   footer:[
@@ -53,8 +59,9 @@ const popupData ={
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
-    `<button class="primary save upload">Upload</button>`,
+    `<button class="primary upload">Upload</button>`,
     `<button class="secondary save">Done</button>`,
+    `<button class="secondary back">Done</button>`
   ]
 }
 
@@ -65,7 +72,7 @@ function popAnimate(){
     $('.popup').addClass('appear');
   },200);
 
-  $('.popup-header, .save, .secondary').click(function(){
+  $('.popup-header:not(.popup-header2), .save').click(function(){
       $('.popup').addClass('disappear');
       $('.overlay').addClass('peek');
       $('.overlay').removeClass('show');
@@ -88,7 +95,32 @@ function popupContent(i){
     </div>`
   );
   popAnimate();
+  $('.upload').click(function(){
+    $('.popup').css('animation','layer 600ms forwards');
+    layer2(6);
+  });
+
 }
+
+function layer2(i){
+  $('body').append(
+    `<div class="overlay overlay2" style='background-color:transparent'>
+      <div class="popup layer2" style='opacity:0'>
+        <div class="popup-header popup-header2">${popupData.title[i]}</div>
+        <div class="popup-body">${popupData.body[i]}</div>
+        <div class="popup-footer">${popupData.footer[i]}</div>
+      </div>
+    </div>`
+  );
+  popAnimate();
+  $('.back, .popup-header2').click(function(){
+    $('.layer2').addClass('disappear');
+    $('.popup:not(.layer2)').css('animation','reverse-layer 600ms forwards');
+    $('.layer2, .overlay2').remove();
+  });
+}
+
+
 
 function uploadPath(){
   let one = $(this).val().replace("C:\\fakepath\\",'');

@@ -657,6 +657,10 @@ Popup
   flex-direction: row;
 }
 
+.second {
+  animation: layer 600ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms forwards;
+}
+
 .show {
   animation: shows 600ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms forwards;
 }
@@ -713,6 +717,28 @@ Animation
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes layer {
+  from {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.4;
+    transform: scale(0.95) translate3d(0, -30px, 0);
+  }
+}
+
+@keyframes reverse-layer {
+  from {
+    opacity: 0.4;
+    transform: scale(0.95) translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
   }
 }
 
