@@ -15,17 +15,12 @@ const popupData ={
     `<label for="other">Company Name</label>
     <input type="text" value='Nutanix Corporate' id='old-pswd'>
     <label for="other">Address</label>
-    <input type="Address" value='1740 Technology Drive' id='new-pswd' style='margin-bottom:15px'>
-    <input type="Address" value='San Jose, California, 95110, United States' id='new-pswd2' >
-    <label for="other">Phone Number</label>
-    <input type="Phone" value='(408) 000 0000' id='retype'>`,
+    <input type="Address" value='1740 Technology Drive, San Jose CA' id='new-pswd'>`,
 
     `<label for="other">Name</label>
     <input type="text" value='Lipa Dua' id='old-pswd'>
     <label for="other">Email</label>
-    <input type="email" value='dualipa@nutanix.com' id='new-pswd'>
-    <label for="other">Phone Number</label>
-    <input type="Phone" value='(408) 000 0000' id='retype'>`,
+    <input type="email" value='dualipa@nutanix.com' id='new-pswd'>`,
 
     `<label for="other">Previous Password</label>
     <input type="password" id='old-pswd'>

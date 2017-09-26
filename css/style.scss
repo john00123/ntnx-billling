@@ -73,7 +73,7 @@ Cards
 .card {
   @include secondary-alt;
   width: calc(50% - 10px);
-  min-height: 165px;
+  min-height: 140px;
   font: $h3-alt;
   padding: 0;
   margin: $medium 0 0;
@@ -143,7 +143,7 @@ Cards
   h3{
     @include link;
     line-height: 10px;
-    &:not(:last-of-type){ margin-bottom: 20px; }
+    &:not(:last-of-type){ margin-bottom: 15px; }
   }
 }
 
@@ -321,13 +321,14 @@ Popup
     @include primary;
     border: 1px solid transparent;
     height: 32px;
+    margin-left: 10px;
   }
 
   .secondary{
     @include secondary;
     height: 32px;
     box-sizing: border-box;
-    margin-right: 10px;
+
   }
 
 }
