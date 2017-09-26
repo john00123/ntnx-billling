@@ -30,7 +30,7 @@ const popupData ={
     <label for="other">Retype new password</label>
     <input type="password" id='retype'>`,
 
-    `<h3>To enable ADFS at Nutanix, a <code>&nbsp;FederationMetadata.xml&nbsp;</code> file is required.</h3>\
+    `<h3>Enable ADFS by uploading <code>&nbsp;FederationMetadata.xml&nbsp;</code> file.</h3>\
     <input type="file" id='file' accept=".xml">
     <label for='path2'>Select file</label>
     <div class='upload-file'>
