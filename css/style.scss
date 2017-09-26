@@ -265,6 +265,7 @@ Popup
     @include size(32px, 40%);
     @include secondary;
     border-radius: 0 4px 4px 0;
+    border-color: $border-color-1;
   }
 
   .primary{
