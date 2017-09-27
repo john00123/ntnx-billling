@@ -549,6 +549,9 @@ Popup
     &::before{
       content: '$';
     }
+    &::after{
+      content: '.00';
+    }
   }
 
 }

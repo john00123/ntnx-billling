@@ -851,6 +851,10 @@ Popup
   content: '$';
 }
 
+.popup-body .money::after {
+  content: '.00';
+}
+
 .banner {
   height: 40px;
   width: 100%;

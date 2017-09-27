@@ -219,7 +219,7 @@ function popupContent(i){
 function countNumbers(){
   $('.redeem').click(function () {
     $('#redeem-input').val('');
-    $('.popup-body').before(`<div class='banner'>$4500.00 have been credited to your account.</div>`);
+    $('.popup-body').before(`<div class='banner'>$4200 have been credited to your account.</div>`);
     $('.count').each(function () {
       var $this = $(this);
       $({ Counter:$this.text() }).animate(
