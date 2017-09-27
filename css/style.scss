@@ -596,8 +596,9 @@ pdf
   @include size(100vh, 100%);
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   overflow:hidden;
+  background-color: white;
 }
 
 .pdf-preview{
