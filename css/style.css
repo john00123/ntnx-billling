@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html {
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
@@ -108,7 +108,7 @@ header {
 }
 
 .actions .secondary {
-  border: 1px solid #B8BFCA;
+  border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
   color: #22272E;
@@ -163,7 +163,7 @@ Cards
 }
 
 .card {
-  border: 1px solid #B8BFCA;
+  border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
   color: #22272E;
@@ -217,7 +217,6 @@ Cards
 .card p {
   margin-top: 12px;
   color: #627386;
-  font-weight: 300;
 }
 
 .card p code {
@@ -661,7 +660,7 @@ Popup
   border: 1px solid #B8BFCA;
   padding: 11px 10px;
   color: #22272E;
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   position: relative;
 }
 
@@ -728,7 +727,7 @@ Popup
   height: 32px;
   width: 40%;
   box-sizing: border-box;
-  border: 1px solid #B8BFCA;
+  border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
   color: #22272E;
@@ -792,7 +791,7 @@ Popup
   height: 32px;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #B8BFCA;
+  border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
   color: #22272E;
@@ -914,7 +913,7 @@ Popup
 }
 
 .popup-footer .secondary {
-  border: 1px solid #B8BFCA;
+  border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
   color: #22272E;
