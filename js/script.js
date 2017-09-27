@@ -136,7 +136,6 @@ function uploadPath(){
 }
 
 $(document).ready(function() {
-  popupContent(0);
   $('.AD .card-title a').click(function(){popupContent(5)});
   $('.adfs').click(function(){popupContent(4)
     $("input[type='file']").change(uploadPath);
