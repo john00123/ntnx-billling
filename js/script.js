@@ -127,7 +127,7 @@ const popupData ={
     `<code class="count money">853</code>
     <h3 style='margin-bottom:0px'>Reedem code</h3>
     <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
-    <input type="text" value='' id='redeem-input'>
+    <input type="text" value='' id='redeem-input' autocomplete='off'>
     `,
 
     `<label for="other">Company Name</label>
@@ -182,6 +182,7 @@ const popupData ={
 }
 
 function popAnimate(){
+  window.scroll(0, 0);
   $('.overlay').addClass('show');
   $('html').css('overflow','hidden');
   setTimeout(function(){
@@ -217,8 +218,8 @@ function popupContent(i){
 function pdfContent(){
   $('body').append(
   `<div class='pdf-chrome'>
-  <div class="popup-header pdf-preview">Preview</div>
-  <object class='invoice' data="pdf/004174.pdf#view=FitH" type="application/pdf">
+  <div class="popup-header pdf-preview"> PDF Previewer</div>
+  <object class='invoice' data="pdf/004174.pdf" type="application/pdf">
   <p>Alternative text - include a link <a href="/pdf/004174.pdf">to the PDF!</a></p>
   </object>
   </div>`
@@ -232,25 +233,61 @@ function pdfContent(){
 }
 
 $(document).keyup(function(e) {
-  if (e.keyCode === 27) $('.pdf-chrome').remove();
+  if (e.keyCode === 27) $('.popup-header').click();
+  if (e.keyCode === 13) $('.primary').click();
 });
 
 //counter
 function countNumbers(){
-  $('.redeem').click(function () {
-    $('#redeem-input').val('');
-    $('.popup-body').before(`<div class='banner'>$4200 have been credited to your account.</div>`);
-    $('.count').each(function () {
-      var $this = $(this);
-      $({ Counter:$this.text() }).animate(
-        { Counter:4900 }, {
-        duration: 600,
-        step: function () {
-          $this.text(Math.ceil(this.Counter)+100);
-        }
-     });
-    });
+  let j = 0;
+  $('.redeem').click(function() {
+    if($('#redeem-input').val() === 'NTNX'){
+      $('#redeem-input').val('');
+      $('.popup-body').before(`<div class='banner'>$4200 have been credited to your account.</div>`);
+      $('.banner').toggle();
+      $('.popup-header').css('border-bottom','none');
+      $('.banner').slideDown();
+      $('.count').each(function () {
+        var $this = $(this);
+        $({ Counter:$this.text() }).animate(
+          { Counter:4900 }, {
+          duration: 600,
+          step: function () {
+            $this.text(Math.ceil(this.Counter)+100);
+          }
+         });
+      });
+      setTimeout(function(){
+        $('.banner').slideUp();
+        $('.popup-header').css('border-bottom','');
+        setTimeout(function(){
+          $('.banner').remove();
+        },300);
+      },7000);
+    }
+    else{
+      $('.banner').remove();
+      $('.popup-body').before(`<div class='banner error-ban'>Invalid code</div>`);
+      $('.banner').toggle();
+      $('.popup-header').css('border-bottom','none');
+      $('.banner').slideDown();
+
+      $('#redeem-input').css('color','#F16363');
+      $('#redeem-input').css('border-color','#F16363');
+      setTimeout(function(){
+        $('#redeem-input').css('border-color','');
+        $('#redeem-input').css('color','');
+      },3000);
+      setTimeout(function(){
+        $('.banner').slideUp();
+        $('.popup-header').css('border-bottom','');
+        setTimeout(function(){
+          $('.banner').remove();
+        },300);
+      },3000);
+    }
   });
+
 }
 
 

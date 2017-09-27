@@ -807,7 +807,8 @@ Popup
 .popup-body .money {
   font: 200 29px/20px "nutanix_soft", san-serif;
   font-weight: 200;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .popup-body .money::before {
@@ -828,9 +829,15 @@ Popup
   flex-direction: "";
   padding: 8px 20px;
   line-height: 10px;
-  color: #2282E3;
+  color: #18BE5F;
   font-weight: 400;
-  background-color: #EDF7FE;
+  z-index: 1;
+  background-color: #EDFBF1;
+}
+
+.error-ban {
+  color: #DF4A53;
+  background-color: #FEF1F1;
 }
 
 .popup-footer {
@@ -908,6 +915,10 @@ Popup
   line-height: 9pt;
 }
 
+#redeem-input {
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 .upload-file {
   width: 100%;
   display: flex;
@@ -952,6 +963,7 @@ pdf
   height: 50px;
   border-bottom: none;
   color: white;
+  border-radius: 0;
 }
 
 .pdf-preview::before, .pdf-preview::after {

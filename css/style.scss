@@ -516,7 +516,9 @@ Popup
   .money{
     font:$h1;
     font-weight: 200;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+
     &::before{
       content: '$';
     }
@@ -532,11 +534,16 @@ Popup
   @include flex(center,'','');
   padding:8px 20px;
   line-height: 10px;
-  color: $dark-blue-3;
+  color: $dark-green-3;
   font-weight: 400;
-  background-color: $light-blue-3;
+  z-index: 1;
+  background-color: $light-green-3;
 }
 
+.error-ban{
+  color:$dark-red-3;
+  background-color: $light-red-3;
+}
 
 
 .popup-footer{
@@ -562,6 +569,10 @@ Popup
     margin-right: 10px;
   }
 
+}
+
+#redeem-input{
+  @include transition(all);
 }
 
 .upload-file{
@@ -606,6 +617,7 @@ pdf
   height: 50px;
   border-bottom: none;
   color:white;
+  border-radius: 0;
 
   &::before, &::after{
   background-color: white;
