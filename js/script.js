@@ -97,6 +97,7 @@ function popupContent(i){
   popAnimate();
   $('.upload').click(function(){
     $('.popup').css('animation','layer 600ms forwards');
+    $('.popup').addClass('second');
     layer2(6);
   });
 
@@ -116,6 +117,7 @@ function layer2(i){
   $('.back, .popup-header2').click(function(){
     $('.layer2').addClass('disappear');
     $('.popup:not(.layer2)').css('animation','reverse-layer 600ms forwards');
+    $('.popup:not(.layer2)').removeClass('second');
     $('.layer2, .overlay2').remove();
   });
 }

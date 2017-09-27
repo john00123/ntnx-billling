@@ -660,6 +660,18 @@ Popup
   animation: layer 600ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms forwards;
 }
 
+.second::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
 .show {
   animation: shows 600ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms forwards;
 }
@@ -725,7 +737,7 @@ Animation
     transform: scale(1) translate3d(0, 0, 0);
   }
   to {
-    opacity: 0.4;
+    opacity: 1;
     transform: scale(0.95) translate3d(0, -45px, 0);
   }
 }
