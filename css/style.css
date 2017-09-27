@@ -209,10 +209,11 @@ Cards
 }
 
 .card p code {
-  background-color: #EDF7FE;
-  color: #58B9FD;
+  background-color: #EDFBF1;
+  color: #18BE5F;
   border-radius: 3px;
   padding: 0 5px;
+  margin-left: 5px;
 }
 
 .card p:first-of-type {
@@ -431,7 +432,8 @@ Popup
 
 .popup-body h3 code {
   background-color: #EDF7FE;
-  color: #58B9FD;
+  color: #2282E3;
+  padding: 0 5px;
   border-radius: 2px;
 }
 
@@ -441,48 +443,12 @@ Popup
   color: #627386;
 }
 
-.popup-body input[type="file"] {
-  display: none;
-}
-
 .popup-body .separator {
   height: 1px;
   width: 100%;
   box-sizing: border-box;
   background-color: #F2F4F6;
   margin: 30px 0;
-}
-
-.popup-body .file-button {
-  height: 32px;
-  width: 40%;
-  box-sizing: border-box;
-  border: 1px solid #D5DAE0;
-  border-radius: 4px;
-  padding: 11px 15px;
-  color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  text-decoration: none;
-  background-color: #FFFFFF;
-  margin: 0;
-  border-radius: 0 4px 4px 0;
-  border-color: #B8BFCA;
-}
-
-.popup-body .file-button:hover {
-  color: #22A5F7;
-  cursor: pointer;
-}
-
-.popup-body .file-button:active {
-  color: #8FD1FE;
-}
-
-.popup-body .file-button span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
 }
 
 .popup-body .primary {
@@ -549,14 +515,6 @@ Popup
   line-height: 9pt;
 }
 
-.popup-body input.path {
-  margin: 0;
-  display: flex;
-  flex-grow: 1;
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-}
-
 .popup-body input.confirm-deletion {
   margin-top: 20px;
   margin-bottom: 0;
@@ -571,6 +529,58 @@ Popup
 
 .popup-body .delete:hover {
   background-color: #DF4A53;
+}
+
+.popup-body input[type="file"] {
+  display: none;
+}
+
+.popup-body .upload-file {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.popup-body .upload-file .file-button {
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+  height: 32px;
+  width: 121px;
+  box-sizing: border-box;
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+  border-color: #B8BFCA;
+}
+
+.popup-body .upload-file .file-button:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.popup-body .upload-file .file-button:active {
+  color: #8FD1FE;
+}
+
+.popup-body .upload-file .file-button span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.popup-body .upload-file input.path {
+  margin: 0;
+  display: flex;
+  flex-grow: 1;
+  border-radius: 4px 0 0 4px;
 }
 
 .popup-footer {
@@ -648,12 +658,35 @@ Popup
   line-height: 9pt;
 }
 
-.upload-file {
-  width: 100%;
+.dot-parent {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.dot-parent .dot {
+  height: 36px;
+  width: 36px;
+  box-sizing: border-box;
+  transform: translate3d(25px, 0, 0);
+  border: 2px dotted #22272E;
+  border-radius: 5pc;
+  margin: 20px;
+  background-color: transparent;
+  z-index: 3;
+  animation: spin 6000ms linear infinite;
+}
+
+.dot-parent .dot2 {
+  height: 20px;
+  width: 20px;
+  box-sizing: border-box;
+  transform: translate3d(-25px, 0, 0);
+  border-radius: 5pc;
+  margin: 20px;
+  background-color: #22272E;
 }
 
 .second {
@@ -750,6 +783,15 @@ Animation
   to {
     opacity: 1;
     transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translate3d(25px, 0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(25px, 0, 0) rotate(359deg);
   }
 }
 

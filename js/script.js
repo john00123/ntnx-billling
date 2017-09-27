@@ -10,7 +10,13 @@ const popupData ={
   ],
 
   body: [
-    `<h3 style='margin-bottom:5px'>Improve your account security with a 2 step verification process</h3>
+    `
+    <div class='dot-parent'>
+      <div class='dot'></div>
+      <div class='dot2'></div>
+    </div>
+    <h3 style='margin-bottom:5px'>Improve your account security with a 2 step verification process</h3>
+
     <p>Each time you sign in you'll need your password and a verification code sent directly to a phone.</p>`,
 
     `<label for="other">Company Name</label>
@@ -30,12 +36,12 @@ const popupData ={
     <label for="other">Retype new password</label>
     <input type="password" id='retype'>`,
 
-    `<h3>Enable ADFS by uploading <code>&nbsp;FederationMetadata.xml&nbsp;</code> file.</h3>\
+    `<h3>Enable ADFS by uploading <code>FederationMetadata.xml</code> file.</h3>\
     <input type="file" id='file' accept=".xml">
     <label for='path2'>Select file</label>
     <div class='upload-file'>
     <input class='path' readonly type='text' id='path2'></input>
-    <label class='file-button' for='file'> Choose File</label>
+    <label class='file-button' for='file'>Select File</label>
     </div>
     `,
 
@@ -48,10 +54,12 @@ const popupData ={
     <input type="text" class='confirm-deletion' id='remove'>
     <button class="primary delete">Remove</button>`,
 
-    `<label for="other">Administrators</label>
-    <input type="text" value='' id='old-pswd'>
+    `<label for="#tags">Administrators</label>
+    <input type="tags" value='' id='#tags'>
     <label for="other">Users</label>
-    <input type="Address" value='' id='new-pswd'>`,
+    <input type="text" value='' id='users-input'>
+    <p id="out"></p>
+    `,
   ],
 
   footer:[
@@ -122,14 +130,13 @@ function layer2(i){
   });
 }
 
-
-
 function uploadPath(){
   let one = $(this).val().replace("C:\\fakepath\\",'');
   $('.path').val(one);
 }
 
 $(document).ready(function() {
+  popupContent(0);
   $('.AD .card-title a').click(function(){popupContent(5)});
   $('.adfs').click(function(){popupContent(4)
     $("input[type='file']").change(uploadPath);
