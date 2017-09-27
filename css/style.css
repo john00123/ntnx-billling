@@ -1,5 +1,5 @@
 html {
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
@@ -206,7 +206,6 @@ Cards
 .card p {
   margin-top: 12px;
   color: #627386;
-  font-weight: 300;
 }
 
 .card p code {
@@ -222,7 +221,7 @@ Cards
 
 .card .link {
   color: #22A5F7;
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
   font-weight: 400;
 }
@@ -268,7 +267,7 @@ Cards
 
 .auth h3 {
   color: #22A5F7;
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
   line-height: 10px;
 }
@@ -391,7 +390,7 @@ Popup
   border: 1px solid #B8BFCA;
   padding: 11px 10px;
   color: #22272E;
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   position: relative;
 }
 
