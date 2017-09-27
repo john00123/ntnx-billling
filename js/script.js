@@ -87,8 +87,8 @@ function tableData(){
   for(let i=0; i<billingData.Ammounts.length; i++){
     $('.prev-bills').append(
       `<tr>
-        <td><code>2017</code> ${billingData.Months[i]}</td>
-        <td>$ ${billingData.Ammounts[i]}<kbd>•</kbd></td>
+        <td><code>2017</code>${billingData.Months[i]}</td>
+        <td>$ ${billingData.Ammounts[i]}</td>
     </tr>`);
   }
 
@@ -96,8 +96,8 @@ function tableData(){
   for(let i=0; i<creditData.Ammounts.length; i++){
     $('.prev-creds').append(
       `<tr>
-        <td><code>2017</code> ${creditData.Months[i]}</td>
-        <td><code>+</code> $ ${creditData.Ammounts[i]}<kbd>•</kbd></td>
+        <td><code>2017</code>${creditData.Months[i]}</td>
+        <td><code>+</code>$ ${creditData.Ammounts[i]}</td>
     </tr>`);
   }
 
@@ -214,6 +214,26 @@ function popupContent(i){
   countNumbers();
 }
 
+function pdfContent(){
+  $('body').append(
+  `<div class='pdf-chrome'>
+  <div class="popup-header pdf-preview">Preview</div>
+  <object class='invoice' data="pdf/004174.pdf#view=FitH" type="application/pdf">
+  <p>Alternative text - include a link <a href="/pdf/004174.pdf">to the PDF!</a></p>
+  </object>
+  </div>`
+);
+  window.scroll(0, 0);
+  $('html').css('overflow','hidden');
+  $('.pdf-preview').click(function(){
+    $('.pdf-chrome').remove();
+    $('html').css('overflow','');
+  })
+}
+
+$(document).keyup(function(e) {
+  if (e.keyCode === 27) $('.pdf-chrome').remove();
+});
 
 //counter
 function countNumbers(){
@@ -239,4 +259,5 @@ $(document).ready(function() {
   chartData();
   tableData();
   $('.card:eq(3) a').click(function(){popupContent(0)});
+  $('.prev-bills td:eq(0)').click(pdfContent);
 });

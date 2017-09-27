@@ -333,7 +333,7 @@ th, td{
     padding: 1px 5px;
     color: $blue-1;
     font-size: 12px;
-    margin-right: 7px;
+    margin-right: 15px;
   }
   a{
     color:$font-color-3;
@@ -344,18 +344,14 @@ th, td{
 th:last-child, td:last-child{
   text-align: right;
   vertical-align: middle;
-  padding-right: 20px;
   width: 120px;
+  padding-right: 20px;
 }
 tr:hover{
   background-color: $semi-white-blue;
   cursor: pointer;
 }
-td:last-child{
-  margin-left: -50px;
-  position: relative;
-  right: 15px;
-}
+
 
 th:not(:first-child), td:not(:first-child){
   width: 100px;
@@ -365,42 +361,17 @@ td{
   white-space: nowrap;
 }
 
-td kbd{
-  margin-left: 10px;
-  color:$grey-2;
-  position:absolute;
-  font-size: 11px;
-  height: 8px;
-  width: 20px;
-  right: 5px;
-
-  &::before{
-    color:$grey-2;
-    content: '•';
-    position: absolute;
-    top:-4px;
-  }
-  &::after{
-    color:$grey-2;
-    content: '•';
-    position: absolute;
-    top:4px;
-    right:0px;
-  }
-  &:hover, &:hover::before, &:hover::after{
-    color:$blue-1;
-    cursor: pointer;
-  }
-}
 
 .table-header:hover{
   background-color: white;
   cursor: initial;
 }
 
-.usage td:last-child{
-  right: 0;
-  margin-left: 0;
+.prev-bills td:first-child{
+  &:hover{
+    color:$blue-1;
+    text-decoration: underline;
+  }
 }
 /* ==========================================================================
 Popup
@@ -616,6 +587,38 @@ Popup
 }
 
 
+/* ==========================================================================
+pdf
+========================================================================== */
+
+.pdf-chrome{
+  position: absolute;
+  @include size(100vh, 100%);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow:hidden;
+}
+
+.pdf-preview{
+  background-color: $dark-grey-1;
+  height: 50px;
+  border-bottom: none;
+  color:white;
+
+  &::before, &::after{
+  background-color: white;
+  }
+
+  &:hover::before, &:hover::after{
+    background-color:$light-grey-1;
+  }
+}
+
+.invoice{
+  height: calc(100% - 50px);
+  width: 100%;
+}
 /* ==========================================================================
 Animation
 ========================================================================== */
