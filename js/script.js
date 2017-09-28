@@ -116,7 +116,7 @@ function tableData(){
 const popupData ={
   title :[
     'Add Funds',
-    'Account Information',
+    'Tax Documents',
     'Profile Information',
     'Change Password',
     'Setup Active Directory',
@@ -129,6 +129,14 @@ const popupData ={
     <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
     <input type="text" value='' id='redeem-input' autocomplete='off'>
     `,
+
+    `<h3>Enable ADFS by uploading <code>FederationMetadata.xml</code> file.</h3>\
+    <input type="file" id='file' accept=".xml">
+    <label for='path2'>Select file</label>
+    <div class='upload-file'>
+    <input class='path' readonly type='text' id='path2'></input>
+    <label class='file-button' for='file'>Select File</label>
+    </div>`,
 
     `<label for="other">Company Name</label>
     <input type="text" value='Nutanix Corporate' id='old-pswd'>
@@ -151,15 +159,6 @@ const popupData ={
     <input type="password" id='new-pswd'>
     <label for="other">Retype new password</label>
     <input type="password" id='retype'>`,
-
-    `<h3>To enable Active Directory Federation Services in <b>Nutanix Corporate</b> a <code>&nbsp;FederationMetadata.xml&nbsp;</code> file is required.</h3>\
-    <input type="file" id='file' accept=".xml">
-    <label for='path2'>Select file</label>
-    <div class='upload-file'>
-    <input class='path' readonly type='text' id='path2'></input>
-    <label class='file-button' for='file'> Choose File</label>
-    </div>
-    `,
 
     `<h3 style='margin-bottom:5px'>Disable Federated Authentication</h3>
     <p>Allows login with you company Active Directory credentials</p>
@@ -295,6 +294,7 @@ $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
+  $('.card:eq(2) a').click(function(){popupContent(1)});
   $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
 });
