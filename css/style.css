@@ -670,7 +670,8 @@ Popup
 .popup-body h3 code {
   background-color: #EDF7FE;
   color: #58B9FD;
-  border-radius: 2px;
+  border-radius: 3px;
+  padding: 0 5px;
 }
 
 .popup-body p {

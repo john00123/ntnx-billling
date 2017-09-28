@@ -289,12 +289,19 @@ function countNumbers(){
 
 }
 
+function uploadPath(){
+  let one = $(this).val().replace("C:\\fakepath\\",'');
+  $('.path').val(one);
+}
 
 $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
-  $('.card:eq(2) a').click(function(){popupContent(1)});
+  $('.card:eq(2) a').click(function(){
+    popupContent(1)
+    $("input[type='file']").change(uploadPath);
+  });
   $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
 });
