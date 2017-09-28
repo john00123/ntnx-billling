@@ -131,7 +131,7 @@ const popupData ={
     `,
 
     `<h3 class='initial-tax'>Nutanix is required to collect sales tax documents.</h3>
-    <p style='margin-bottom:20px;'>Please consult your tax advisor if you're not sure whether your Nutanix usage is subject to US sales tax.</p>
+    <p style='margin: -8px 0 20px 0;' class='consult'>Please consult your tax advisor if you're not sure whether your Nutanix usage is subject to US sales tax.</p>
 
     <label id='tax-label'for="tax">Tax Document number</label>
     <input type="text" id="tax" placeholder='000 000 0000' onkeypress="return event.charCode >= 48 && event.charCode <= 57" style='margin-bottom:10px'/>
@@ -304,16 +304,27 @@ function uploadPath(){
 }
 
 function ex(){
+  checkoff();
   $("input[type='file']").change(uploadPath);
   $('input[type="checkbox"]').click(function() {
     if (this.checked) {
       $('.initial-tax').html(`If you're <code>tax exempt in your state</code>, attach an electronic copy of a valid tax exemption certificate authorized by the appropriate taxing authority.`);
-      $('#tax, #tax-label').hide();
+      $('#tax, #tax-label, .consult').hide();
+      $('.save').click(function(){
+        $('.card-body:eq(2) h4').text('Tax exemption uploaded');
+      })
     }
     else{
-    $('.initial-tax').html(`Nutanix is required to collect sales tax documents.`);
-    $('#tax, #tax-label').show()
+      checkoff();
     }
+});
+}
+
+function checkoff(){
+$('.initial-tax').html(`Nutanix is required to collect sales tax documents.`);
+$('#tax, #tax-label, .consult').show()
+$('.save').click(function(){
+  $('.card-body:eq(2) h4').text('221-222-333-44');
 });
 }
 
