@@ -134,7 +134,7 @@ const popupData ={
     <p style='margin: -8px 0 20px 0;' class='consult'>Consult a tax advisor if unsure your Nutanix usage is subject to sales tax.</p>
 
     <label id='tax-label'for="tax">Tax Document number</label>
-    <input type="text" id="tax" placeholder='000 000 0000' onkeypress="return event.charCode >= 48 && event.charCode <= 57" style='margin-bottom:10px'/>
+    <input type="text" id="tax" placeholder='000 000 0000' onkeypress="return event.charCode >= 48 && event.charCode <= 57" style='margin-bottom:20px'/>
 
 
     <input type="file" id='file' accept=".xml">
