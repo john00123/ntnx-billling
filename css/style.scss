@@ -462,10 +462,6 @@ Popup
     color: $font-color-2;
   }
 
-  input[type="file"]{
-    display: none;
-  }
-
   .separator{
     @include size(1px, 100%);
     background-color: $border-color-3;
@@ -488,14 +484,6 @@ Popup
     @include size(32px, 100%);
     @include secondary;
     margin-top: 20px;
-  }
-
-  input.path{
-    margin: 0;
-    display: flex;
-    flex-grow: 1;
-    border-right:none;
-    border-radius: 4px 0 0 4px;
   }
 
   input.confirm-deletion{
@@ -575,11 +563,31 @@ Popup
   @include transition(all);
 }
 
+input[type="file"]{
+  display: none;
+}
+
 .upload-file{
   width: 100%;
-  @include flex(center, space-between, row);
 
+  @include flex(center, space-between, row);
+  .file-button{
+
+    @include secondary;
+    @include size(32px, 121px);
+    border-radius: 0 4px 4px 0;
+    border-left:none;
+    border-color: $border-color-1;
+  }
+
+  input.path{
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    border-radius: 4px 0 0 4px;
+  }
 }
+
 
 .show{
   animation: shows 600ms $animation 100ms forwards;
