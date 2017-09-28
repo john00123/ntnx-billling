@@ -117,7 +117,7 @@ const popupData ={
   title :[
     'Add Funds',
     'Tax Documents',
-    'Profile Information',
+    'Payment',
     'Change Password',
     'Setup Active Directory',
     'Active Directory Options'
@@ -131,7 +131,7 @@ const popupData ={
     `,
 
     `<h3 class='initial-tax'>Nutanix is required to collect sales tax documents.</h3>
-    <p style='margin: -8px 0 20px 0;' class='consult'>Please consult your tax advisor if you're not sure whether your Nutanix usage is subject to US sales tax.</p>
+    <p style='margin: -8px 0 20px 0;' class='consult'>Consult a tax advisor if unsure your Nutanix usage is subject to sales tax.</p>
 
     <label id='tax-label'for="tax">Tax Document number</label>
     <input type="text" id="tax" placeholder='000 000 0000' onkeypress="return event.charCode >= 48 && event.charCode <= 57" style='margin-bottom:10px'/>
@@ -144,13 +144,7 @@ const popupData ={
     <label class='file-button' for='file'>Select File</label>
     </div>`,
 
-    `<label for="other">Company Name</label>
-    <input type="text" value='Nutanix Corporate' id='old-pswd'>
-    <label for="other">Address</label>
-    <input type="Address" value='1740 Technology Drive' id='new-pswd' style='margin-bottom:15px'>
-    <input type="Address" value='San Jose, California, 95110, United States' id='new-pswd2' >
-    <label for="other">Phone Number</label>
-    <input type="Phone" value='(408) 000 0000' id='retype'>`,
+    `<div id="formDialog" class="formDialog ui-dialog-content ui-widget-content" style="width: auto; min-height: 93.53125px; max-height: none; height: auto;"><div id="zuora_payment_modal"><div id="zuora-container"><div id="credit-card-spinner" style="height: auto"></div><div id="zuora_payment" style="display: inline-block !important"><iframe src="https://apisandbox.zuora.com/apps/PublicHostedPageLite.do?method=requestPage&amp;host=https%3A%2F%2Fdemo-billing.nutanix.com%2Fsummary&amp;signature=QgMIwgm6P7qWt4g6FoJ8TzbA81Vc1f%2F9RkMCeVdZCj4OUAjCyYzmpCKVeb2iqegCFKGVSnm4v1E7Dpr5vlrTO7l1%2Be%2BoEowkb0V55KeTrb3JibrPNztFYfHeT5bb3IxZnOdwb7Sd%2F9hbwj%2BFDGkQWWWLAviJ%2F6lqexOqCEb5n9WaUpPDaHh7Dc2IWZ8rm64UtZPcH%2Fjb506C5N7zJEWie7tBRw9ZwvJLYsw3m2nnWDixvfHtNrU2lOBqsiEnWTzb6PcT8QkW9d6454exI1N3TbkmAbKYPesJv9Z7dqwjWwgAJ%2BFC0DiP0wNePp%2FvmPQ54cakLMIix6u4xxOtlOwkfQ%3D%3D&amp;token=6BC890imMM17lZsEbqnW79QbiW8unHje&amp;tenantId=14890&amp;style=inline&amp;submitEnabled=true&amp;param_supportedTypes=AmericanExpress%2CJCB%2CVisa%2CMasterCard%2CDiscover&amp;paymentGateway=Auth.net&amp;id=2c92c0f95a64a713015a6b19fe65250b&amp;field_passthrough1=0011800000TvduUAAR&amp;field_accountId=2c92c0fb5e7f8f35015e828d8c706aab&amp;customizeErrorRequired=true&amp;" id="z_hppm_iframe" overflow="visible" scrolling="no" frameborder="0" allowtransparency="true" class="z_hppm_iframe" width="375" height="479" style="display: block;"></iframe></div><div class="zuorastatus"><hr class="zuorabluebar"></div></div></div></div>`,
 
     `<label for="other">Name</label>
     <input type="text" value='Lipa Dua' id='old-pswd'>
@@ -180,7 +174,7 @@ const popupData ={
     `<button class="primary redeem">Redeem</button>`,
     `<div class='tax-block'>
     <input type="checkbox" id='exempted'>
-    <p>I'm exempted of paying taxes in my state.</p>
+    <p>I'm exempt from state taxes.</p>
     </div><button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
@@ -308,7 +302,7 @@ function ex(){
   $("input[type='file']").change(uploadPath);
   $('input[type="checkbox"]').click(function() {
     if (this.checked) {
-      $('.initial-tax').html(`If you're <code>tax exempt in your state</code>, attach an electronic copy of a valid tax exemption certificate authorized by the appropriate taxing authority.`);
+      $('.initial-tax').html(`If you're <code>exempt from state tax</code>, attach an electronic copy of a valid tax exemption certificate authorized by the appropriate taxing authority.`);
       $('#tax, #tax-label, .consult').hide();
       $('.save').click(function(){
         $('.card-body:eq(2) h4').text('Tax exemption uploaded');
@@ -337,5 +331,6 @@ $(document).ready(function() {
     ex();
   });
   $('.card:eq(3) a').click(function(){popupContent(0)});
+  $('.card:eq(1) a').click(function(){popupContent(2)});
   $('.prev-bills td:eq(0)').click(pdfContent);
 });
