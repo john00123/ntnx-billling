@@ -208,7 +208,7 @@ Cards
   color: #627386;
 }
 
-.card p code {
+.card p code, .card p code {
   background-color: #EDFBF1;
   color: #18BE5F;
   border-radius: 3px;
@@ -230,6 +230,15 @@ Cards
 .card .link:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.card .enable-mult-auth::after {
+  content: 'Active';
+  background-color: #EDFBF1;
+  color: #18BE5F;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin-left: 5px;
 }
 
 .card-title {
@@ -669,8 +678,8 @@ Popup
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   box-sizing: border-box;
   display: block;
   margin-bottom: 30px;
@@ -691,7 +700,7 @@ Popup
   padding: 5px;
   color: white;
   font-weight: 500;
-  right: -2px;
+  right: -4px;
   border-radius: 2pc;
   height: 7px;
   width: 7px;
