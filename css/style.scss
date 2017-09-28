@@ -344,25 +344,26 @@ Popup
 
 .dot-parent{
   @include flex(center,center,row);
+  @include size(40px, 40px);
+  display: block;
   margin-bottom: 30px;
-
-  .dot{
-    @include size(36px, 36px);
-    transform: translate3d(25px, 0, 0);
-    border:2px dotted $dark-grey-1;
-    border-radius: 5pc;
-    margin: 20px;
-    background-color: transparent;
-    // border-right-color:white;
-    z-index: 3;
-    animation: spin 6000ms linear infinite;
-  }
-  .dot2{
-    @include size(20px, 20px);
-    transform: translate3d(-25px, 0, 0);
-    border-radius: 5pc;
-    margin: 20px;
-    background-color: $dark-grey-1;
+  background:url(/img/circle2.svg);
+  background-size:contain;
+  background-repeat: no-repeat;
+  position: relative;
+  &::after{
+    @include flex(center, center,row);
+    position: absolute;
+    content: '2';
+    font-size: 10px;
+    padding: 5px;
+    color:white;
+    font-weight: 500;
+    right: -2px;
+    border-radius: 2pc;
+    @include size(7px,7px);
+    box-sizing: content-box;
+    background-color: $red-1;
   }
 }
 
@@ -456,15 +457,6 @@ Animation
   to{
     opacity: 1;
     transform: scale(1) translate3d(0, 0, 0);
-  }
-}
-
-@keyframes spin{
-  from{
-    transform: translate3d(25px, 0, 0) rotate(0deg);
-  }
-  to{
-    transform: translate3d(25px, 0, 0) rotate(359deg);
   }
 }
 

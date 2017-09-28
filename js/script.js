@@ -12,8 +12,6 @@ const popupData ={
   body: [
     `
     <div class='dot-parent'>
-      <div class='dot'></div>
-      <div class='dot2'></div>
     </div>
     <h3 style='margin-bottom:5px'>Improve your account security with a 2 step verification process</h3>
 
@@ -54,10 +52,12 @@ const popupData ={
     <input type="text" class='confirm-deletion' id='remove'>
     <button class="primary delete">Remove</button>`,
 
-    `<label for="#tags">Administrators</label>
-    <input type="tags" value='' id='#tags'>
-    <label for="other">Users</label>
-    <input type="text" value='' id='users-input'>
+    `
+    <h3>Assign <code>Comma-separated</code> groups to their access tiers.</h3>
+    <label for="#tags">Administrative access</label>
+    <input type="tags" value='administration, IT, marketing' placeholder="Example: group" id='tags'>
+    <label for="other">User access</label>
+    <input type="text" placeholder="Example: group2" id='users-input'>
     <p id="out"></p>
     `,
   ],
@@ -69,7 +69,7 @@ const popupData ={
     `<button class="primary save">Save</button>`,
     `<button class="primary upload">Upload</button>`,
     `<button class="secondary save">Done</button>`,
-    `<button class="secondary back">Done</button>`
+    `<button class="primary back">Assign</button>`
   ]
 }
 
