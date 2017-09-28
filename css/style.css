@@ -220,7 +220,7 @@ Cards
 
 .card p code {
   background-color: #EDF7FE;
-  color: #58B9FD;
+  color: #2282E3;
   border-radius: 3px;
   padding: 0 5px;
 }
@@ -487,7 +487,7 @@ th code, td code {
   background-color: #EDF7FE;
   border-radius: 2px;
   padding: 1px 5px;
-  color: #22A5F7;
+  color: #2282E3;
   font-size: 12px;
   margin-right: 15px;
 }
@@ -614,7 +614,7 @@ Popup
   background-color: white;
 }
 
-.popup-body input {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]) {
   height: 32px;
   width: 100%;
   box-sizing: border-box;
@@ -626,16 +626,16 @@ Popup
   position: relative;
 }
 
-.popup-body input:not(:last-child) {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):not(:last-child) {
   margin-bottom: 20px;
 }
 
-.popup-body input:focus {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):focus {
   outline: none;
   border-color: #22A5F7;
 }
 
-.popup-body input::-webkit-input-placeholder {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file])::-webkit-input-placeholder {
   padding-top: 4px;
   vertical-align: middle;
   color: #D5DAE0;
@@ -669,7 +669,7 @@ Popup
 
 .popup-body h3 code {
   background-color: #EDF7FE;
-  color: #58B9FD;
+  color: #2282E3;
   border-radius: 3px;
   padding: 0 5px;
 }
@@ -959,11 +959,33 @@ input[type="file"] {
   line-height: 9pt;
 }
 
-.upload-file input.path {
+.upload-file input#path2.path {
   margin: 0;
   display: flex;
   flex-grow: 1;
   border-radius: 4px 0 0 4px;
+}
+
+.tax-block {
+  height: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.tax-block input {
+  maring: 0;
+}
+
+.tax-block p {
+  flex-grow: 1;
+  height: 10px;
+  margin-left: 10px;
+  margin-bottom: 0;
+  line-height: 9pt;
 }
 
 .show {

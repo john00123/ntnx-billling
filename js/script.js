@@ -130,7 +130,13 @@ const popupData ={
     <input type="text" value='' id='redeem-input' autocomplete='off'>
     `,
 
-    `<h3>Enable ADFS by uploading <code>FederationMetadata.xml</code> file.</h3>\
+    `<h3 class='initial-tax'>Nutanix is required to collect sales tax documents.</h3>
+    <p style='margin-bottom:20px;'>Please consult your tax advisor if you're not sure whether your Nutanix usage is subject to US sales tax.</p>
+
+    <label id='tax-label'for="tax">Tax Document number</label>
+    <input type="text" id="tax" placeholder='000 000 0000' onkeypress="return event.charCode >= 48 && event.charCode <= 57" style='margin-bottom:10px'/>
+
+
     <input type="file" id='file' accept=".xml">
     <label for='path2'>Select file</label>
     <div class='upload-file'>
@@ -172,7 +178,10 @@ const popupData ={
 
   footer:[
     `<button class="primary redeem">Redeem</button>`,
-    `<button class="primary save">Save</button>`,
+    `<div class='tax-block'>
+    <input type="checkbox" id='exempted'>
+    <p>I'm exempted of paying taxes in my state.</p>
+    </div><button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save upload">Upload</button>`,
@@ -294,13 +303,27 @@ function uploadPath(){
   $('.path').val(one);
 }
 
+function ex(){
+  $("input[type='file']").change(uploadPath);
+  $('input[type="checkbox"]').click(function() {
+    if (this.checked) {
+      $('.initial-tax').html(`If you're <code>tax exempt in your state</code>, attach an electronic copy of a valid tax exemption certificate authorized by the appropriate taxing authority.`);
+      $('#tax, #tax-label').hide();
+    }
+    else{
+    $('.initial-tax').html(`Nutanix is required to collect sales tax documents.`);
+    $('#tax, #tax-label').show()
+    }
+});
+}
+
 $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
   $('.card:eq(2) a').click(function(){
-    popupContent(1)
-    $("input[type='file']").change(uploadPath);
+    popupContent(1);
+    ex();
   });
   $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
