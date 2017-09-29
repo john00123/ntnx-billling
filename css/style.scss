@@ -174,6 +174,13 @@ Graph
   @include flex(flex-end, flex-start, row);
 }
 
+select{
+  @include secondary;
+  display: flex;
+  flex-grow: 1;
+  -webkit-appearance:none;
+}
+
 
 .trend{
   @include flex(flex-end, flex-start, row);
@@ -283,7 +290,9 @@ Graph
     opacity: 0.3
   }
 }
-
+.info-pair input,  .info-pair select{
+  margin-top: 10px;
+}
 
 /* ==========================================================================
 Table
@@ -341,21 +350,22 @@ th, td{
   }
 }
 
-th:last-child, td:last-child{
+th:not(:first-child), td:not(:first-child){
   text-align: right;
   vertical-align: middle;
-  width: 120px;
+  width: 100px;
   padding-right: 20px;
 }
+
+th:nth-child(2), td:nth-child(2){
+  width: 60px;
+}
+
 tr:hover{
   background-color: $semi-white-blue;
   cursor: pointer;
 }
 
-
-th:not(:first-child), td:not(:first-child){
-  width: 100px;
-}
 
 td{
   white-space: nowrap;
@@ -373,6 +383,7 @@ td{
     text-decoration: underline;
   }
 }
+
 /* ==========================================================================
 Popup
 ========================================================================== */
@@ -636,19 +647,19 @@ pdf
 }
 
 .pdf-preview{
-  background-color: $dark-grey-1;
+  // background-color: $dark-grey-1;
   height: 50px;
   border-bottom: none;
-  color:white;
+  // color:white;
   border-radius: 0;
 
-  &::before, &::after{
-  background-color: white;
-  }
-
-  &:hover::before, &:hover::after{
-    background-color:$light-grey-1;
-  }
+  // &::before, &::after{
+  // background-color: white;
+  // }
+  //
+  // &:hover::before, &:hover::after{
+  //   background-color:$light-grey-1;
+  // }
 }
 
 .invoice{
@@ -692,6 +703,10 @@ Animation
 @keyframes hides {
   from{ opacity: 1;}
   to{ opacity: 0;}
+}
+
+iframe input.text-input{
+  border-color: red;
 }
 
 /* ==========================================================================

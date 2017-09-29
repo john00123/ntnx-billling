@@ -1,7 +1,7 @@
 const cardData ={
-  cardInfo : ['Current plan','Payment type','Tax documents','Available Credit'],
+  cardInfo : ['Current plan','Payment Method','Tax documents','Available Credit'],
   cardBody :['Pay as you go','Credit Card','221-222-333-44', '$5000.00'],
-  cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Add credits'],
+  cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Redeem code'],
 }
 
 const billingData ={
@@ -117,34 +117,114 @@ const popupData ={
   title :[
     'Add Funds',
     'Tax Documents',
-    'Payment',
+    'Payment Method &nbsp;&nbsp;🔒',
     'Change Password',
     'Setup Active Directory',
     'Active Directory Options'
   ],
 
   body: [
+    //credits
     `<code class="count money">853</code>
     <h3 style='margin-bottom:0px'>Reedem code</h3>
     <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
     <input type="text" value='' id='redeem-input' autocomplete='off'>
     `,
 
+    //tax data
     `<h3 class='initial-tax'>Nutanix is required to collect sales tax documents.</h3>
-    <p style='margin: -8px 0 20px 0;' class='consult'>Consult a tax advisor if unsure your Nutanix usage is subject to sales tax.</p>
 
     <label id='tax-label'for="tax">Tax Document number</label>
     <input type="text" id="tax" placeholder='000 000 0000' onkeypress="return event.charCode >= 48 && event.charCode <= 57" style='margin-bottom:20px'/>
-
 
     <input type="file" id='file' accept=".xml">
     <label for='path2'>Select file</label>
     <div class='upload-file'>
     <input class='path' readonly type='text' id='path2'></input>
     <label class='file-button' for='file'>Select File</label>
-    </div>`,
+    </div>
+    <p style='margin: 22px 0 -8px 0;' class='consult'>To learn if your cloud consumption is subject to sale taxes, consult your tax advisor.</p>
+    `,
 
-    `<div id="formDialog" class="formDialog ui-dialog-content ui-widget-content" style="width: auto; min-height: 93.53125px; max-height: none; height: auto;"><div id="zuora_payment_modal"><div id="zuora-container"><div id="credit-card-spinner" style="height: auto"></div><div id="zuora_payment" style="display: inline-block !important"><iframe src="https://apisandbox.zuora.com/apps/PublicHostedPageLite.do?method=requestPage&amp;host=https%3A%2F%2Fdemo-billing.nutanix.com%2Fsummary&amp;signature=QgMIwgm6P7qWt4g6FoJ8TzbA81Vc1f%2F9RkMCeVdZCj4OUAjCyYzmpCKVeb2iqegCFKGVSnm4v1E7Dpr5vlrTO7l1%2Be%2BoEowkb0V55KeTrb3JibrPNztFYfHeT5bb3IxZnOdwb7Sd%2F9hbwj%2BFDGkQWWWLAviJ%2F6lqexOqCEb5n9WaUpPDaHh7Dc2IWZ8rm64UtZPcH%2Fjb506C5N7zJEWie7tBRw9ZwvJLYsw3m2nnWDixvfHtNrU2lOBqsiEnWTzb6PcT8QkW9d6454exI1N3TbkmAbKYPesJv9Z7dqwjWwgAJ%2BFC0DiP0wNePp%2FvmPQ54cakLMIix6u4xxOtlOwkfQ%3D%3D&amp;token=6BC890imMM17lZsEbqnW79QbiW8unHje&amp;tenantId=14890&amp;style=inline&amp;submitEnabled=true&amp;param_supportedTypes=AmericanExpress%2CJCB%2CVisa%2CMasterCard%2CDiscover&amp;paymentGateway=Auth.net&amp;id=2c92c0f95a64a713015a6b19fe65250b&amp;field_passthrough1=0011800000TvduUAAR&amp;field_accountId=2c92c0fb5e7f8f35015e828d8c706aab&amp;customizeErrorRequired=true&amp;" id="z_hppm_iframe" overflow="visible" scrolling="no" frameborder="0" allowtransparency="true" class="z_hppm_iframe" width="375" height="479" style="display: block;"></iframe></div><div class="zuorastatus"><hr class="zuorabluebar"></div></div></div></div>`,
+    //payment method
+    `
+    <h4 style='width:100%; padding:0 0 20px 0;'>Card Information</h4>
+    <div class='upload-file'>
+    <div class='info-pair'>
+    <label for="other">Card Number</label>
+    <input type="text" value='Lipa Dua' id='old-pswd'>
+    </div>
+    <div class='info-pair'>
+    <label for="other">Card Holder's Name</label>
+    <input type="text" value='Lipa Dua' id='old-pswd'>
+    </div>
+    </div>
+
+    <div class='upload-file' style='margin-top:20px;'>
+      <div class='info-pair'>
+        <label for='month'>Month</label>
+        <select name="month" id="month">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+        </select>
+      </div>
+
+      <div class='info-pair'>
+        <label for='year'>Year</label>
+        <select name="year" id="year">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+
+      <div class='info-pair'>
+        <label for='cvv'>CVV</label>
+        <input type='text' id='cvv'></input>
+      </div>
+    </div>
+
+    <h4 style='width:100%; padding:30px 0 20px 0;'>Billing Information</h4>
+    <label for="other">Card Number</label>
+    <input type="text" value='Lipa Dua' id='old-pswd' style='margin-bottom:15px;'>
+    <input type="text" value='Lipa Dua' id='old-pswd'>
+
+
+    <div class='upload-file'>
+    <div class='info-pair'>
+    <label for='month'>Month</label>
+    <input type="text" value='Lipa Dua' id='old-pswd'>
+    </div>
+
+    <div class='info-pair'>
+    <label for='year'>Year</label>
+    <input type="text" value='Lipa Dua' id='old-pswd'>
+    </div>
+
+
+    <div class='info-pair'>
+    <label for='month'>Month</label>
+    <input type="text" value='Lipa Dua' id='old-pswd'>
+    </div>
+
+    <div class='info-pair'>
+    <label for='year'>Year</label>
+    <select name="year" id="year">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+    </div>
+    </div>
+
+    `
+
+
+    ,
 
     `<label for="other">Name</label>
     <input type="text" value='Lipa Dua' id='old-pswd'>
@@ -204,6 +284,17 @@ function popAnimate(){
 }
 
 function popupContent(i){
+  if(i==2){
+    $('body').append(
+      `<div class="overlay" style='opacity:0'>
+        <div class="popup" style='opacity:0; width:500px'>
+          <div class="popup-header">${popupData.title[i]}</div>
+          <div class="popup-body">${popupData.body[i]}</div>
+          <div class="popup-footer">${popupData.footer[i]}</div>
+        </div>
+      </div>`
+    );
+  }else{
   $('body').append(
     `<div class="overlay" style='opacity:0'>
       <div class="popup" style='opacity:0'>
@@ -213,6 +304,7 @@ function popupContent(i){
       </div>
     </div>`
   );
+  }
   popAnimate();
   countNumbers();
 }
@@ -247,6 +339,7 @@ function countNumbers(){
       $('#redeem-input').val('');
       $('.popup-body').before(`<div class='banner'>$4200 have been credited to your account.</div>`);
       $('.banner').toggle();
+      $('.money').css('color','#18BE5F');
       $('.popup-header').css('border-bottom','none');
       $('.banner').slideDown();
       $('.count').each(function () {
@@ -261,11 +354,12 @@ function countNumbers(){
       });
       setTimeout(function(){
         $('.banner').slideUp();
+
         $('.popup-header').css('border-bottom','');
         setTimeout(function(){
           $('.banner').remove();
         },300);
-      },7000);
+    },7000);
     }
     else{
       $('.banner').remove();

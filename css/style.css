@@ -310,6 +310,36 @@ Graph
   flex-direction: row;
 }
 
+select {
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+  display: flex;
+  flex-grow: 1;
+  -webkit-appearance: none;
+}
+
+select:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+select:active {
+  color: #8FD1FE;
+}
+
+select span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
 .trend {
   display: flex;
   align-items: flex-end;
@@ -436,6 +466,10 @@ Graph
   opacity: 0.3;
 }
 
+.info-pair input, .info-pair select {
+  margin-top: 10px;
+}
+
 /* ==========================================================================
 Table
 ========================================================================== */
@@ -497,20 +531,20 @@ th a, td a {
   margin-left: 5px;
 }
 
-th:last-child, td:last-child {
+th:not(:first-child), td:not(:first-child) {
   text-align: right;
   vertical-align: middle;
-  width: 120px;
+  width: 100px;
   padding-right: 20px;
+}
+
+th:nth-child(2), td:nth-child(2) {
+  width: 60px;
 }
 
 tr:hover {
   background-color: #F6FBFE;
   cursor: pointer;
-}
-
-th:not(:first-child), td:not(:first-child) {
-  width: 100px;
 }
 
 td {
@@ -1020,19 +1054,9 @@ pdf
 }
 
 .pdf-preview {
-  background-color: #22272E;
   height: 50px;
   border-bottom: none;
-  color: white;
   border-radius: 0;
-}
-
-.pdf-preview::before, .pdf-preview::after {
-  background-color: white;
-}
-
-.pdf-preview:hover::before, .pdf-preview:hover::after {
-  background-color: #B8BFCA;
 }
 
 .invoice {
@@ -1082,6 +1106,10 @@ Animation
   to {
     opacity: 0;
   }
+}
+
+iframe input.text-input {
+  border-color: red;
 }
 
 /* ==========================================================================
