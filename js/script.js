@@ -148,22 +148,22 @@ const popupData ={
 
     //payment method
     `
-    <h4 style='width:100%; padding:0 0 20px 0;'>Card Information</h4>
+    <h4 style='width:100%; padding:0 0 16px 0;'>Card Information</h4>
     <div class='upload-file'>
     <div class='info-pair'>
     <label for="other">Card Number</label>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <input type="text"  id='old-pswd' ">
     </div>
     <div class='info-pair'>
     <label for="other">Card Holder's Name</label>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <input type="text"  id='old-pswd'style="margin-left:10px;">
     </div>
     </div>
 
-    <div class='upload-file' style='margin-top:20px;'>
+    <div class='upload-file' style='margin:16px 0 30px 0;'>
       <div class='info-pair'>
         <label for='month'>Month</label>
-        <select name="month" id="month">
+        <select class='thirty' name="month" id="month">
         <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
         <option value="fiat">Fiat</option>
@@ -173,7 +173,7 @@ const popupData ={
 
       <div class='info-pair'>
         <label for='year'>Year</label>
-        <select name="year" id="year">
+        <select class='thirty' name="year" id="year">
           <option value="volvo">Volvo</option>
           <option value="saab">Saab</option>
           <option value="fiat">Fiat</option>
@@ -187,32 +187,32 @@ const popupData ={
       </div>
     </div>
 
-    <h4 style='width:100%; padding:30px 0 20px 0;'>Billing Information</h4>
-    <label for="other">Card Number</label>
-    <input type="text" value='Lipa Dua' id='old-pswd' style='margin-bottom:15px;'>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <h4 style='width:100%; padding:30px 0 20px 0; border-top:1px solid #F2F4F6;' >Billing Information</h4>
+    <label for="other">Address</label>
+    <input type="text" id='old-pswd' style='margin-bottom:15px;'>
+    <input type="text" id='old-pswd'>
 
 
     <div class='upload-file'>
     <div class='info-pair'>
     <label for='month'>Month</label>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <input type="text"  id='old-pswd'>
     </div>
 
-    <div class='info-pair'>
+    <div class='info-pair' style='margin-left:10px;'>
     <label for='year'>Year</label>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <input type="text"  id='old-pswd'>
     </div>
 
 
-    <div class='info-pair'>
+    <div class='info-pair' style='margin-left:10px;'>
     <label for='month'>Month</label>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
+    <input type="text"  id='old-pswd' >
     </div>
 
-    <div class='info-pair'>
+    <div class='info-pair' style='margin-left:10px;'>
     <label for='year'>Year</label>
-    <select name="year" id="year">
+    <select class='twentyfive' name="year" id="year">
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
       <option value="fiat">Fiat</option>
