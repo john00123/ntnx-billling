@@ -117,7 +117,7 @@ const popupData ={
   title :[
     'Add Funds',
     'Tax Documents',
-    'Payment Method &nbsp;&nbsp;🔒',
+    'Payment Method',
     'Change Password',
     'Setup Active Directory',
     'Active Directory Options'
@@ -148,7 +148,7 @@ const popupData ={
 
     //payment method
     `
-    <h4 style='width:100%; padding:0 0 16px 0;'>Card Information</h4>
+
 
     <label for="other">Card Number</label>
     <input type="text"  id='old-pswd' ">
@@ -159,63 +159,71 @@ const popupData ={
 
 
 
-    <div class='upload-file' style='margin:0 0 30px 0;'>
+    <div class='upload-file' style='margin:0 0 30px 0; padding-bottom:30px; border-bottom:1px solid #F2F4F6;'>
       <div class='info-pair'>
         <label for='month'>Month</label>
         <select class='thirty' name="month" id="month">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
+        <option value="volvo">Jan</option>
+        <option value="saab">Feb</option>
+        <option value="fiat">Mar</option>
+        <option value="audi">Apr</option>
+        <option value="audi">Jun</option>
+        <option value="audi">Jul</option>
+        <option value="audi">Aug</option>
+        <option value="audi">Sep</option>
+        <option value="audi">Oct</option>
+        <option value="audi">Nov</option>
+        <option value="audi">Dec</option>
+
         </select>
       </div>
 
       <div class='info-pair'>
         <label for='year'>Year</label>
         <select class='thirty' name="year" id="year">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="fiat">Fiat</option>
-          <option value="audi">Audi</option>
+          <option value="volvo">2018</option>
+          <option value="saab">2019</option>
+          <option value="fiat">2020</option>
+          <option value="audi">2021</option>
         </select>
       </div>
 
-      <div class='info-pair'>
+      <div class='info-pair' style='width:145px;'>
         <label for='cvv'>CVV</label>
         <input type='text' id='cvv'></input>
       </div>
     </div>
 
-    <h4 style='width:100%; padding:30px 0 20px 0; border-top:1px solid #F2F4F6;' >Billing Information</h4>
     <label for="other">Address</label>
-    <input type="text" id='old-pswd' style='margin-bottom:15px;'>
+    <input type="text" id='old-pswd' style='margin-bottom:20px;'>
+    <label for="other">Address 2</label>
     <input type="text" id='old-pswd'>
 
 
     <div class='upload-file'>
-    <div class='info-pair'>
-    <label for='month'>Month</label>
+    <div class='info-pair' style='margin-right:5px;'>
+    <label for='month'>Zip Code</label>
     <input type="text"  id='old-pswd'>
     </div>
 
     <div class='info-pair' style='margin-left:10px;'>
-    <label for='year'>Year</label>
+    <label for='year'>City</label>
     <input type="text"  id='old-pswd'>
     </div>
 
 
-    <div class='info-pair' style='margin-left:10px;'>
-    <label for='month'>Month</label>
+    <div class='info-pair' style='margin-left:15px;'>
+    <label for='month'>State</label>
     <input type="text"  id='old-pswd' >
     </div>
 
-    <div class='info-pair' style='margin-left:10px;'>
-    <label for='year'>Year</label>
+    <div class='info-pair' style='margin-left:15px;'>
+    <label for='year'>Country</label>
     <select class='twentyfive' name="year" id="year">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
+      <option value="volvo">United States</option>
+      <option value="saab">Argentina</option>
+      <option value="fiat">Armenia</option>
+      <option value="audi">Algeria</option>
     </select>
     </div>
     </div>

@@ -175,11 +175,12 @@ Graph
 }
 
 select{
-  width: 100px;
+  width: 140px;
   @include secondary;
   display: flex;
   flex-grow: 1;
   height: 32px;
+  line-height: 9pt;
   padding: 8px 15px;
   -webkit-appearance:none;
   text-align: left;
@@ -189,7 +190,7 @@ select{
 }
 
 .thirty{
-  width: 120px
+  width: 145px
 }
 
 .trend{
