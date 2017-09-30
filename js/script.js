@@ -149,18 +149,17 @@ const popupData ={
     //payment method
     `
     <h4 style='width:100%; padding:0 0 16px 0;'>Card Information</h4>
-    <div class='upload-file'>
-    <div class='info-pair'>
+
     <label for="other">Card Number</label>
     <input type="text"  id='old-pswd' ">
-    </div>
-    <div class='info-pair'>
-    <label for="other">Card Holder's Name</label>
-    <input type="text"  id='old-pswd'style="margin-left:10px;">
-    </div>
-    </div>
 
-    <div class='upload-file' style='margin:16px 0 30px 0;'>
+
+    <label for="other">Card Holder's Name</label>
+    <input type="text" id='old-pswd'>
+
+
+
+    <div class='upload-file' style='margin:0 0 30px 0;'>
       <div class='info-pair'>
         <label for='month'>Month</label>
         <select class='thirty' name="month" id="month">
