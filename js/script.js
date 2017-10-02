@@ -194,10 +194,10 @@ const popupData ={
       </div>
     </div>
 
-    <label for="other">Address</label>
+    <label for="other">Billing Address</label>
     <input type="text" id='old-pswd' style='margin-bottom:20px;'>
     <label for="other">Address 2</label>
-    <input type="text" id='old-pswd'>
+    <input type="text" placeholder='street' id='old-pswd'>
 
 
     <div class='upload-file'>
@@ -259,13 +259,19 @@ const popupData ={
 
   footer:[
     `<button class="primary redeem">Redeem</button>`,
+
     `<div class='tax-block'>
     <input type="checkbox" id='exempted'>
     <p>I'm exempt from state taxes.</p>
     </div><button class="primary save">Save</button>`,
+
+    `<button class="secondary save">Switch to invoice</button>
+    <button class="primary save">Save</button>`,
+
     `<button class="primary save">Save</button>`,
-    `<button class="primary save">Save</button>`,
+
     `<button class="primary save upload">Upload</button>`,
+
     `<button class="secondary save">Done</button>`,
   ]
 }
