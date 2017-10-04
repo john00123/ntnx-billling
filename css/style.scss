@@ -356,9 +356,6 @@ td kbd{
   }
 }
 
-
-
-
 .popup-footer{
   @include flex(center,flex-end,row);
   @include size(72px, 100%);
@@ -384,7 +381,6 @@ td kbd{
   }
 
 }
-
 
 .dot-parent{
   @include flex(center,center,row);
