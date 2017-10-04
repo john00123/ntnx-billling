@@ -175,4 +175,5 @@ $(document).ready(function() {
   $('.overlay').toggle();
   tableData();
   selectAll();
+  $('.invite').click(function(){popupContent(0)});
 });
