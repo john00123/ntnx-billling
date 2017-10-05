@@ -80,12 +80,12 @@ header {
 .actions .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .actions .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .actions .primary span {
@@ -115,7 +115,7 @@ header {
 }
 
 .actions .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .actions .secondary span {
@@ -174,7 +174,7 @@ Cards
 }
 
 .card:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .card span {
@@ -209,8 +209,8 @@ Cards
 }
 
 .card p code, .card p code {
-  background-color: #EDFBF1;
-  color: #18BE5F;
+  background-color: #ebfaf0;
+  color: #31bb67;
   border-radius: 3px;
   padding: 0 5px;
   margin-left: 5px;
@@ -234,8 +234,8 @@ Cards
 
 .card .enable-mult-auth::after {
   content: 'Active';
-  background-color: #EDFBF1;
-  color: #18BE5F;
+  background-color: #ebfaf0;
+  color: #31bb67;
   border-radius: 3px;
   padding: 0 5px;
   margin-left: 5px;
@@ -392,7 +392,7 @@ Popup
   background-color: white;
 }
 
-.popup-body input {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]) {
   height: 32px;
   width: 100%;
   box-sizing: border-box;
@@ -404,16 +404,16 @@ Popup
   position: relative;
 }
 
-.popup-body input:not(:last-child) {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):not(:last-child) {
   margin-bottom: 20px;
 }
 
-.popup-body input:focus {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):focus {
   outline: none;
   border-color: #22A5F7;
 }
 
-.popup-body input::-webkit-input-placeholder {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file])::-webkit-input-placeholder {
   padding-top: 4px;
   vertical-align: middle;
   color: #D5DAE0;
@@ -446,8 +446,8 @@ Popup
 }
 
 .popup-body h3 code {
-  background-color: #EDF7FE;
-  color: #2282E3;
+  background-color: #e9f6fe;
+  color: #1f88de;
   padding: 0 5px;
   border-radius: 2px;
 }
@@ -484,12 +484,12 @@ Popup
 .popup-body .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .popup-body .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .popup-body .primary span {
@@ -520,7 +520,7 @@ Popup
 }
 
 .popup-body .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-body .secondary span {
@@ -539,11 +539,11 @@ Popup
   border-radius: 4px;
   border: none;
   margin-top: 20px;
-  background-color: #F16363;
+  background-color: #F55656;
 }
 
 .popup-body .delete:hover {
-  background-color: #DF4A53;
+  background-color: #dd4d57;
 }
 
 .popup-body input[type="file"] {
@@ -581,7 +581,7 @@ Popup
 }
 
 .popup-body .upload-file .file-button:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-body .upload-file .file-button span {
@@ -629,12 +629,12 @@ Popup
 .popup-footer .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .popup-footer .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .popup-footer .primary span {
@@ -663,7 +663,7 @@ Popup
 }
 
 .popup-footer .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-footer .secondary span {
@@ -706,7 +706,7 @@ Popup
   width: 7px;
   box-sizing: border-box;
   box-sizing: content-box;
-  background-color: #F16363;
+  background-color: #F55656;
 }
 
 .second {
