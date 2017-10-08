@@ -391,8 +391,11 @@ td{
 .prev-bills td:first-child{
   &:hover{
     color:$blue-1;
-    text-decoration: underline;
   }
+}
+
+.link{
+  @include link;
 }
 
 /* ==========================================================================

@@ -6,8 +6,10 @@ const cardData ={
 
 const billingData ={
   Months
-  :['December','November','October','February  <a>Trial</a>','January <a>Trial</a>'],
+  :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
   Ammounts :['3780.00','2827.00','3100.00','0.00','0.00'],
+  Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial', 'Free Trial'],
+  Download:['<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>'],
 }
 
 const usageData ={
@@ -17,8 +19,10 @@ const usageData ={
 }
 
 const creditData ={
-  Months:['September','January'],
+  Months:['Sep 15, 2017','Jan 15, 2017'],
   Ammounts :['3000.00','2000.00'],
+  Plan:['Free Trial', 'Free Trial'],
+    Download:['<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>'],
 }
 
 // creates cards
@@ -87,8 +91,10 @@ function tableData(){
   for(let i=0; i<billingData.Ammounts.length; i++){
     $('.prev-bills').append(
       `<tr>
-        <td><code>2017</code>${billingData.Months[i]}</td>
+        <td>${billingData.Months[i]}</td>
+        <td>${billingData.Plan[i]}</td>
         <td>$ ${billingData.Ammounts[i]}</td>
+        <td>${billingData.Download[i]}</td>
     </tr>`);
   }
 
@@ -96,8 +102,10 @@ function tableData(){
   for(let i=0; i<creditData.Ammounts.length; i++){
     $('.prev-creds').append(
       `<tr>
-        <td><code>2017</code>${creditData.Months[i]}</td>
-        <td><code>+</code>$ ${creditData.Ammounts[i]}</td>
+        <td>${creditData.Months[i]}</td>
+        <td>${creditData.Plan[i]}</td>
+        <td>$ ${creditData.Ammounts[i]}</td>
+        <td>${creditData.Download[i]}</td>
     </tr>`);
   }
 
@@ -107,6 +115,7 @@ function tableData(){
         <td> ${usageData.Title[i]}</td>
         <td> ${usageData.Numbers[i]}</td>
         <td> $ ${usageData.Ammounts[i]}</td>
+
     </tr>`);
   }
 }
@@ -433,11 +442,8 @@ $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
-  $('.card:eq(2) a').click(function(){
-    popupContent(1);
-    ex();
-  });
-  $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.card:eq(1) a').click(function(){popupContent(2)});
+  $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
+  $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
 });

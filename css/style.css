@@ -91,12 +91,12 @@ header {
 .actions .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .actions .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .actions .primary span {
@@ -126,7 +126,7 @@ header {
 }
 
 .actions .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .actions .secondary span {
@@ -184,7 +184,7 @@ Cards
 }
 
 .card:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .card span {
@@ -219,8 +219,8 @@ Cards
 }
 
 .card p code {
-  background-color: #EDF7FE;
-  color: #2282E3;
+  background-color: #e9f6fe;
+  color: #1f88de;
   border-radius: 3px;
   padding: 0 5px;
 }
@@ -338,7 +338,7 @@ select:hover {
 }
 
 select:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 select span {
@@ -405,7 +405,7 @@ select span {
 }
 
 .x-values p:hover::after {
-  border-color: #2068CA;
+  border-color: #1b6dc6;
 }
 
 .x-values p::before {
@@ -530,10 +530,10 @@ th, td {
 }
 
 th code, td code {
-  background-color: #EDF7FE;
+  background-color: #e9f6fe;
   border-radius: 2px;
   padding: 1px 5px;
-  color: #2282E3;
+  color: #1f88de;
   font-size: 12px;
   margin-right: 15px;
 }
@@ -555,7 +555,7 @@ th:nth-child(2), td:nth-child(2) {
 }
 
 tr:hover {
-  background-color: #F6FBFE;
+  background-color: #f4fbff;
   cursor: pointer;
 }
 
@@ -570,6 +570,16 @@ td {
 
 .prev-bills td:first-child:hover {
   color: #22A5F7;
+}
+
+.link {
+  color: #22A5F7;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+}
+
+.link:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -714,8 +724,8 @@ Popup
 }
 
 .popup-body h3 code {
-  background-color: #EDF7FE;
-  color: #2282E3;
+  background-color: #e9f6fe;
+  color: #1f88de;
   border-radius: 3px;
   padding: 0 5px;
 }
@@ -755,7 +765,7 @@ Popup
 }
 
 .popup-body .file-button:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-body .file-button span {
@@ -783,12 +793,12 @@ Popup
 .popup-body .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .popup-body .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .popup-body .primary span {
@@ -819,7 +829,7 @@ Popup
 }
 
 .popup-body .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-body .secondary span {
@@ -838,11 +848,11 @@ Popup
   border-radius: 4px;
   border: none;
   margin-top: 20px;
-  background-color: #F16363;
+  background-color: #F55656;
 }
 
 .popup-body .delete:hover {
-  background-color: #DF4A53;
+  background-color: #dd4d57;
 }
 
 .popup-body .money {
@@ -870,15 +880,15 @@ Popup
   flex-direction: "";
   padding: 8px 20px;
   line-height: 10px;
-  color: #18BE5F;
+  color: #31bb67;
   font-weight: 400;
   z-index: 1;
-  background-color: #EDFBF1;
+  background-color: #ebfaf0;
 }
 
 .error-ban {
-  color: #DF4A53;
-  background-color: #FEF1F1;
+  color: #dd4d57;
+  background-color: #feeeee;
 }
 
 .popup-footer {
@@ -911,12 +921,12 @@ Popup
 .popup-footer .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .popup-footer .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .popup-footer .primary span {
@@ -946,7 +956,7 @@ Popup
 }
 
 .popup-footer .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-footer .secondary span {
@@ -995,7 +1005,7 @@ input[type="file"] {
 }
 
 .upload-file .file-button:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .upload-file .file-button span {
