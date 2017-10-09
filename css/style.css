@@ -648,6 +648,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 .floater a {
   margin-left: 0;
   text-decoration: none;
+  color: #22272E;
 }
 
 .floater a:hover {
