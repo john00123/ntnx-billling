@@ -11,10 +11,6 @@ const billingData ={
   Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial', 'Free Trial'],
   Download:[
   '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
-  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
-  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
-  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
-  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
   ],
 }
 
@@ -99,7 +95,7 @@ function tableData(){
         <td>${billingData.Months[i]}</td>
         <td>${billingData.Plan[i]}</td>
         <td>$ ${billingData.Ammounts[i]}</td>
-        <td>${billingData.Download[i]}</td>
+        <td>${billingData.Download[0]}</td>
     </tr>`);
   }
 
@@ -110,7 +106,7 @@ function tableData(){
         <td>${creditData.Months[i]}</td>
         <td>${creditData.Plan[i]}</td>
         <td>$ ${creditData.Ammounts[i]}</td>
-        <td>${creditData.Download[i]}</td>
+        <td>${creditData.Download[0]}</td>
     </tr>`);
   }
 
