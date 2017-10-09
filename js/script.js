@@ -43,14 +43,16 @@ const popupData ={
     </div>
     `,
 
-    `<h3 style='margin-bottom:5px'>Disable Federated Authentication</h3>
+    `<h3 style='margin-bottom:5px'><input type="checkbox" checked="checked"> &nbsp;Federated Authentication</h3>
     <p>Allows login with you company Active Directory credentials</p>
-    <button class="primary">Disable</button>
     <div class='separator'></div>
     <h3 style='margin-bottom:5px'>Remove ADFS</h3>
     <p>Remove AD for this account, this will render all access for the AD users and groups invalid type 'DELETE' to proceed.</p>
-    <input type="text" class='confirm-deletion' id='remove'>
-    <button class="primary delete">Remove</button>`,
+    <div class='upload-file' style='margin-top:20px;'>
+      <input class='path' type='text'></input>
+      <button class="primary delete">Remove</button>
+    </div>
+    `,
 
     `
     <h3>Assign <code>Comma-separated</code> groups to their access tiers.</h3>
@@ -68,7 +70,7 @@ const popupData ={
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary upload">Upload</button>`,
-    `<button class="secondary save">Done</button>`,
+    ``,
     `<button class="primary back">Assign</button>`
   ]
 }

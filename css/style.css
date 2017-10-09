@@ -209,9 +209,11 @@ Cards
 }
 
 .card p code, .card p code {
-  background-color: #ebfaf0;
+  content: 'Active';
+  border: 1px solid #68dc8e;
   color: #31bb67;
   border-radius: 3px;
+  font-size: 12px;
   padding: 0 5px;
   margin-left: 5px;
 }
@@ -234,11 +236,12 @@ Cards
 
 .card .enable-mult-auth::after {
   content: 'Active';
-  background-color: #ebfaf0;
+  border: 1px solid #68dc8e;
   color: #31bb67;
   border-radius: 3px;
+  font-size: 12px;
   padding: 0 5px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .card-title {
@@ -536,10 +539,11 @@ Popup
 }
 
 .popup-body .delete {
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   border: none;
-  margin-top: 20px;
   background-color: #F55656;
+  margin-top: 0 !important;
+  width: 150px;
 }
 
 .popup-body .delete:hover {
@@ -591,11 +595,11 @@ Popup
   line-height: 9pt;
 }
 
-.popup-body .upload-file input.path {
-  margin: 0;
+.popup-body .upload-file .path {
+  margin: 0 !important;
   display: flex;
   flex-grow: 1;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px !important;
 }
 
 .popup-footer {

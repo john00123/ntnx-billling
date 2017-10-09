@@ -90,9 +90,11 @@ Cards
     margin-top: 12px;
     color: $font-color-2;
     code, code{
-      background-color: $light-green-3;
+      content: 'Active';
+      border: 1px solid $green-2;
       color:$dark-green-3;
       border-radius: 3px;
+      font-size: 12px;
       padding: 0 5px;
       margin-left: 5px;
     }
@@ -108,11 +110,12 @@ Cards
   }
   .enable-mult-auth::after{
     content: 'Active';
-    background-color: $light-green-3;
+    border: 1px solid $green-2;
     color:$dark-green-3;
     border-radius: 3px;
+    font-size: 12px;
     padding: 0 5px;
-    margin-left: 5px;
+    margin-left: 10px;
   }
 }
 
@@ -286,10 +289,11 @@ Popup
   }
 
   .delete{
-    border-radius: 4px;
+    border-radius: 0 4px 4px 0;
     border: none;
-    margin-top: 20px;
     background-color: $red-1;
+    margin-top: 0 !important;
+    width: 150px;
     &:hover{
       background-color: $dark-red-3;
     }
@@ -311,11 +315,11 @@ Popup
       border-color: $border-color-1;
     }
 
-    input.path{
-      margin: 0;
+    .path{
+      margin: 0 !important;
       display: flex;
       flex-grow: 1;
-      border-radius: 4px 0 0 4px;
+      border-radius: 4px 0 0 4px !important;
     }
   }
 }
