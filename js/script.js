@@ -1,7 +1,7 @@
 const cardData ={
   cardInfo : ['Current plan','Payment Method','Tax documents','Available Credit'],
   cardBody :['Pay as you go','Credit Card','221-222-333-44', '$5000.00'],
-  cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Redeem code'],
+  cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Updates every end of billing cycle'],
 }
 
 const billingData ={
