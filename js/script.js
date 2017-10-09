@@ -9,7 +9,13 @@ const billingData ={
   :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
   Ammounts :['3780.00','2827.00','3100.00','0.00','0.00'],
   Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial', 'Free Trial'],
-  Download:['<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>'],
+  Download:[
+  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
+  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
+  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
+  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
+  '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
+  ],
 }
 
 const usageData ={
@@ -22,7 +28,7 @@ const creditData ={
   Months:['Sep 15, 2017','Jan 15, 2017'],
   Ammounts :['3000.00','2000.00'],
   Plan:['Free Trial', 'Free Trial'],
-    Download:['<a class=\'link\'>Download</a>','<a class=\'link\'>Download</a>'],
+  Download:['<a class="link">Download</a>','<a class="link">Download</a>'],
 }
 
 // creates cards
@@ -54,7 +60,6 @@ function cardsData() {
           </div>`
       );
     }
-
     cards--;
     index++;
   }
@@ -127,9 +132,7 @@ const popupData ={
     'Add Funds',
     'Tax Documents',
     'Payment Method',
-    'Change Password',
-    'Setup Active Directory',
-    'Active Directory Options'
+    'Change Plan',
   ],
 
   body: [
@@ -141,7 +144,10 @@ const popupData ={
     `,
 
     //tax data
-    `<h3 class='initial-tax'>Nutanix is required to collect sales tax documents.</h3>
+    `<h1 class='initial-tax'>
+    Nutanix is required to collect sales tax in some US states.</h1>
+
+    <p style='margin-bottom:20px;'> If you're tax exempt in a particular state, please attach an electronic copy of your valid tax exemption certificate authorized by the appropriate taxing authority.</p>
 
     <label id='tax-label'for="tax">Tax Document number</label>
     <input type="text" id="tax" placeholder='000 000 0000' onkeypress="return event.charCode >= 48 && event.charCode <= 57" style='margin-bottom:20px'/>
@@ -157,16 +163,11 @@ const popupData ={
 
     //payment method
     `
-
-
     <label for="other">Card Number</label>
     <input type="text"  id='old-pswd' ">
 
-
     <label for="other">Card Holder's Name</label>
     <input type="text" id='old-pswd'>
-
-
 
     <div class='upload-file' style='margin:0 0 30px 0; padding-bottom:30px; border-bottom:1px solid #F2F4F6;'>
       <div class='info-pair'>
@@ -220,7 +221,6 @@ const popupData ={
     <input type="text"  id='old-pswd'>
     </div>
 
-
     <div class='info-pair' style='margin-left:15px;'>
     <label for='month'>State</label>
     <input type="text"  id='old-pswd' >
@@ -237,51 +237,49 @@ const popupData ={
     </div>
     </div>
 
+    `,
+
+    // change plan
     `
+    <div class='upload-file plan-change'>
+      <div class='plan pay-as-you-go selected'>Pay as you go</div>
+      <div class='plan min-commit'>Minimum commitment</div>
+    </div>
+    <div class="section1">
+      <h1> Pay as you go plan  <code style="  margin-left: 10px;"> Current Plan</code></h1>
+      <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
 
+      <p class='expiration-info'>
+      This plan is renewed monthtly on every 15th. Changing plan will take effect after billing cycle.
+      </p>
+    </div>
+    <div class="section2" style='display:none;'>
+      <h1> Minimum Commitment</h1>
+      <p style="margin-bottom:20px;">This is a fixed budget plan. It allows to controlled consumption.</p>
 
-    ,
-
-    `<label for="other">Name</label>
-    <input type="text" value='Lipa Dua' id='old-pswd'>
-    <label for="other">Email</label>
-    <input type="email" value='dualipa@nutanix.com' id='new-pswd'>
-    <label for="other">Phone Number</label>
-    <input type="Phone" value='(408) 000 0000' id='retype'>`,
-
-    `<label for="other">Previous Password</label>
-    <input type="password" id='old-pswd'>
-    <label for="other">New Password</label>
-    <input type="password" id='new-pswd'>
-    <label for="other">Retype new password</label>
-    <input type="password" id='retype'>`,
-
-    `<h3 style='margin-bottom:5px'>Disable Federated Authentication</h3>
-    <p>Allows login with you company Active Directory credentials</p>
-    <button class="primary">Disable</button>
-    <div class='separator'></div>
-    <h3 style='margin-bottom:5px'>Remove ADFS</h3>
-    <p>Remove AD for this account, this will render all access for the AD users and groups invalid type 'DELETE' to proceed.</p>
-    <input type="text" class='confirm-deletion' id='remove'>
-    <button class="primary delete">Remove</button>`
+      <label>Select Term & ammount</label><br>
+      <div class='upload-file'>
+        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00"></input>
+        <select class='term'>
+        <option>3 years</option>
+        <option>1 year</option>
+        </select>
+      </div>
+      <input type="checkbox" checked="checked"/><kbd> Auto renew </kbd>
+    </div>
+      `,
   ],
 
   footer:[
     `<button class="primary redeem">Redeem</button>`,
 
-    `<div class='tax-block'>
-    <input type="checkbox" id='exempted'>
-    <p>I'm exempt from state taxes.</p>
-    </div><button class="primary save">Save</button>`,
+    `<button class="primary save">Save</button>`,
 
     `<button class="secondary save">Switch to invoice</button>
     <button class="primary save">Save</button>`,
 
-    `<button class="primary save">Save</button>`,
-
-    `<button class="primary save upload">Upload</button>`,
-
-    `<button class="secondary save">Done</button>`,
+    `<button class="secondary save">Cancel</button>
+    <button class="primary save" style='opacity:0.3;'>Save Changes</button>`,
   ]
 }
 
@@ -329,29 +327,14 @@ function popupContent(i){
   }
   popAnimate();
   countNumbers();
-}
-
-function pdfContent(){
-  $('body').append(
-  `<div class='pdf-chrome'>
-  <div class="popup-header pdf-preview"> PDF Previewer</div>
-  <object class='invoice' data="pdf/004174.pdf" type="application/pdf">
-  <p>Alternative text - include a link <a href="/pdf/004174.pdf">to the PDF!</a></p>
-  </object>
-  </div>`
-);
-  window.scroll(0, 0);
-  $('html').css('overflow','hidden');
-  $('.pdf-preview').click(function(){
-    $('.pdf-chrome').remove();
-    $('html').css('overflow','');
-  })
+  $('.plan').click(accountChange);
 }
 
 $(document).keyup(function(e) {
   if (e.keyCode === 27) $('.popup-header').click();
   if (e.keyCode === 13) $('.primary').click();
 });
+
 
 //counter
 function countNumbers(){
@@ -405,7 +388,6 @@ function countNumbers(){
       },3000);
     }
   });
-
 }
 
 function uploadPath(){
@@ -430,6 +412,15 @@ function ex(){
 });
 }
 
+function accountChange(){
+  $('.min-commit, .pay-as-you-go').toggleClass('selected');
+  $('.section1, .section2').toggle();
+  $("input[type='number']").change(function(){
+    $('.save').css('opacity','1');
+  });
+}
+
+
 function checkoff(){
 $('.initial-tax').html(`Nutanix is required to collect sales tax documents.`);
 $('#tax, #tax-label, .consult').show()
@@ -442,6 +433,7 @@ $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
+  $('.card:eq(0) a').click(function(){popupContent(3)});
   $('.card:eq(1) a').click(function(){popupContent(2)});
   $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
   $('.card:eq(3) a').click(function(){popupContent(0)});

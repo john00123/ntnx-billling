@@ -527,12 +527,46 @@ Popup
     }
   }
 
+
+
+  .plan-change{
+    margin-bottom: 30px;
+
+  }
+
+  .plan{
+    @include flex(center, center, row);
+    width: 50%;
+    @include secondary;
+    &:nth-child(1){
+      border-radius: 4px 0 0 4px;
+    }
+    &:nth-child(2){
+      border-left:none;
+      border-radius:  0 4px 4px 0;
+    }
+  }
+
+  code{
+    background-color: $light-blue-3;
+    color:$dark-blue-3;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 12px;
+    text-align: left;
+    margin: 0 auto 10px 0;
+  }
+
   .money{
     font:$h1;
     font-weight: 200;
+    color:$font-color-1;
     margin-top: 10px;
     margin-bottom: 40px;
-
+    background: none;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
     &::before{
       content: '$';
     }
@@ -541,7 +575,41 @@ Popup
     }
   }
 
+  .selected{
+    color: $font-color-3;
+    border-color: $border-color-2;
+    background-color: $background-color-3;
+    pointer-events: none;
+  }
+
+  .term{
+    @include secondary;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding:0;
+    height: 32px;
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    line-height: 30px;
+    padding-left: 10px;
+    width: 30%;
+  }
+  input[type="number"], .term {
+    margin-bottom: 10px !important;
+  }
+  .expiration-info{
+    @include secondary;
+    color:$font-color-1;
+    margin-top: 30px;
+    pointer-events: none;
+    line-height: 1.5;
+    background-color: $background-color-3;
+    border: none;
+    padding:20px;
+
+  }
 }
+
 
 .banner{
   @include size(40px, 100%);
@@ -646,41 +714,10 @@ input[type="file"]{
 }
 
 
-/* ==========================================================================
-pdf
-========================================================================== */
 
-.pdf-chrome{
-  position: absolute;
-  @include size(100vh, 100%);
-  top: 0;
-  left: 0;
-  z-index: 200;
-  overflow:hidden;
-  background-color: white;
-}
 
-.pdf-preview{
-  // background-color: $dark-grey-1;
-  height: 50px;
-  border-bottom: none;
-  // color:white;
-  border-radius: 0;
 
-  // &::before, &::after{
-  // background-color: white;
-  // }
-  //
-  // &:hover::before, &:hover::after{
-  //   background-color:$light-grey-1;
-  // }
-}
 
-.invoice{
-  height: calc(100% - 50px);
-  width: 100%;
-  background-color: white;
-}
 /* ==========================================================================
 Animation
 ========================================================================== */

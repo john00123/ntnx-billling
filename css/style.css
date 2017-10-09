@@ -855,11 +855,71 @@ Popup
   background-color: #dd4d57;
 }
 
+.popup-body .plan-change {
+  margin-bottom: 30px;
+}
+
+.popup-body .plan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 50%;
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+}
+
+.popup-body .plan:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.popup-body .plan:active {
+  color: #91d2fb;
+}
+
+.popup-body .plan span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.popup-body .plan:nth-child(1) {
+  border-radius: 4px 0 0 4px;
+}
+
+.popup-body .plan:nth-child(2) {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+.popup-body code {
+  background-color: #e9f6fe;
+  color: #1f88de;
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-size: 12px;
+  text-align: left;
+  margin: 0 auto 10px 0;
+}
+
 .popup-body .money {
   font: 200 29px/20px "nutanix_soft", san-serif;
   font-weight: 200;
+  color: #22272E;
   margin-top: 10px;
   margin-bottom: 40px;
+  background: none;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
 }
 
 .popup-body .money::before {
@@ -868,6 +928,87 @@ Popup
 
 .popup-body .money::after {
   content: '.00';
+}
+
+.popup-body .selected {
+  color: #7C8D9F;
+  border-color: #D5DAE0;
+  background-color: #F2F4F6;
+  pointer-events: none;
+}
+
+.popup-body .term {
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+  height: 32px;
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+  line-height: 30px;
+  padding-left: 10px;
+  width: 30%;
+}
+
+.popup-body .term:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.popup-body .term:active {
+  color: #91d2fb;
+}
+
+.popup-body .term span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.popup-body input[type="number"], .popup-body .term {
+  margin-bottom: 10px !important;
+}
+
+.popup-body .expiration-info {
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+  color: #22272E;
+  margin-top: 30px;
+  pointer-events: none;
+  line-height: 1.5;
+  background-color: #F2F4F6;
+  border: none;
+  padding: 20px;
+}
+
+.popup-body .expiration-info:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.popup-body .expiration-info:active {
+  color: #91d2fb;
+}
+
+.popup-body .expiration-info span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
 }
 
 .banner {
@@ -1058,33 +1199,6 @@ input[type="file"] {
 
 .disappear {
   animation: disappear 600ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-/* ==========================================================================
-pdf
-========================================================================== */
-.pdf-chrome {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  overflow: hidden;
-  background-color: white;
-}
-
-.pdf-preview {
-  height: 50px;
-  border-bottom: none;
-  border-radius: 0;
-}
-
-.invoice {
-  height: calc(100% - 50px);
-  width: 100%;
-  background-color: white;
 }
 
 /* ==========================================================================
