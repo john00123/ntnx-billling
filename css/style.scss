@@ -387,6 +387,11 @@ td:last-child{
   position: relative;
   right: 15px;
 }
+
+.tusage td:last-child{
+  right: 0;
+}
+
 td kbd{
   margin-left: 10px;
   color:$grey-2;
@@ -435,6 +440,7 @@ td kbd{
 
   z-index: 3000;
   a {
+    margin-left: 0;
     text-decoration: none;
     &:hover{
       color:$blue-1;
