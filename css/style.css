@@ -92,12 +92,12 @@ header {
 .actions .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .actions .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .actions .primary span {
@@ -109,6 +109,47 @@ header {
 
 .actions .primary:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.actions .manage {
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+  transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: none;
+  margin-right: 10px;
+}
+
+.actions .manage:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.actions .manage:active {
+  color: #91d2fb;
+}
+
+.actions .manage span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.actions .manage:hover {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.actions .manage span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
 }
 
 .actions select {
@@ -126,8 +167,9 @@ header {
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
   font-size: 14px;
-  height: 34px;
+  height: 32px;
   width: 78px;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -137,7 +179,7 @@ header {
 }
 
 .actions select:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .actions select span {
@@ -216,7 +258,7 @@ th, td {
 }
 
 th code, td code {
-  background-color: #EDF7FE;
+  background-color: #e9f6fe;
   border-radius: 2px;
   padding: 1px 5px;
   color: #22A5F7;
@@ -237,7 +279,7 @@ th:last-child, td:last-child {
 }
 
 tr:hover {
-  background-color: #F6FBFE;
+  background-color: #f4fbff;
   cursor: pointer;
 }
 
@@ -435,8 +477,8 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 }
 
 .popup-body h3 code {
-  background-color: #EDF7FE;
-  color: #2282E3;
+  background-color: #e9f6fe;
+  color: #1f88de;
   padding: 0 5px;
   border-radius: 2px;
 }
@@ -473,12 +515,12 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 .popup-body .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .popup-body .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .popup-body .primary span {
@@ -509,7 +551,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 }
 
 .popup-body .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-body .secondary span {
@@ -528,11 +570,11 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   border-radius: 4px;
   border: none;
   margin-top: 20px;
-  background-color: #F16363;
+  background-color: #F55656;
 }
 
 .popup-body .delete:hover {
-  background-color: #DF4A53;
+  background-color: #dd4d57;
 }
 
 .popup-body input[type="file"] {
@@ -570,7 +612,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 }
 
 .popup-body .upload-file .file-button:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-body .upload-file .file-button span {
@@ -618,12 +660,12 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 .popup-footer .primary:hover {
   color: #FFFFFF;
   cursor: pointer;
-  background-color: #2282E3;
+  background-color: #1f88de;
 }
 
 .popup-footer .primary:active {
   color: #FFFFFF;
-  background-color: #2068CA;
+  background-color: #1b6dc6;
 }
 
 .popup-footer .primary span {
@@ -652,7 +694,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 }
 
 .popup-footer .secondary:active {
-  color: #8FD1FE;
+  color: #91d2fb;
 }
 
 .popup-footer .secondary span {
@@ -695,7 +737,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   width: 7px;
   box-sizing: border-box;
   box-sizing: content-box;
-  background-color: #F16363;
+  background-color: #F55656;
 }
 
 .second {
