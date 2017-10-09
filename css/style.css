@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font: 400 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
@@ -563,6 +564,42 @@ td {
   white-space: nowrap;
 }
 
+td:last-child {
+  margin-left: -50px;
+  position: relative;
+  right: 15px;
+}
+
+td kbd {
+  margin-left: 10px;
+  color: #7C8D9F;
+  position: absolute;
+  font-size: 11px;
+  height: 8px;
+  width: 20px;
+  right: 5px;
+}
+
+td kbd::before {
+  color: #7C8D9F;
+  content: '•';
+  position: absolute;
+  top: -4px;
+}
+
+td kbd::after {
+  color: #7C8D9F;
+  content: '•';
+  position: absolute;
+  top: 4px;
+  right: 0px;
+}
+
+td kbd:hover, td kbd:hover::before, td kbd:hover::after {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
 .table-header:hover {
   background-color: white;
   cursor: initial;
@@ -570,6 +607,64 @@ td {
 
 .prev-bills td:first-child:hover {
   color: #22A5F7;
+}
+
+.floater {
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #22272E;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  margin: 0;
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  position: absolute;
+  top: 24px;
+  right: -15px;
+  z-index: 3000;
+}
+
+.floater:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.floater:active {
+  color: #91d2fb;
+}
+
+.floater span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.floater a {
+  text-decoration: none;
+}
+
+.floater a:hover {
+  color: #22A5F7;
+}
+
+.floater:hover {
+  color: #22A5F7;
+}
+
+.floater::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  transform: rotate(45deg) scale(0.8);
+  border-radius: 1.5px;
+  right: 10px;
+  background-color: white;
+  box-shadow: -1px -1px 0 0 #D5DAE0;
+  height: 10px;
+  width: 10px;
+  display: block;
 }
 
 .link {

@@ -8,7 +8,7 @@ const billingData ={
   Months
   :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
   Ammounts :['3780.00','2827.00','3100.00','0.00','0.00'],
-  Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial', 'Free Trial'],
+  Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial plan', 'Free Trial plan'],
   Download:[
   '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
   ],
@@ -23,7 +23,7 @@ const usageData ={
 const creditData ={
   Months:['Sep 15, 2017','Jan 15, 2017'],
   Ammounts :['3000.00','2000.00'],
-  Plan:['Free Trial', 'Free Trial'],
+  Plan:['Free Trial plan', 'Free Trial plan'],
   Download:['<a class="link">Download</a>','<a class="link">Download</a>'],
 }
 
@@ -94,7 +94,7 @@ function tableData(){
       `<tr>
         <td>${billingData.Months[i]}</td>
         <td>${billingData.Plan[i]}</td>
-        <td>$ ${billingData.Ammounts[i]}<kbd>•</kbd></td>
+        <td>$ ${billingData.Ammounts[i]}<kbd class='download-dropdown'>•</kbd></td>
 
     </tr>`);
   }
@@ -105,7 +105,7 @@ function tableData(){
       `<tr>
         <td>${creditData.Months[i]}</td>
         <td>${creditData.Plan[i]}</td>
-        <td>$ ${creditData.Ammounts[i]}<kbd>•</kbd></td>
+        <td>$ ${creditData.Ammounts[i]}<kbd class='download-dropdown'>•</kbd></td>
     </tr>`);
   }
 
@@ -118,6 +118,7 @@ function tableData(){
 
     </tr>`);
   }
+  $('.download-dropdown').click(downloadPDF);
 }
 
 // Popup
@@ -278,6 +279,8 @@ const popupData ={
   ]
 }
 
+
+
 function popAnimate(){
   window.scroll(0, 0);
   $('.overlay').addClass('show');
@@ -298,6 +301,8 @@ function popAnimate(){
   );
 }
 
+
+//popup
 function popupContent(i){
   if(i==2){
     $('body').append(
@@ -424,6 +429,22 @@ $('.save').click(function(){
 });
 }
 
+function downloadPDF(){
+  $('.floater').remove();
+  $(this).append(
+    `<div class='secondary floater'>
+    <a href=''>Download PDF</a>
+    </div>`
+  );
+  event.stopPropagation();
+  $(document).on("click", function(event)
+  {$('.floater').remove();});
+
+  $('tr').mouseleave(function(){
+      $('.floater').remove();
+  });
+}
+
 $(document).ready(function() {
   cardsData();
   chartData();
@@ -433,4 +454,5 @@ $(document).ready(function() {
   $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
   $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
+
 });
