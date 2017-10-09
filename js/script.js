@@ -94,8 +94,8 @@ function tableData(){
       `<tr>
         <td>${billingData.Months[i]}</td>
         <td>${billingData.Plan[i]}</td>
-        <td>$ ${billingData.Ammounts[i]}</td>
-        <td>${billingData.Download[0]}</td>
+        <td>$ ${billingData.Ammounts[i]}<kbd>•</kbd></td>
+
     </tr>`);
   }
 
@@ -105,8 +105,7 @@ function tableData(){
       `<tr>
         <td>${creditData.Months[i]}</td>
         <td>${creditData.Plan[i]}</td>
-        <td>$ ${creditData.Ammounts[i]}</td>
-        <td>${creditData.Download[0]}</td>
+        <td>$ ${creditData.Ammounts[i]}<kbd>•</kbd></td>
     </tr>`);
   }
 
