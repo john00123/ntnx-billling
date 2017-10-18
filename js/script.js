@@ -159,9 +159,14 @@ const popupData ={
 
     //payment method
     `
-    <h4 style='align-self:left; margin-bottom:10px;'>sotheming</h4>
-    <p style='align-self:left;'>There is some text here </p>
-    <button class="secondary save">Switch to invoice</button>
+    <h4 style='align-self:left; margin-bottom:10px;'>
+    <input type='checkbox' id='invoice-only'
+    style='margin-right:5px;'></input>
+    Use invoice billing</h4>
+
+    <p style='align-self:left; margin-top:10px;'>This service is only available to our enterprise level clients, and it happens mostly offline.</p><br>
+    <p>Once you saved we will send a request for a Sales Representative to contact you back.<a class='link' style='margin-left:10px;'>Learn more</a></p>
+
     <div class='separator'></div>
     <label for="other">Card Number</label>
     <input type="text"  id='old-pswd' ">
@@ -282,8 +287,7 @@ const popupData ={
   ]
 }
 
-
-
+//popup animation
 function popAnimate(){
   window.scroll(0, 0);
   $('.overlay').addClass('show');
@@ -331,6 +335,7 @@ function popupContent(i){
   popAnimate();
   countNumbers();
   $('.plan').click(accountChange);
+  invoiceOnly();
 }
 
 $(document).keyup(function(e) {
@@ -432,6 +437,9 @@ $('.save').click(function(){
 });
 }
 
+
+//downloadPDF
+
 function downloadPDF(){
   $('.floater').remove();
   $(this).append(
@@ -448,14 +456,37 @@ function downloadPDF(){
   });
 }
 
+
+//invoice only
+
+function invoiceOnly(){
+  $('#invoice-only').change(function(){
+    if($(this).is(':checked')){
+      $('.separator').nextAll().fadeTo( "fast", 0.3 );
+      $('.save').addClass('change');
+      $('.save').removeClass('save');
+
+      $('.change').click(function(){
+       alert('We have sent a request to change your payment to invoice.')
+      });
+    }
+    else{
+      $('.separator').nextAll().fadeTo( "fast", 1 );
+    }
+  });
+
+
+}
+
 $(document).ready(function() {
+  popupContent(2);
   cardsData();
   chartData();
   tableData();
+
   $('.card:eq(0) a').click(function(){popupContent(3)});
   $('.card:eq(1) a').click(function(){popupContent(2)});
   $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
   $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
-
 });

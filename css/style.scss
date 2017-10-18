@@ -568,7 +568,7 @@ Popup
   }
 
   .file-button{
-    @include size(32px, 40%);
+    @include size(32px, auto);
     @include secondary;
     border-radius: 0 4px 4px 0;
     flex-shrink: 0;
@@ -744,9 +744,8 @@ input[type="file"]{
   flex-shrink: 0;
   @include flex(center, space-between, row);
   .file-button{
-
     @include secondary;
-    @include size(32px, 121px);
+    @include size(32px, auto);
     border-radius: 0 4px 4px 0;
     border-left:none;
     border-color: $border-color-1;
