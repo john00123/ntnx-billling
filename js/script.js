@@ -464,21 +464,19 @@ function invoiceOnly(){
     if($(this).is(':checked')){
       $('.separator').nextAll().fadeTo( "fast", 0.3 );
       $('.save').addClass('change');
-      $('.save').removeClass('save');
+      $('.change').removeClass('save');
 
-      $('.change').click(function(){
+      $('.change').off('click').on('click',function(){
         $('.popup').css('animation','layer 600ms forwards');
         $('.popup').addClass('second');
-          layer2();
+        layer2();
         });
-      });
-    }
+      }
+
     else{
       $('.separator').nextAll().fadeTo( "fast", 1 );
     }
   });
-
-
 }
 
 
@@ -488,8 +486,8 @@ function layer2(){
   $('body').append(
     `<div class="overlay overlay2" style='background-color:transparent'>
       <div class="popup layer2" style='opacity:0'>
-        <div class="popup-header popup-header2">Confirm change</div>
-        <div class="popup-body">Have have sent a request for you payment method change</div>
+        <div class="popup-header popup-header2">Confirmation</div>
+        <div class="popup-body"><p style='color: #22272E'>Have have sent a request for you payment method change, your old payment method will remain active until the change has been processed.</p> </div>
         <div class="popup-footer"><button class="secondary save">Close</button></div>
       </div>
     </div>`

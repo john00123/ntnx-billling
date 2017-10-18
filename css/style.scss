@@ -14,6 +14,11 @@ body {
   overflow-x: hidden;
 }
 
+
+button{
+  outline: none;
+}
+
 h4{
   font:$h3-alt;
   line-height: 9pt;
@@ -792,7 +797,20 @@ input[type="file"]{
 
 
 
-
+.second{
+  &::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 4px;
+  }
+  animation: layer 600ms $animation 100ms forwards;
+}
 
 
 /* ==========================================================================
