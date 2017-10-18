@@ -467,9 +467,10 @@ function invoiceOnly(){
       $('.save').removeClass('save');
 
       $('.change').click(function(){
-
-
-       alert('We have sent a request to change your payment to invoice.')
+        $('.popup').css('animation','layer 600ms forwards');
+        $('.popup').addClass('second');
+          layer2();
+        });
       });
     }
     else{
