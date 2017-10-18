@@ -467,6 +467,8 @@ function invoiceOnly(){
       $('.save').removeClass('save');
 
       $('.change').click(function(){
+
+
        alert('We have sent a request to change your payment to invoice.')
       });
     }
@@ -477,6 +479,30 @@ function invoiceOnly(){
 
 
 }
+
+
+//Layer 2
+
+function layer2(){
+  $('body').append(
+    `<div class="overlay overlay2" style='background-color:transparent'>
+      <div class="popup layer2" style='opacity:0'>
+        <div class="popup-header popup-header2">Confirm change</div>
+        <div class="popup-body">Have have sent a request for you payment method change</div>
+        <div class="popup-footer"><button class="secondary save">Close</button></div>
+      </div>
+    </div>`
+  );
+  popAnimate();
+  $('.back, .popup-header2').click(function(){
+    $('.layer2').addClass('disappear');
+    $('.popup:not(.layer2)').css('animation','reverse-layer 600ms forwards');
+    $('.popup:not(.layer2)').removeClass('second');
+    $('.layer2, .overlay2').remove();
+  });
+}
+
+
 
 $(document).ready(function() {
   popupContent(2);
