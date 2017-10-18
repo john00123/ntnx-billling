@@ -159,6 +159,10 @@ const popupData ={
 
     //payment method
     `
+    <h4 style='align-self:left; margin-bottom:10px;'>sotheming</h4>
+    <p style='align-self:left;'>There is some text here </p>
+    <button class="secondary save">Switch to invoice</button>
+    <div class='separator'></div>
     <label for="other">Card Number</label>
     <input type="text"  id='old-pswd' ">
 
@@ -271,8 +275,7 @@ const popupData ={
 
     `<button class="primary save">Save</button>`,
 
-    `<button class="secondary save">Switch to invoice</button>
-    <button class="primary save">Save</button>`,
+    `<button class="primary save">Save</button>`,
 
     `<button class="secondary save">Cancel</button>
     <button class="primary save" style='opacity:0.3;'>Save Changes</button>`,
