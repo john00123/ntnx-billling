@@ -470,6 +470,10 @@ function invoiceOnly(){
         $('.popup').css('animation','layer 600ms forwards');
         $('.popup').addClass('second');
         layer2();
+        $('.confirm').click(function(){
+          $('.card-body:eq(1) h4').text('Invoice');
+          $('.card-body:eq(1) p').text('Request processing');
+        });
         });
       }
 
@@ -487,8 +491,8 @@ function layer2(){
     `<div class="overlay overlay2" style='background-color:transparent'>
       <div class="popup layer2" style='opacity:0'>
         <div class="popup-header popup-header2">Confirmation</div>
-        <div class="popup-body"><p style='color: #22272E'>Have have sent a request for you payment method change, your old payment method will remain active until the change has been processed.</p> </div>
-        <div class="popup-footer"><button class="secondary save">Close</button></div>
+        <div class="popup-body"><p style='color: #22272E'>We have sent a request for you payment method change, your old payment method will remain active until the change has been processed.</p> </div>
+        <div class="popup-footer"><button class="secondary save confirm" style='margin-right:0;'>Close</button></div>
       </div>
     </div>`
   );
@@ -504,12 +508,13 @@ function layer2(){
 
 
 $(document).ready(function() {
-  popupContent(2);
   cardsData();
   chartData();
   tableData();
-
-  $('.card:eq(0) a').click(function(){popupContent(3)});
+  $('.card:eq(0) a').click(function(){
+    popupContent(3)
+    $('.popup-body').css('min-height','300px');
+  });
   $('.card:eq(1) a').click(function(){popupContent(2)});
   $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
   $('.card:eq(3) a').click(function(){popupContent(0)});
