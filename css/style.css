@@ -74,6 +74,7 @@ header {
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
+  outline: none;
   margin-right: 10px;
 }
 
@@ -104,6 +105,7 @@ header {
   text-decoration: none;
   background-color: #FFFFFF;
   margin: 0;
+  outline: none;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
   margin-bottom: 0;
@@ -159,6 +161,7 @@ Cards
   text-decoration: none;
   background-color: #FFFFFF;
   margin: 0;
+  outline: none;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
   width: calc(50% - 10px);
@@ -481,6 +484,7 @@ Popup
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
+  outline: none;
   margin-top: 20px;
 }
 
@@ -514,6 +518,7 @@ Popup
   text-decoration: none;
   background-color: #FFFFFF;
   margin: 0;
+  outline: none;
   margin-top: 20px;
 }
 
@@ -571,6 +576,7 @@ Popup
   text-decoration: none;
   background-color: #FFFFFF;
   margin: 0;
+  outline: none;
   height: 32px;
   width: 121px;
   box-sizing: border-box;
@@ -625,6 +631,7 @@ Popup
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
+  outline: none;
   border: 1px solid transparent;
   height: 32px;
   margin-left: 10px;
@@ -657,6 +664,7 @@ Popup
   text-decoration: none;
   background-color: #FFFFFF;
   margin: 0;
+  outline: none;
   height: 32px;
   box-sizing: border-box;
 }
@@ -725,7 +733,7 @@ Popup
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
 

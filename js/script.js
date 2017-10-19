@@ -56,11 +56,22 @@ const popupData ={
 
     `
     <h3>Assign <code>Comma-separated</code> groups to their access tiers.</h3>
-    <label for="#tags">Administrative access</label>
-    <input type="tags" value='administration, IT, marketing' placeholder="Example: group" id='tags'>
-    <label for="other">User access</label>
-    <input type="text" placeholder="Example: group2" id='users-input'>
-    <p id="out"></p>
+    <div class='upload-file'>
+      <div class='pair' style='margin-right:10px;'>
+        <label for="#tags">Xi Admin</label>
+        <input type="textbox"
+          style='margin-top:10px;'
+          value='administration, IT, marketing' placeholder="Example: group"
+          id='tags'>
+      </div>
+      <div class='pair' style='margin-left:10px;'>
+        <label for="other">Xi User</label>
+        <input type="text"
+          style='margin-top:10px;'
+          placeholder="Example: group"
+          id='users-input'>
+      </div>
+    </div>
     `,
   ],
 
