@@ -7,7 +7,7 @@ const cardData ={
 const billingData ={
   Months
   :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
-  Ammounts :['3780.00','2827.00','3100.00','0.00','0.00'],
+  Ammounts :['5200.00','2827.00','3100.00','0.00','0.00'],
   Plan:['Min commitment', 'Min commitment','Min commitment', 'Free Trial plan', 'Free Trial plan'],
   Download:[
   '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
