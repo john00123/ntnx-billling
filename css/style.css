@@ -1058,45 +1058,6 @@ Popup
   margin-bottom: 10px !important;
 }
 
-.popup-body .expiration-info {
-  border: 1px solid #D5DAE0;
-  border-radius: 4px;
-  padding: 11px 15px;
-  color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  text-decoration: none;
-  background-color: #FFFFFF;
-  margin: 0;
-  outline: none;
-  color: #22272E;
-  margin-bottom: 30px;
-  line-height: 1.5;
-  background-color: #F2F4F6;
-  border: none;
-  padding: 20px;
-}
-
-.popup-body .expiration-info:hover {
-  color: #22A5F7;
-  cursor: pointer;
-}
-
-.popup-body .expiration-info:active {
-  color: #91d2fb;
-}
-
-.popup-body .expiration-info span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
-.popup-body .expiration-info:hover {
-  color: initial;
-  cursor: initial;
-}
-
 .banner {
   height: 40px;
   width: 100%;

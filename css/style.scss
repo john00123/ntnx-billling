@@ -649,11 +649,6 @@ Popup
       content: '.00';
     }
   }
-
-
-
-
-
   .term{
     @include secondary;
     margin-top: 10px;
@@ -668,19 +663,6 @@ Popup
   }
   input[type="number"], .term {
     margin-bottom: 10px !important;
-  }
-  .expiration-info{
-    @include secondary;
-    color:$font-color-1;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    background-color: $background-color-3;
-    border: none;
-    padding:20px;
-    &:hover{
-      color:initial;
-      cursor:initial;
-    }
   }
 }
 

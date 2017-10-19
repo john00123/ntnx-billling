@@ -302,6 +302,7 @@ function popAnimate(){
     }
   );
 }
+
 function radio(){
   $('.radio').click(function(){
     $(".radio").prop("checked", false);
@@ -419,14 +420,6 @@ function ex(){
       checkoff();
     }
 });
-}
-
-function accountChange(){
-  $('.min-commit, .pay-as-you-go').toggleClass('selected');
-  $('.section1, .section2').toggle();
-  $("input[type='number']").change(function(){
-    $('.save').css('opacity','1');
-  });
 }
 
 
