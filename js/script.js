@@ -248,19 +248,19 @@ const popupData ={
     `
     <div class="section1">
       <h1>
-      <input type='radio' class='radio'> Pay as you go plan </h1>
+      <input type='radio' class='radio'checked="checked"> Pay as you go plan. <code style="  margin-left: 10px;">Current Plan</code></h1>
       <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
 
       <div class='separator'></div>
 
       <h1>
-      <input type='radio'  class='radio' checked="checked"> Minimum Commitment<code style="  margin-left: 10px;">Current Plan</code>
+      <input type='radio'  class='radio' > Minimum Commitment
       </h1>
-      <p style="margin-bottom:20px;">Increase the ammount of your minimum commitment. Your current ammount is $8000.00 per month.</p>
+      <p style="margin-bottom:20px;">Select an ammount for your minimum commitment plan.</p>
 
-      <label>Select Term & ammount</label><br>
+      <label>Select Term & ammount per month</label><br>
       <div class='upload-file'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00" value='8000.00'></input>
+        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00">
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
@@ -278,7 +278,7 @@ const popupData ={
     `<button class="primary save">Save</button>`,
 
     `<button class="secondary save">Cancel</button>
-    <button class="primary save" style='opacity:0.3;'>Save Changes</button>`,
+    <button class="primary save">Save Changes</button>`,
   ]
 }
 
@@ -330,6 +330,7 @@ function popupContent(i){
   popAnimate();
   countNumbers();
   invoiceOnly();
+  radio();
 }
 
 $(document).keyup(function(e) {
@@ -337,6 +338,12 @@ $(document).keyup(function(e) {
   if (e.keyCode === 13) $('.primary').click();
 });
 
+function radio(){
+  $('.radio').click(function(){
+    $(".radio").prop("checked", false);
+    $(this).prop("checked", true);
+  });
+}
 
 //counter
 function countNumbers(){
