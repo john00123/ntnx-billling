@@ -209,13 +209,17 @@ select{
     content: '';
     width: 1140px;
     height: 1px;
-    background-color: $green-1;
+    background-color: $dark-yellow-3;
     top:calc(50% + 2px);
     right: 30px;
   }
   ul{
     opacity:0;
   }
+}
+
+.ticker{
+  color:$red-1;
 }
 
 .x-values{
@@ -237,7 +241,7 @@ select{
         background-color: $border-color-2;
       }
       &::after{
-        border-color: $dark-green-2;
+        border-color: $dark-yellow-2;
       }
     }
     &::before{
@@ -258,7 +262,7 @@ select{
       width: 3px;
       border-radius: 4px;
       background-color: white;
-      border: 1px solid $dark-green-3;
+      border: 1px solid $dark-yellow-3;
       position: absolute;
       bottom:100px;
       left: calc(50% - 2px);

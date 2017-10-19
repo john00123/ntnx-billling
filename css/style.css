@@ -377,13 +377,17 @@ select span {
   content: '';
   width: 1140px;
   height: 1px;
-  background-color: #36D068;
+  background-color: #e69a0a;
   top: calc(50% + 2px);
   right: 30px;
 }
 
 .trend ul {
   opacity: 0;
+}
+
+.ticker {
+  color: #F55656;
 }
 
 .x-values {
@@ -414,7 +418,7 @@ select span {
 }
 
 .x-values p:hover::after {
-  border-color: #2ba663;
+  border-color: #cc7c09;
 }
 
 .x-values p::before {
@@ -436,7 +440,7 @@ select span {
   width: 3px;
   border-radius: 4px;
   background-color: white;
-  border: 1px solid #31bb67;
+  border: 1px solid #e69a0a;
   position: absolute;
   bottom: 100px;
   left: calc(50% - 2px);

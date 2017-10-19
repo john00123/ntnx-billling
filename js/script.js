@@ -1,14 +1,14 @@
 const cardData ={
-  cardInfo : ['Current plan','Payment Method','Tax documents','Ammount available'],
-  cardBody :['Minum commitment','Credit Card','221-222-333-44', '$8000.00'],
-  cardSecondary : ['$80000 - Renews Jan 14','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Valid untl 15/01/2020'],
+  cardInfo : ['Current plan','Payment Method','Tax documents','Trial Ammount'],
+  cardBody :['Free Trial','No payment selected','No tax document added', '$8000.00'],
+  cardSecondary : ['Expires in <kbd class="ticker">16 days<kbd>','Click to add payment method','Click to add tax documents', 'Updates on Jan 15/2018'],
 }
 
 const billingData ={
   Months
-  :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
-  Ammounts :['5200.00','2827.00','3100.00','0.00','0.00'],
-  Plan:['Min commitment', 'Min commitment','Min commitment', 'Free Trial plan', 'Free Trial plan'],
+  :['Feb 15, 2017','Jan 15, 2017'],
+  Ammounts :['5400.00','0.00'],
+  Plan:['Free Trial plan', 'Free Trial plan'],
   Download:[
   '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
   ],
@@ -21,7 +21,7 @@ const usageData ={
 }
 
 const creditData ={
-  Months:['Sep 15, 2017','Jan 15, 2017'],
+  Months:['Feb 15, 2017','Jan 15, 2017'],
   Ammounts :['3000.00','2000.00'],
   Plan:['Free Trial plan', 'Free Trial plan'],
   Download:['<a class="link">Download</a>','<a class="link">Download</a>'],
@@ -36,7 +36,7 @@ function cardsData() {
     $('.deck').append(
       `<div class='card'>
         <div class='card-title'>
-          <h4>${cardData.cardInfo[index]}</h4><a>Edit</a>
+          <h4>${cardData.cardInfo[index]}</h4><a>Add</a>
         </div>
         <div class='card-body'>
           <h4>${cardData.cardBody[index]}</h4>
@@ -49,6 +49,18 @@ function cardsData() {
       $('.card:eq(3)').html(
         `<div class='card-title'>
             <h4>${cardData.cardInfo[index]}</h4><a>Add Funds</a>
+          </div>
+          <div class='card-body'>
+            <h4>${cardData.cardBody[index]}</h4>
+            <p>${cardData.cardSecondary[index]}</p>
+          </div>`
+      );
+    }
+
+    if (index == 0){
+      $('.card:eq(0)').html(
+        `<div class='card-title'>
+            <h4>${cardData.cardInfo[index]}</h4><a>Upgrade plan</a>
           </div>
           <div class='card-body'>
             <h4>${cardData.cardBody[index]}</h4>
@@ -99,7 +111,7 @@ function tableData(){
     </tr>`);
   }
 
-  $('.balance').append(`$${billingData.Ammounts[0]}`);
+  $('.balance').append(`$ 5400.00`);
   for(let i=0; i<creditData.Ammounts.length; i++){
     $('.prev-creds').append(
       `<tr>
@@ -127,8 +139,8 @@ const popupData ={
   title :[
     'Add Funds',
     'Tax Documents',
-    'Payment Method',
-    'Update Plan',
+    'Add credit card',
+    'Select a  Plan',
   ],
 
   body: [
@@ -159,15 +171,6 @@ const popupData ={
 
     //payment method
     `
-    <h4 style='align-self:left; margin-bottom:10px;'>
-    <input type='checkbox' id='invoice-only'
-    style='margin-right:5px;'></input>
-    Use invoice billing</h4>
-
-    <p style='align-self:left; margin-top:10px;'>This service is only available to our enterprise level clients, and it happens mostly offline.</p><br>
-    <p>Once you saved we will send a request for a Sales Representative to contact you back.<a class='link' style='margin-left:10px;'>Learn more</a></p>
-
-    <div class='separator'></div>
     <label for="other">Card Number</label>
     <input type="text"  id='old-pswd' ">
 
@@ -253,13 +256,13 @@ const popupData ={
       <div class='separator'></div>
 
       <h1>
-      <input type='radio'  class='radio' checked="checked"> Minimum Commitment<code style="  margin-left: 10px;">Current Plan</code>
+      <input type='radio'  class='radio'> Minimum Commitment
       </h1>
       <p style="margin-bottom:20px;">Increase the ammount of your minimum commitment. Your current ammount is $8000.00 per month.</p>
 
       <label>Select Term & ammount</label><br>
       <div class='upload-file'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00" value='8000.00'></input>
+        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00"></input>
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
