@@ -610,25 +610,6 @@ Popup
   }
 
 
-
-  .plan-change{
-    margin-bottom: 30px;
-
-  }
-
-  .plan{
-    @include flex(center, center, row);
-    width: 50%;
-    @include secondary;
-    &:nth-child(1){
-      border-radius: 4px 0 0 4px;
-    }
-    &:nth-child(2){
-      border-left:none;
-      border-radius:  0 4px 4px 0;
-    }
-  }
-
   code{
     background-color: $light-blue-3;
     color:$dark-blue-3;
@@ -657,12 +638,6 @@ Popup
     }
   }
 
-  .selected{
-    color: $font-color-3;
-    border-color: $border-color-2;
-    background-color: $background-color-3;
-    pointer-events: none;
-  }
 
   .term{
     @include secondary;
@@ -679,17 +654,7 @@ Popup
   input[type="number"], .term {
     margin-bottom: 10px !important;
   }
-  .expiration-info{
-    @include secondary;
-    color:$font-color-1;
-    margin-top: 30px;
-    pointer-events: none;
-    line-height: 1.5;
-    background-color: $background-color-3;
-    border: none;
-    padding:20px;
 
-  }
 }
 
 

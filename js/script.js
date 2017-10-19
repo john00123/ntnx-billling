@@ -246,31 +246,26 @@ const popupData ={
 
     // change plan
     `
-    <div class='upload-file plan-change'>
-      <div class='plan pay-as-you-go selected'>Pay as you go</div>
-      <div class='plan min-commit'>Minimum commitment</div>
-    </div>
     <div class="section1">
-      <h1> Pay as you go plan  <code style="  margin-left: 10px;"> Current Plan</code></h1>
+      <h1>
+      <input type='radio' class='radio'> Pay as you go plan </h1>
       <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
 
-      <p class='expiration-info'>
-      This plan is renewed monthtly on every 15th. Changing plan will take effect after billing cycle.
-      </p>
-    </div>
-    <div class="section2" style='display:none;'>
-      <h1> Minimum Commitment</h1>
-      <p style="margin-bottom:20px;">This is a fixed budget plan. It allows to controlled consumption.</p>
+      <div class='separator'></div>
+
+      <h1>
+      <input type='radio'  class='radio' checked="checked"> Minimum Commitment<code style="  margin-left: 10px;">Current Plan</code>
+      </h1>
+      <p style="margin-bottom:20px;">Increase the ammount of your minimum commitment. Your current ammount is $8000.00 per month.</p>
 
       <label>Select Term & ammount</label><br>
       <div class='upload-file'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00"></input>
+        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00" value='8000.00'></input>
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
         </select>
       </div>
-      <input type="checkbox" checked="checked"/><kbd> Auto renew </kbd>
     </div>
       `,
   ],
@@ -334,7 +329,6 @@ function popupContent(i){
   }
   popAnimate();
   countNumbers();
-  $('.plan').click(accountChange);
   invoiceOnly();
 }
 
@@ -418,14 +412,6 @@ function ex(){
       checkoff();
     }
 });
-}
-
-function accountChange(){
-  $('.min-commit, .pay-as-you-go').toggleClass('selected');
-  $('.section1, .section2').toggle();
-  $("input[type='number']").change(function(){
-    $('.save').css('opacity','1');
-  });
 }
 
 

@@ -974,52 +974,6 @@ Popup
   background-color: #dd4d57;
 }
 
-.popup-body .plan-change {
-  margin-bottom: 30px;
-}
-
-.popup-body .plan {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  width: 50%;
-  border: 1px solid #D5DAE0;
-  border-radius: 4px;
-  padding: 11px 15px;
-  color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  text-decoration: none;
-  background-color: #FFFFFF;
-  margin: 0;
-  outline: none;
-}
-
-.popup-body .plan:hover {
-  color: #22A5F7;
-  cursor: pointer;
-}
-
-.popup-body .plan:active {
-  color: #91d2fb;
-}
-
-.popup-body .plan span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
-.popup-body .plan:nth-child(1) {
-  border-radius: 4px 0 0 4px;
-}
-
-.popup-body .plan:nth-child(2) {
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-}
-
 .popup-body code {
   background-color: #e9f6fe;
   color: #1f88de;
@@ -1048,13 +1002,6 @@ Popup
 
 .popup-body .money::after {
   content: '.00';
-}
-
-.popup-body .selected {
-  color: #7C8D9F;
-  border-color: #D5DAE0;
-  background-color: #F2F4F6;
-  pointer-events: none;
 }
 
 .popup-body .term {
@@ -1096,41 +1043,6 @@ Popup
 
 .popup-body input[type="number"], .popup-body .term {
   margin-bottom: 10px !important;
-}
-
-.popup-body .expiration-info {
-  border: 1px solid #D5DAE0;
-  border-radius: 4px;
-  padding: 11px 15px;
-  color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  text-decoration: none;
-  background-color: #FFFFFF;
-  margin: 0;
-  outline: none;
-  color: #22272E;
-  margin-top: 30px;
-  pointer-events: none;
-  line-height: 1.5;
-  background-color: #F2F4F6;
-  border: none;
-  padding: 20px;
-}
-
-.popup-body .expiration-info:hover {
-  color: #22A5F7;
-  cursor: pointer;
-}
-
-.popup-body .expiration-info:active {
-  color: #91d2fb;
-}
-
-.popup-body .expiration-info span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
 }
 
 .banner {
