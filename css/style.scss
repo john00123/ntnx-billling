@@ -323,6 +323,10 @@ Popup
     }
   }
 
+  .top-aligned{
+    @include flex(flex-start, space-between, row);
+  }
+
   .pair{
     @include flex(flex-start, flex-start ,column);
     margin-top: 10px;

@@ -120,7 +120,7 @@
 }
 .selectize-input {
   border: 1px solid #B8BFCA;
-  padding: 8px 8px;
+  padding: 0 15px;
   display: inline-block;
   width: 100%;
   overflow: hidden;
@@ -136,7 +136,7 @@
   border-radius: 3px;
 }
 .selectize-control.multi .selectize-input.has-items {
-  padding: 6px 8px 3px;
+  padding: 5px 8px 1px 5px ;
   width: 100%;
 }
 .selectize-input.full {
@@ -148,6 +148,7 @@
 }
 .selectize-input.focus {
   border-color: #22A5F7;
+  padding: 2px 15px;
 }
 .selectize-input.dropdown-active {
   -webkit-border-radius: 3px 3px 0 0;
@@ -258,6 +259,7 @@
 .selectize-dropdown .active {
   background-color: #f5fafd;
   color: #495c68;
+  padding: 0 15px;
 }
 .selectize-dropdown .active.create {
   color: #495c68;
@@ -278,6 +280,7 @@
 .selectize-control.single .selectize-input.input-active,
 .selectize-control.single .selectize-input.input-active input {
   cursor: text;
+  padding: 0 15px; ///* TODO: Check this values */
 }
 .selectize-control.single .selectize-input:after {
   content: ' ';

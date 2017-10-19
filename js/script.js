@@ -57,14 +57,14 @@ const popupData ={
     //mapping
     `
     <h3>Assign <code>Comma-separated</code> groups to their access tiers.</h3>
-    <div class='upload-file'>
+    <div class='upload-file top-aligned'>
       <div class='pair selectized' style='margin-right:10px;'>
         <label for="input-tags">Xi Admin</label>
         <input type='text' id='input-tags'>
 
       </div>
       <div class='pair selectized' style='margin-right:10px;'>
-        <label for="input-tags2">Xi Admin</label>
+        <label for="input-tags2">Xi User</label>
         <input type='text' id='input-tags2'>
 
       </div>
