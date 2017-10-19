@@ -209,7 +209,7 @@ select{
     content: '';
     width: 1140px;
     height: 1px;
-    background-color: $blue-1;
+    background-color: $green-1;
     top:calc(50% + 2px);
     right: 30px;
   }
@@ -237,7 +237,7 @@ select{
         background-color: $border-color-2;
       }
       &::after{
-        border-color: $dark-blue-2;
+        border-color: $dark-green-2;
       }
     }
     &::before{
@@ -258,7 +258,7 @@ select{
       width: 3px;
       border-radius: 4px;
       background-color: white;
-      border: 1px solid $blue-1;
+      border: 1px solid $dark-green-3;
       position: absolute;
       bottom:100px;
       left: calc(50% - 2px);
@@ -274,7 +274,7 @@ select{
   border-radius: 4px;
   top:-150px;
   right:-36px;
-  z-index: 99;
+  z-index: 110;
   line-height: 10px;
   padding: 11px 15px;
   color: white;
@@ -291,6 +291,16 @@ select{
     transform: rotate(45deg);
     z-index: -1;
   }
+}
+
+.max{
+  @include size(1px, 1140px);
+  position: absolute;
+  top:55px;
+  right: 25px;
+  border-bottom: 1px dashed $border-color-2;
+  display:block;
+  z-index: 100;
 }
 
 .click{
@@ -527,6 +537,8 @@ Popup
   }
 }
 
+
+
 .popup-body{
   @include size(auto,100%);
   @include flex(center, flex-start, column);
@@ -609,26 +621,6 @@ Popup
     }
   }
 
-
-
-  .plan-change{
-    margin-bottom: 30px;
-
-  }
-
-  .plan{
-    @include flex(center, center, row);
-    width: 50%;
-    @include secondary;
-    &:nth-child(1){
-      border-radius: 4px 0 0 4px;
-    }
-    &:nth-child(2){
-      border-left:none;
-      border-radius:  0 4px 4px 0;
-    }
-  }
-
   code{
     background-color: $light-blue-3;
     color:$dark-blue-3;
@@ -645,6 +637,7 @@ Popup
     color:$font-color-1;
     margin-top: 10px;
     margin-bottom: 40px;
+    margin-left: -10px;
     background: none;
     width: 100%;
     text-align: center;
@@ -657,12 +650,9 @@ Popup
     }
   }
 
-  .selected{
-    color: $font-color-3;
-    border-color: $border-color-2;
-    background-color: $background-color-3;
-    pointer-events: none;
-  }
+
+
+
 
   .term{
     @include secondary;
@@ -682,13 +672,15 @@ Popup
   .expiration-info{
     @include secondary;
     color:$font-color-1;
-    margin-top: 30px;
-    pointer-events: none;
+    margin-bottom: 30px;
     line-height: 1.5;
     background-color: $background-color-3;
     border: none;
     padding:20px;
-
+    &:hover{
+      color:initial;
+      cursor:initial;
+    }
   }
 }
 

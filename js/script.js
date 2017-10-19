@@ -1,14 +1,14 @@
 const cardData ={
-  cardInfo : ['Current plan','Payment Method','Tax documents','Available Credit'],
-  cardBody :['Pay as you go','Credit Card','221-222-333-44', '$5000.00'],
-  cardSecondary : ['Renews end of day June 22','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Updates every end of billing cycle'],
+  cardInfo : ['Current plan','Payment Method','Tax documents','Ammount available'],
+  cardBody :['Minum commitment','Credit Card','221-222-333-44', '$8000.00'],
+  cardSecondary : ['$80000 - Renews Jan 14','Visa ending 4204 · Exp 12/19','Last updated Oct 2016', 'Valid untl 15/01/2020'],
 }
 
 const billingData ={
   Months
   :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
   Ammounts :['3780.00','2827.00','3100.00','0.00','0.00'],
-  Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial plan', 'Free Trial plan'],
+  Plan:['Min commitment', 'Min commitment','Min commitment', 'Free Trial plan', 'Free Trial plan'],
   Download:[
   '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
   ],
@@ -128,12 +128,12 @@ const popupData ={
     'Add Funds',
     'Tax Documents',
     'Payment Method',
-    'Change Plan',
+    'Update Plan',
   ],
 
   body: [
     //credits
-    `<code class="count money">853</code>
+    `<code class="count money">8000</code>
     <h3 style='margin-bottom:0px'>Reedem code</h3>
     <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
     <input type="text" value='' id='redeem-input' autocomplete='off'>
@@ -241,37 +241,32 @@ const popupData ={
     </select>
     </div>
     </div>
-
     `,
 
     // change plan
     `
-    <div class='upload-file plan-change'>
-      <div class='plan pay-as-you-go selected'>Pay as you go</div>
-      <div class='plan min-commit'>Minimum commitment</div>
-    </div>
     <div class="section1">
-      <h1> Pay as you go plan  <code style="  margin-left: 10px;"> Current Plan</code></h1>
+      <h1>
+      <input type='radio' class='radio'> Pay as you go plan </h1>
       <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
 
-      <p class='expiration-info'>
-      This plan is renewed monthtly on every 15th. Changing plan will take effect after billing cycle.
-      </p>
-    </div>
-    <div class="section2" style='display:none;'>
-      <h1> Minimum Commitment</h1>
-      <p style="margin-bottom:20px;">This is a fixed budget plan. It allows to controlled consumption.</p>
+      <div class='separator'></div>
+
+      <h1>
+      <input type='radio'  class='radio' checked="checked"> Minimum Commitment<code style="  margin-left: 10px;">Current Plan</code>
+      </h1>
+      <p style="margin-bottom:20px;">Increase the ammount of your minimum commitment. Your current ammount is $8000.00 per month.</p>
 
       <label>Select Term & ammount</label><br>
       <div class='upload-file'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00"></input>
+        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00" value='8000.00'></input>
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
         </select>
       </div>
-      <input type="checkbox" checked="checked"/><kbd> Auto renew </kbd>
     </div>
+
       `,
   ],
 
@@ -283,7 +278,7 @@ const popupData ={
     `<button class="primary save">Save</button>`,
 
     `<button class="secondary save">Cancel</button>
-    <button class="primary save" style='opacity:0.3;'>Save Changes</button>`,
+    <button class="primary save">Save Changes</button>`,
   ]
 }
 
@@ -307,7 +302,12 @@ function popAnimate(){
     }
   );
 }
-
+function radio(){
+  $('.radio').click(function(){
+    $(".radio").prop("checked", false);
+    $(this).prop("checked", true);
+  });
+}
 
 //popup
 function popupContent(i){
@@ -334,8 +334,8 @@ function popupContent(i){
   }
   popAnimate();
   countNumbers();
-  $('.plan').click(accountChange);
   invoiceOnly();
+  radio();
 }
 
 $(document).keyup(function(e) {
@@ -350,7 +350,8 @@ function countNumbers(){
   $('.redeem').click(function() {
     if($('#redeem-input').val() === 'NTNX'){
       $('#redeem-input').val('');
-      $('.popup-body').before(`<div class='banner'>$4200 have been credited to your account.</div>`);
+      $('.popup-body').before(`<div class='banner'>$2000 have been credited to your account.</div>`);
+      $('.card:eq(3) h4:eq(1)').text('$10000.00');
       $('.banner').toggle();
       $('.money').css('color','#18BE5F');
       $('.popup-header').css('border-bottom','none');
@@ -358,10 +359,10 @@ function countNumbers(){
       $('.count').each(function () {
         var $this = $(this);
         $({ Counter:$this.text() }).animate(
-          { Counter:4900 }, {
+          { Counter:10000.00}, {
           duration: 600,
           step: function () {
-            $this.text(Math.ceil(this.Counter)+100);
+            $this.text(Math.ceil(this.Counter));
           }
          });
       });

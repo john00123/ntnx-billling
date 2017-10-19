@@ -377,7 +377,7 @@ select span {
   content: '';
   width: 1140px;
   height: 1px;
-  background-color: #22A5F7;
+  background-color: #36D068;
   top: calc(50% + 2px);
   right: 30px;
 }
@@ -414,7 +414,7 @@ select span {
 }
 
 .x-values p:hover::after {
-  border-color: #1b6dc6;
+  border-color: #2ba663;
 }
 
 .x-values p::before {
@@ -436,7 +436,7 @@ select span {
   width: 3px;
   border-radius: 4px;
   background-color: white;
-  border: 1px solid #22A5F7;
+  border: 1px solid #31bb67;
   position: absolute;
   bottom: 100px;
   left: calc(50% - 2px);
@@ -449,7 +449,7 @@ select span {
   border-radius: 4px;
   top: -150px;
   right: -36px;
-  z-index: 99;
+  z-index: 110;
   line-height: 10px;
   padding: 11px 15px;
   color: white;
@@ -469,6 +469,18 @@ select span {
   background-color: inherit;
   transform: rotate(45deg);
   z-index: -1;
+}
+
+.max {
+  height: 1px;
+  width: 1140px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 55px;
+  right: 25px;
+  border-bottom: 1px dashed #D5DAE0;
+  display: block;
+  z-index: 100;
 }
 
 .click {
@@ -974,52 +986,6 @@ Popup
   background-color: #dd4d57;
 }
 
-.popup-body .plan-change {
-  margin-bottom: 30px;
-}
-
-.popup-body .plan {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  width: 50%;
-  border: 1px solid #D5DAE0;
-  border-radius: 4px;
-  padding: 11px 15px;
-  color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  text-decoration: none;
-  background-color: #FFFFFF;
-  margin: 0;
-  outline: none;
-}
-
-.popup-body .plan:hover {
-  color: #22A5F7;
-  cursor: pointer;
-}
-
-.popup-body .plan:active {
-  color: #91d2fb;
-}
-
-.popup-body .plan span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
-.popup-body .plan:nth-child(1) {
-  border-radius: 4px 0 0 4px;
-}
-
-.popup-body .plan:nth-child(2) {
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-}
-
 .popup-body code {
   background-color: #e9f6fe;
   color: #1f88de;
@@ -1036,6 +1002,7 @@ Popup
   color: #22272E;
   margin-top: 10px;
   margin-bottom: 40px;
+  margin-left: -10px;
   background: none;
   width: 100%;
   text-align: center;
@@ -1048,13 +1015,6 @@ Popup
 
 .popup-body .money::after {
   content: '.00';
-}
-
-.popup-body .selected {
-  color: #7C8D9F;
-  border-color: #D5DAE0;
-  background-color: #F2F4F6;
-  pointer-events: none;
 }
 
 .popup-body .term {
@@ -1109,8 +1069,7 @@ Popup
   margin: 0;
   outline: none;
   color: #22272E;
-  margin-top: 30px;
-  pointer-events: none;
+  margin-bottom: 30px;
   line-height: 1.5;
   background-color: #F2F4F6;
   border: none;
@@ -1131,6 +1090,11 @@ Popup
   display: block;
   font-weight: 500;
   line-height: 9pt;
+}
+
+.popup-body .expiration-info:hover {
+  color: initial;
+  cursor: initial;
 }
 
 .banner {
