@@ -608,6 +608,15 @@ Popup
   border-radius: 4px 0 0 4px !important;
 }
 
+.popup-body .pair {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 10px;
+  width: calc(50% - 17px);
+}
+
 .popup-footer {
   display: flex;
   align-items: center;

@@ -54,20 +54,19 @@ const popupData ={
     </div>
     `,
 
+    //mapping
     `
     <h3>Assign <code>Comma-separated</code> groups to their access tiers.</h3>
     <div class='upload-file'>
-      <div class='pair' style='margin-right:10px;'>
-        <label for="#tags">Xi Admin</label>
-        <input type='text' id='input-tags'
-          style='margin-top:10px;'
-          value='administration, IT, marketing' placeholder="Example: group">
+      <div class='pair selectized' style='margin-right:10px;'>
+        <label for="input-tags">Xi Admin</label>
+        <input type='text' id='input-tags'>
+
       </div>
-      <div class='pair' style='margin-left:10px;'>
-        <label for="other">Xi User</label>
-        <input type='text' id='input-tags'
-          style='margin-top:10px;'
-          placeholder="Example: group">
+      <div class='pair selectized' style='margin-right:10px;'>
+        <label for="input-tags2">Xi Admin</label>
+        <input type='text' id='input-tags2'>
+
       </div>
     </div>
     `,
@@ -113,13 +112,13 @@ function popupContent(i){
       </div>
     </div>`
   );
+
   popAnimate();
   $('.upload').click(function(){
     $('.popup').css('animation','layer 600ms forwards');
     $('.popup').addClass('second');
     layer2(6);
   });
-
 }
 
 function layer2(i){
@@ -139,6 +138,16 @@ function layer2(i){
     $('.popup:not(.layer2)').removeClass('second');
     $('.layer2, .overlay2').remove();
   });
+  $('#input-tags, #input-tags2').selectize({
+    delimiter: ',',
+    persist: false,
+    create: function(input) {
+        return {
+            value: input,
+            text: input
+        }
+      }
+  });
 }
 
 function uploadPath(){
@@ -155,18 +164,4 @@ $(document).ready(function() {
   $('.profile .card-title a').click(function(){popupContent(2)});
   $('.account .card-title a').click(function(){popupContent(1)});
   $('.enable-mult-auth').click(function(){popupContent(0)});
-
-  //selectize
-  $('#input-tags').selectize({
-    delimiter: ',',
-    persist: false,
-    create: function(input) {
-        return {
-            value: input,
-            text: input
-        }
-      }
-  });
-
-
 });
