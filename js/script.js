@@ -59,17 +59,15 @@ const popupData ={
     <div class='upload-file'>
       <div class='pair' style='margin-right:10px;'>
         <label for="#tags">Xi Admin</label>
-        <input type="textbox"
+        <input type='text' id='input-tags'
           style='margin-top:10px;'
-          value='administration, IT, marketing' placeholder="Example: group"
-          id='tags'>
+          value='administration, IT, marketing' placeholder="Example: group">
       </div>
       <div class='pair' style='margin-left:10px;'>
         <label for="other">Xi User</label>
-        <input type="text"
+        <input type='text' id='input-tags'
           style='margin-top:10px;'
-          placeholder="Example: group"
-          id='users-input'>
+          placeholder="Example: group">
       </div>
     </div>
     `,
@@ -157,4 +155,18 @@ $(document).ready(function() {
   $('.profile .card-title a').click(function(){popupContent(2)});
   $('.account .card-title a').click(function(){popupContent(1)});
   $('.enable-mult-auth').click(function(){popupContent(0)});
+
+  //selectize
+  $('#input-tags').selectize({
+    delimiter: ',',
+    persist: false,
+    create: function(input) {
+        return {
+            value: input,
+            text: input
+        }
+      }
+  });
+
+
 });
