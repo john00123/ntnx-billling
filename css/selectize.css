@@ -148,7 +148,7 @@
 }
 .selectize-input.focus {
   border-color: #22A5F7;
-  padding: 2px 15px;
+  padding: 0 15px;
 }
 .selectize-input.dropdown-active {
   -webkit-border-radius: 3px 3px 0 0;
