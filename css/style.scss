@@ -666,7 +666,9 @@ Popup
   }
 }
 
-
+.radio{
+  margin-right: 5px;
+}
 .banner{
   @include size(40px, 100%);
   @include flex(center,'','');

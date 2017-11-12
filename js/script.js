@@ -246,11 +246,7 @@ const popupData ={
     // change plan
     `
     <div class="section1">
-      <h1>
-      <input type='radio' class='radio'> Pay as you go plan </h1>
-      <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
 
-      <div class='separator'></div>
 
       <h1>
       <input type='radio'  class='radio' checked="checked"> Minimum Commitment<code style="  margin-left: 10px;">Current Plan</code>
@@ -259,12 +255,20 @@ const popupData ={
 
       <label>Select Term & ammount</label><br>
       <div class='upload-file'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00" value='8000.00'></input>
+        <input class='min-commit-val' style="margin:10px 0 0 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00" value='8000.00'></input>
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
         </select>
       </div>
+
+          <div class='separator'></div>
+
+      <h1 style='opacity:0.3'>
+      <input type='radio' class='radio' disabled> Pay as you go plan </h1>
+      <p style='opacity:0.3'>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
+
+
     </div>
 
       `,
@@ -512,5 +516,5 @@ $(document).ready(function() {
   $('.card:eq(1) a').click(function(){popupContent(2)});
   $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
   $('.card:eq(3) a').click(function(){popupContent(0)});
-  $('.prev-bills td:eq(0)').click(pdfContent);
+  $('.prev-bills td:eq(0)').click();
 });

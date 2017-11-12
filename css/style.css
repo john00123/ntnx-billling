@@ -1058,6 +1058,10 @@ Popup
   margin-bottom: 10px !important;
 }
 
+.radio {
+  margin-right: 5px;
+}
+
 .banner {
   height: 40px;
   width: 100%;
