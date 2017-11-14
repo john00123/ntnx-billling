@@ -133,10 +133,7 @@ const popupData ={
 
   body: [
     //credits
-    `<code class="count money">8000</code>
-    <h3 style='margin-bottom:0px'>Reedem code</h3>
-    <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
-    <input type="text" value='' id='redeem-input' autocomplete='off'>
+    `<div class='container'></div>
     `,
 
     //tax data
@@ -506,15 +503,13 @@ function layer2(){
 
 
 $(document).ready(function() {
-  cardsData();
-  chartData();
-  tableData();
-  $('.card:eq(0) a').click(function(){
-    popupContent(3)
-    $('.popup-body').css('min-height','300px');
+  $('.trigger-popup').click(function(){
+    popupContent(0);
+  $('.popup-header').after('<div class="loader"></div>');
+  $('.overlay .loader').css('position','absolute');
+  $('.overlay .loader').css('height','1px');
+  $('.overlay .loader').css('top','50px');
+  $('.overlay .loader').css('border-color','black');
+
   });
-  $('.card:eq(1) a').click(function(){popupContent(2)});
-  $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
-  $('.card:eq(3) a').click(function(){popupContent(0)});
-  $('.prev-bills td:eq(0)').click();
 });

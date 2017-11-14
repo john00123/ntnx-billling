@@ -7,16 +7,77 @@ html {
   @include font;
   background-color: $light-grey-3;
   overflow-x: hidden;
+  @include size(100%, 100%);
+  box-sizing: content-box;
 }
 
 body {
   @include size(100%, 100%);
-  overflow-x: hidden;
+  overflow: hidden;
+  box-sizing: content-box;
 }
 
 
 button{
   outline: none;
+}
+
+
+
+
+h1{
+  font:$h1;
+  margin-bottom: 30px;
+  font-size: 48px;
+  color: $font-color-4;
+
+}
+
+h3{
+  font:$h2;
+  color: $font-color-4;
+  margin-bottom: 20px;
+
+}
+
+p{
+  font: $p;
+  color: $font-color-3;
+    text-align: center;
+}
+
+p a{
+@include link;
+
+}
+
+.loader{
+  @include size(2px, 100%);
+  background-color: $blue-1;
+  transform: scaleX(0);
+  animation: load 3600ms $animation 1200ms infinite forwards;
+}
+
+
+@keyframes load{
+  0%{
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin:left center;
+  }
+
+  80%{
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin:left center;
+  }
+
+  100%{
+    opacity: 0;
+    transform: scaleX(1);
+    transform-origin:left center;
+  }
+
 }
 
 h4{
@@ -51,12 +112,13 @@ header {
 
 //container
 .container {
-  @include size(100%, 100%);
+  @include size(calc(100% - 60px), 500px);
   @include flex(center, center, column);
   max-width: 1280px;
   margin: 8px auto;
   padding: 20px;
   overflow-x: hidden;
+    box-sizing: content-box;
 }
 
 //actions
@@ -828,9 +890,6 @@ Animation
   to{ opacity: 0;}
 }
 
-iframe input.text-input{
-  border-color: red;
-}
 
 @keyframes layer{
   from{
@@ -842,6 +901,10 @@ iframe input.text-input{
     transform: scale(0.95) translate3d(0, -45px, 0);
   }
 }
+
+
+
+
 /* ==========================================================================
 Media Queries
 ========================================================================== */
