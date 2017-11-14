@@ -25,16 +25,46 @@ button {
   outline: none;
 }
 
+.primary {
+  margin: 0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #FFFFFF;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  border: none;
+  text-decoration: none;
+  background-color: #22A5F7;
+  outline: none;
+}
+
+.primary:hover {
+  color: #FFFFFF;
+  cursor: pointer;
+  background-color: #1f88de;
+}
+
+.primary:active {
+  color: #FFFFFF;
+  background-color: #1b6dc6;
+}
+
+.primary span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
 h1 {
   font: 200 29px/20px "nutanix_soft", san-serif;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 48px;
   color: #9AA5B5;
 }
 
 h3 {
-  font: 400 18px/12px "nutanix_soft", san-serif;
-  color: #9AA5B5;
+  font: 500 14px/10px "nutanix_soft", san-serif;
+  color: #7C8D9F;
   margin-bottom: 20px;
 }
 
@@ -42,6 +72,7 @@ p {
   font: 400 14px/22px "nutanix_soft", san-serif;
   color: #7C8D9F;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 p a {
@@ -121,15 +152,14 @@ header {
 
 .container {
   height: calc(100% - 60px);
-  width: 500px;
+  width: calc(400px - 40px);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   max-width: 1280px;
-  margin: 8px auto;
-  padding: 20px;
+  margin: 0px auto;
   overflow-x: hidden;
   box-sizing: content-box;
 }
