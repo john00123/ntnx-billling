@@ -173,7 +173,11 @@ Cards
   }
 
 }
-
+.overlay{
+  .loader{
+    background-color: $border-color-2;
+  }
+}
 .card-title {
   @include flex(center, space-between, row);
   padding: 14px 20px;

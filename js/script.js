@@ -509,7 +509,7 @@ $(document).ready(function() {
   $('.overlay .loader').css('position','absolute');
   $('.overlay .loader').css('height','1px');
   $('.overlay .loader').css('top','50px');
-  $('.overlay .loader').css('border-color','black');
+
 
   });
 });

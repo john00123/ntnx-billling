@@ -296,6 +296,10 @@ Cards
   padding: 0 5px;
 }
 
+.overlay .loader {
+  background-color: #D5DAE0;
+}
+
 .card-title {
   display: flex;
   align-items: center;
