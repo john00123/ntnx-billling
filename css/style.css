@@ -21,58 +21,32 @@ body {
   box-sizing: content-box;
 }
 
-button {
-  outline: none;
-}
-
-.primary {
-  margin: 0;
-  border-radius: 4px;
-  padding: 11px 15px;
-  color: #FFFFFF;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  border: none;
-  text-decoration: none;
-  background-color: #22A5F7;
-  outline: none;
-}
-
-.primary:hover {
-  color: #FFFFFF;
-  cursor: pointer;
-  background-color: #1f88de;
-}
-
-.primary:active {
-  color: #FFFFFF;
-  background-color: #1b6dc6;
-}
-
-.primary span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
 h1 {
   font: 200 29px/20px "nutanix_soft", san-serif;
+  font-size: 42px;
   margin-bottom: 20px;
-  font-size: 48px;
-  color: #9AA5B5;
+  color: #7C8D9F;
 }
 
 h3 {
   font: 500 14px/10px "nutanix_soft", san-serif;
-  color: #7C8D9F;
-  margin-bottom: 20px;
+  color: #627386;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.min-separator {
+  width: 40px;
+  height: 1px;
+  border-bottom: 1px solid #D5DAE0;
+  margin-bottom: 15px;
 }
 
 p {
   font: 400 14px/22px "nutanix_soft", san-serif;
-  color: #7C8D9F;
+  color: #627386;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 p a {
@@ -92,7 +66,51 @@ p a:hover {
   box-sizing: border-box;
   background-color: #22A5F7;
   transform: scaleX(0);
+  position: relative;
   animation: load 3600ms cubic-bezier(0.165, 0.84, 0.44, 1) 1200ms infinite forwards;
+}
+
+.loader::after {
+  content: '';
+  background-color: transparent;
+  height: 2px;
+  width: 80%;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.triangle {
+  position: relative;
+  background-color: orange;
+  text-align: left;
+}
+
+.triangle:before,
+.triangle:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+}
+
+.triangle,
+.triangle:before,
+.triangle:after {
+  width: 0.5em;
+  height: 0.5em;
+  border-top-right-radius: 30%;
+}
+
+.triangle {
+  transform: rotate(-60deg) skewX(-30deg) scale(1, 0.866);
+}
+
+.triangle:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+}
+
+.triangle:after {
+  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
 }
 
 @keyframes load {
@@ -148,6 +166,10 @@ header {
   flex-direction: "";
   background-color: #22272E;
   color: transparent;
+}
+
+link {
+  margin-top: 20px;
 }
 
 .container {
@@ -795,6 +817,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   color: #22A5F7;
   font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
+  text-decoration-color: #1856ad;
 }
 
 .link:hover {
@@ -888,6 +911,7 @@ Popup
   padding: 30px 20px;
   background-color: white;
   max-height: 500px;
+  min-height: 300px;
   overflow-y: scroll;
 }
 
@@ -1239,7 +1263,6 @@ Popup
   outline: none;
   height: 32px;
   box-sizing: border-box;
-  margin-right: 10px;
   flex-shrink: 0;
 }
 

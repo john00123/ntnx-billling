@@ -18,33 +18,33 @@ body {
 }
 
 
-button{
-  outline: none;
-}
-
-.primary{
-  @include primary;
-}
 h1{
   font:$h1;
+  font-size: 42px;
   margin-bottom: 20px;
-  font-size: 48px;
-  color: $font-color-4;
-
+  color: $font-color-3;
 }
 
 h3{
   font:$h3;
-  color: $font-color-3;
-  margin-bottom: 20px;
+  color: $font-color-2;
+  margin-bottom: 18px;
+  position: relative;
 
+}
+
+.min-separator{
+  width: 40px;
+  height: 1px;
+  border-bottom: 1px solid $border-color-2;
+  margin-bottom: 15px;
 }
 
 p{
   font: $p;
-  color: $font-color-3;
-    text-align: center;
-    margin-bottom: 20px;
+  color: $font-color-2;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 p a{
@@ -56,9 +56,56 @@ p a{
   @include size(2px, 100%);
   background-color: $blue-1;
   transform: scaleX(0);
+  position: relative;
   animation: load 3600ms $animation 1200ms infinite forwards;
+  &::after{
+    content:'';
+    background-color: transparent;
+    height: 2px;
+    width: 80%;
+    top:0;
+    right: 0;
+    position: absolute;
+    // box-shadow: 0px 2px 2px $light-blue-1;
+  }
+
 }
 
+.triangle {
+	position: relative;
+	background-color: orange;
+	text-align: left;
+}
+.triangle:before,
+.triangle:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+.triangle,
+.triangle:before,
+.triangle:after {
+	width:  0.5em;
+	height: 0.5em;
+	border-top-right-radius: 30%;
+}
+
+.triangle {
+	transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+}
+.triangle:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.triangle:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+}
+
+// code{
+//   background-color: $light-red-2;
+//   color: $dark-red-2;
+//   padding: 0px 5px;
+//   border-radius: 3px;
+// }
 
 @keyframes load{
   0%{
@@ -109,6 +156,9 @@ header {
   @include flex(center, space-between, '');
   background-color: $background-color-1;
   color: transparent;
+}
+link{
+  margin-top: 20px;
 }
 
 //container
@@ -547,6 +597,7 @@ td kbd{
 }
 .link{
   @include link;
+  text-decoration-color: $dark-blue-1;
 }
 
 /* ==========================================================================
@@ -612,6 +663,7 @@ Popup
   padding: 30px 20px;
   background-color: white;
   max-height: 500px;
+  min-height: 300px;
 
   overflow-y: scroll;
 
@@ -773,7 +825,6 @@ Popup
     @include secondary;
     height: 32px;
     box-sizing: border-box;
-    margin-right: 10px;
     flex-shrink: 0;
   }
 

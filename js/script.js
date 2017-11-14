@@ -125,7 +125,7 @@ function tableData(){
 
 const popupData ={
   title :[
-    'Add Funds',
+    'Loading Popup',
     'Tax Documents',
     'Payment Method',
     'Update Plan',
@@ -272,7 +272,7 @@ const popupData ={
   ],
 
   footer:[
-    `<button class="primary redeem">Redeem</button>`,
+    `<button class="secondary redeem">Done</button>`,
 
     `<button class="primary save">Save</button>`,
 
