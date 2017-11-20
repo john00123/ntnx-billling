@@ -562,6 +562,12 @@ td kbd{
   }
 }
 
+.dotdotdot{
+  display: inline-block;
+  min-width: 10px;
+  text-align: left;
+}
+
 .floater{
   @include secondary;
   @include shadow;
@@ -715,6 +721,7 @@ Popup
     @include primary;
     margin-top: 20px;
     flex-shrink: 0;
+    @include transition(all);
   }
 
   .secondary{

@@ -752,6 +752,12 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   color: #22A5F7;
 }
 
+.dotdotdot {
+  display: inline-block;
+  min-width: 10px;
+  text-align: left;
+}
+
 .floater {
   border: 1px solid #D5DAE0;
   border-radius: 4px;
@@ -1038,6 +1044,7 @@ Popup
   outline: none;
   margin-top: 20px;
   flex-shrink: 0;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .popup-body .primary:hover {

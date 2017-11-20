@@ -272,7 +272,7 @@ const popupData ={
   ],
 
   footer:[
-    `<button class="secondary redeem">Done</button>`,
+    `<button class="primary redeem" > Save</button>`,
 
     `<button class="primary save">Save</button>`,
 
@@ -501,10 +501,34 @@ function layer2(){
 }
 
 
+let dots ='.';
+function dotdotdotted(){
+$('.dotdotdot').text(dots);
+dots += '.';
+if (dots=== '....'){
+  dots='.';
+}
+};
 
 $(document).ready(function() {
   $('.trigger-popup').click(function(){
     popupContent(0);
+
+    $('.redeem').click(function(){
+      $('.primary').html(`Saving <kbd class='dotdotdot'>...</kbd>`);
+
+      var intervalListener = setInterval(dotdotdotted, 1200);
+
+      $('.primary').css('opacity','0.3');
+
+      setTimeout(function(){
+        $('.primary').text('Save');
+        $('.primary').css('opacity','1');
+        $('.dotdotdot').remove();
+        window.clearInterval(intervalListener);
+      },6000);
+    });
+
   $('.popup-header').after('<div class="loader"></div>');
   $('.overlay .loader').css('position','absolute');
   $('.overlay .loader').css('height','1px');
