@@ -549,7 +549,25 @@ Popup
   }
 }
 
+.closed{
+  &::before, &::after{
+  content:'';
+  @include absolute(12px,'',23px);
+  @include size(14px, 2px);
+  border-radius: 3px;
+  display: block;
+  background-color: $green-1;
+  }
 
+  &::before{
+  transform: rotate(45deg);
+  }
+
+  &::after{
+  transform: rotate(-45deg);
+  }
+
+}
 
 .popup-body{
   @include size(auto,100%);
@@ -685,6 +703,7 @@ Popup
   @include size(40px, 100%);
   @include flex(center,'','');
   padding:8px 20px;
+  position: relative;
   line-height: 10px;
   color: $dark-green-3;
   font-weight: 400;

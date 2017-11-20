@@ -793,6 +793,28 @@ Popup
   transform: rotate(-45deg);
 }
 
+.closed::before, .closed::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: "";
+  right: 23px;
+  height: 14px;
+  width: 2px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: block;
+  background-color: #36D068;
+}
+
+.closed::before {
+  transform: rotate(45deg);
+}
+
+.closed::after {
+  transform: rotate(-45deg);
+}
+
 .popup-body {
   height: auto;
   width: 100%;
@@ -1084,6 +1106,7 @@ Popup
   justify-content: "";
   flex-direction: "";
   padding: 8px 20px;
+  position: relative;
   line-height: 10px;
   color: #31bb67;
   font-weight: 400;

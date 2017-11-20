@@ -523,8 +523,8 @@ $(document).ready(function() {
   $('.card:eq(0) a').click(function(){
     popupContent(3)
     $('.popup-body').css('min-height','300px');
-    $('.popup-body').before(`<div class='banner' style='height:auto'>
-    <p data-type='multi-line'>Request accepted. You can <kbd type='under-line' class='previous'>cancel</kbd> it anytime before the next cycle in 10 days.</p></div>`);
+    $('.popup-body').before(`<div class='banner closed' style='height:auto'>
+    <p data-type='multi-line'>Minimum commit change accepted.<br> You can <kbd type='under-line' class='previous'>cancel</kbd> anytime before next cycle in 10 days.</p></div>`);
     $('.popup-header').css('border-bottom','none');
     $('.upload-file').css('opacity','0.5');
     $('.upload-file').css('pointer-events','none');
