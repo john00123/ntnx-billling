@@ -57,6 +57,19 @@ header {
   color: transparent;
 }
 
+.previous {
+  text-decoration: underline;
+}
+
+.previous:hover {
+  color: #26925f;
+  cursor: pointer;
+}
+
+[data-type='multi-line'] {
+  line-height: 1.5;
+}
+
 .container {
   height: 100%;
   width: 100%;

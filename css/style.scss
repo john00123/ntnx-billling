@@ -49,6 +49,18 @@ header {
   color: transparent;
 }
 
+.previous{
+  text-decoration:underline;
+  &:hover{
+    color: $dark-green-1;
+    cursor: pointer;
+  }
+}
+
+[data-type='multi-line']{
+  line-height: 1.5;
+}
+
 //container
 .container {
   @include size(100%, 100%);

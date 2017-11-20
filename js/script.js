@@ -132,14 +132,14 @@ const popupData ={
   ],
 
   body: [
-    //credits
+    //1
     `<code class="count money">8000</code>
     <h3 style='margin-bottom:0px'>Reedem code</h3>
     <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
     <input type="text" value='' id='redeem-input' autocomplete='off'>
     `,
 
-    //tax data
+    //2
     `<h1 class='initial-tax'>
     Nutanix is required to collect sales tax in some US states.</h1>
 
@@ -157,7 +157,7 @@ const popupData ={
     <p style='margin: 22px 0 -8px 0;' class='consult'>To learn if your cloud consumption is subject to sale taxes, consult your tax advisor.</p>
     `,
 
-    //payment method
+    //3
     `
     <h4 style='align-self:left; margin-bottom:10px;'>
     <input type='checkbox' id='invoice-only'
@@ -243,7 +243,7 @@ const popupData ={
     </div>
     `,
 
-    // change plan
+    //4
     `
     <div class="section1">
 
@@ -251,7 +251,7 @@ const popupData ={
       <h1>
       <input type='radio'  class='radio' checked="checked"> Minimum Commitment<code style="  margin-left: 10px;">Current Plan</code>
       </h1>
-      <p style="margin-bottom:20px;">Increase the ammount of your minimum commitment. Your current ammount is $8000.00 per month.</p>
+      <p style="margin-bottom:20px;">Increase the ammount of your minimum commitment. Your current ammount is $7000.00 per month.</p>
 
       <label>Select Term & ammount</label><br>
       <div class='upload-file'>
@@ -503,6 +503,17 @@ function layer2(){
   });
 }
 
+function returnMinCommit(){
+$('.min-commit-val').val(7000.00);
+$('.popup-header').css('border-bottom','1px solid #f7f8f9');
+$('.upload-file').css('opacity','1');
+$('.upload-file').css('pointer-events','all');
+$('.banner').slideUp();
+setTimeout(function(){
+  $('.banner').remove();
+},600);
+$('.min-commit-val').prop('disabled',false);
+}
 
 
 $(document).ready(function() {
@@ -512,6 +523,12 @@ $(document).ready(function() {
   $('.card:eq(0) a').click(function(){
     popupContent(3)
     $('.popup-body').css('min-height','300px');
+    $('.popup-body').before(`<div class='banner' style='height:auto'>
+    <p data-type='multi-line'>Request accepted. You can <kbd type='under-line' class='previous'>cancel</kbd> it anytime before the next cycle in 10 days.</p></div>`);
+    $('.popup-header').css('border-bottom','none');
+    $('.upload-file').css('opacity','0.5');
+    $('.upload-file').css('pointer-events','none');
+    $('.previous').click(returnMinCommit);
   });
   $('.card:eq(1) a').click(function(){popupContent(2)});
   $('.card:eq(2) a').click(function(){popupContent(1); ex(); });
