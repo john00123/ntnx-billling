@@ -533,7 +533,21 @@ $(document).ready(function() {
   $('.overlay .loader').css('position','absolute');
   $('.overlay .loader').css('height','1px');
   $('.overlay .loader').css('top','50px');
+  });
+});
 
+$('.trigger-banner').click(function(){
 
+  $('.loader').after(`<div class='banner error-ban' style='height:50px;'>$2000 have been credited to your account.</div>`);
+  $('.card:eq(3) h4:eq(1)').text('$10000.00');
+  $('.banner').toggle();
+  $('.money').css('color','#18BE5F');
+  $('.popup-header').css('border-bottom','none');
+  $('.banner').slideDown();
+  $('.banner').click(function(){
+    $('.banner').slideUp();
+    setTimeout(function(){
+      $('.banner').remove();
+    }, 600);
   });
 });

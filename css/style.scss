@@ -724,6 +724,7 @@ Popup
     @include transition(all);
   }
 
+
   .secondary{
     @include size(32px, 100%);
     @include secondary;
@@ -794,6 +795,7 @@ Popup
 .radio{
   margin-right: 5px;
 }
+
 .banner{
   @include size(40px, 100%);
   @include flex(center,'','');
