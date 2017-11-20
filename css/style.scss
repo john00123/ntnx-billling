@@ -556,6 +556,30 @@ td kbd{
   cursor: initial;
 }
 
+
+
+.closed{
+  &::before, &::after{
+  content:'';
+  @include absolute(17px,'',20px);
+  @include size(14px, 2px);
+  border-radius: 3px;
+  display: block;
+  background-color: $dark-red-3;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+  &::before{
+  transform: rotate(45deg);
+  }
+
+  &::after{
+  transform: rotate(-45deg);
+  }
+
+}
+
 .prev-bills td:first-child{
   &:hover{
     color:$blue-1;
@@ -809,6 +833,7 @@ Popup
 
 .error-ban{
   color:$dark-red-3;
+  position: relative;
   background-color: $light-red-3;
 }
 

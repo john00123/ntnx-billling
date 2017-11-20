@@ -748,6 +748,32 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   cursor: initial;
 }
 
+.closed::before, .closed::after {
+  content: '';
+  position: absolute;
+  top: 17px;
+  left: "";
+  right: 20px;
+  height: 14px;
+  width: 2px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: block;
+  background-color: #dd4d57;
+}
+
+.closed:hover {
+  cursor: pointer;
+}
+
+.closed::before {
+  transform: rotate(45deg);
+}
+
+.closed::after {
+  transform: rotate(-45deg);
+}
+
 .prev-bills td:first-child:hover {
   color: #22A5F7;
 }
@@ -1208,6 +1234,7 @@ Popup
 
 .error-ban {
   color: #dd4d57;
+  position: relative;
   background-color: #feeeee;
 }
 
