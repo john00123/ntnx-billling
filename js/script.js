@@ -538,7 +538,7 @@ $(document).ready(function() {
 
 $('.trigger-banner').click(function(){
 
-  $('.loader').after(`<div class='banner error-ban' style='height:50px;'>$2000 have been credited to your account.</div>`);
+  $('.loader').after(`<div class='banner error-ban' style='height:50px;'>There were error while loading the page.</div>`);
   $('.card:eq(3) h4:eq(1)').text('$10000.00');
   $('.banner').toggle();
   $('.money').css('color','#18BE5F');
