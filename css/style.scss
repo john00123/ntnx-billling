@@ -420,7 +420,10 @@ Popup
   animation: disappear 600ms $animation forwards;
 }
 
-
+#new-pswd{
+  position: relative;
+  background-color: red;
+}
 /* ==========================================================================
 Animation
 ========================================================================== */

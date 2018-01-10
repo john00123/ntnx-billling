@@ -30,7 +30,10 @@ const popupData ={
     `<label for="other">Previous Password</label>
     <input type="password" id='old-pswd'>
     <label for="other">New Password</label>
-    <input type="password" id='new-pswd'>
+    <div>
+      <input type="password" id='new-pswd'>
+      <button class='secondary'>See</button>
+    </div>
     <label for="other">Retype new password</label>
     <input type="password" id='retype'>`,
 
@@ -156,6 +159,7 @@ function uploadPath(){
 }
 
 $(document).ready(function() {
+  popupContent(3);
   $('.AD .card-title a').click(function(){popupContent(5)});
   $('.adfs').click(function(){popupContent(4)
     $("input[type='file']").change(uploadPath);
