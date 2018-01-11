@@ -309,9 +309,10 @@ Popup
     .file-button{
 
       @include secondary;
-      @include size(32px, 121px);
+      @include size(32px, 80px);
       border-radius: 0 4px 4px 0;
       border-left:none;
+      text-align: center;
       border-color: $border-color-1;
     }
 
@@ -420,10 +421,6 @@ Popup
   animation: disappear 600ms $animation forwards;
 }
 
-#new-pswd{
-  position: relative;
-  background-color: red;
-}
 /* ==========================================================================
 Animation
 ========================================================================== */
