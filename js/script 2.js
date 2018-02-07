@@ -117,7 +117,8 @@ function tableData(){
     $('.prev-creds').append(
       `<tr>
         <td>${creditData.Months[i]}</td>
-        <td>${creditData.Plan[i]}</td>  <td>${creditData.Dates[i]}</td>
+        <td>${creditData.Plan[i]}</td>
+        <td>${creditData.Dates[i]}</td>
         <td>$ ${creditData.Ammounts[i]}<kbd class='download-dropdown'>•</kbd></td>
     </tr>`);
   }
@@ -146,7 +147,7 @@ const popupData ={
 
   body: [
     //credits
-    `<code class="count money">$0.00</code>
+    `<code class="count money">8000</code>
     <h3 style='margin-bottom:0px'>Reedem code</h3>
     <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
     <input type="text" value='' id='redeem-input' autocomplete='off'>
@@ -355,9 +356,8 @@ function countNumbers(){
   $('.redeem').click(function() {
     if($('#redeem-input').val() === 'NTNX'){
       $('#redeem-input').val('');
-      $('.ticker').text('9999 days').css('color','#18BE5F');
-      $('.popup-body').before(`<div class='banner'>Your trial period has been extended by 9999 days.</div>`);
-      $('.card:eq(3) h4:eq(1)').text('$100.00');
+      $('.popup-body').before(`<div class='banner'>$2000 have been credited to your account.</div>`);
+      $('.card:eq(3) h4:eq(1)').text('$10000.00');
       $('.banner').toggle();
       $('.money').css('color','#18BE5F');
       $('.popup-header').css('border-bottom','none');
@@ -368,7 +368,7 @@ function countNumbers(){
           { Counter:10000.00}, {
           duration: 600,
           step: function () {
-            $this.text(Math.ceil(this.Counter)+' days');
+            $this.text(Math.ceil(this.Counter));
           }
          });
       });

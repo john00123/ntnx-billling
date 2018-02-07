@@ -1014,11 +1014,11 @@ Popup
 }
 
 .popup-body .money::before {
-  content: '$';
+  content: '';
 }
 
 .popup-body .money::after {
-  content: '.00';
+  content: '';
 }
 
 .popup-body .term {
