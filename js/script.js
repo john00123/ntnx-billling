@@ -381,6 +381,37 @@ function countNumbers(){
         },300);
     },7000);
     }
+
+    else if($('#redeem-input').val() === 'NTNX2'){
+      $('#redeem-input').val('');
+      $('.ticker').text('9999 days').css('color','#18BE5F');
+      $('.popup-body').before(`<div class='banner'>$100 added to your account.</br> Your trial has been extended by 9999 days.</div>`);
+      $('.banner').css('line-height','1.5');
+      $('.banner').css('height','auto');
+      $('.card:eq(3) h4:eq(1)').text('$100.00');
+      $('.banner').toggle();
+      $('.money').css('color','#18BE5F');
+      $('.popup-header').css('border-bottom','none');
+      $('.banner').slideDown();
+      $('.count').each(function () {
+        var $this = $(this);
+        $({ Counter:$this.text() }).animate(
+          { Counter:100.00}, {
+          duration: 600,
+          step: function () {
+            $this.text('$' +Math.ceil(this.Counter)+'.00');
+          }
+         });
+      });
+      setTimeout(function(){
+        $('.banner').slideUp();
+
+        $('.popup-header').css('border-bottom','');
+        setTimeout(function(){
+          $('.banner').remove();
+        },300);
+    },7000);
+    }
     else{
       $('.banner').remove();
       $('.popup-body').before(`<div class='banner error-ban'>Invalid code</div>`);
