@@ -14,7 +14,9 @@ body {
   overflow-x: hidden;
 }
 
-
+a{
+  @include link;
+}
 button{
   outline: none;
 }

@@ -16,6 +16,17 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: #22A5F7;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 button {
   outline: none;
 }

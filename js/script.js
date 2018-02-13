@@ -256,7 +256,7 @@ const popupData ={
       <h1>
       <input type='radio'  class='radio' > Minimum Commitment
       </h1>
-      <p style="margin-bottom:20px;">Select an ammount for your minimum commitment plan.</p>
+      <p style="margin-bottom:20px;">Select an ammount for your minimum commitment plan. For order-specific discounts. <a class='price-details'> See pricing details.</a></p>
 
       <label>Select Term & ammount per month</label><br>
       <div class='upload-file'>
@@ -331,6 +331,7 @@ function popupContent(i){
   countNumbers();
   invoiceOnly();
   radio();
+  priceDetails();
 }
 
 $(document).keyup(function(e) {
@@ -484,7 +485,7 @@ function layer2(){
     `<div class="overlay overlay2" style='background-color:transparent'>
       <div class="popup layer2" style='opacity:0'>
         <div class="popup-header popup-header2">Confirmation</div>
-        <div class="popup-body"><p style='color: #22272E'>We have sent a request for you payment method change, your old payment method will remain active until the change has been processed.</p> </div>
+        <div class="popup-body popup-body2"><p style='color: #22272E'>We have sent a request for you payment method change, your old payment method will remain active until the change has been processed.</p> </div>
         <div class="popup-footer"><button class="secondary save confirm" style='margin-right:0;'>Close</button></div>
       </div>
     </div>`
@@ -498,7 +499,14 @@ function layer2(){
   });
 }
 
-
+function priceDetails(){
+  $('.price-details').click(function(){
+    $('.popup').addClass('second');
+    layer2();
+    $('.popup-header2').text('Pricing');
+    $('.popup-body2').html('d');
+  });
+}
 
 $(document).ready(function() {
   cardsData();
