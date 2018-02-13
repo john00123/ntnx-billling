@@ -1,3 +1,4 @@
+
 const cardData ={
   cardInfo : ['Current plan','Payment Method','Tax documents','Available Credit'],
   cardBody :['Pay as you go','Credit Card','221-222-333-44', '$5000.00'],
@@ -504,7 +505,16 @@ function priceDetails(){
     $('.popup').addClass('second');
     layer2();
     $('.popup-header2').text('Pricing');
-    $('.popup-body2').html('d');
+    $('.popup-body2').addClass('prices-table').html(
+      `<div class='table-wrapper'>
+        <table class='pp'>
+          <tr>
+            <th>Item </th>
+            <th> Cost/Unit</th>
+          </tr>
+        </table>
+      </div>`);
+    $('.pp').append(data.map(e =>`<tr><td width="99%">${e} </td><td align="right" style="white-space: nowrap;">$ ${Math.floor(Math.random()*6+1)}</td>`))
   });
 }
 
