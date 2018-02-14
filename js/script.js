@@ -262,6 +262,7 @@ const popupData ={
       <label>Select Term & ammount per month</label><br>
       <div class='upload-file'>
         <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00">
+        <code class='discount'>15% discount</code>
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
@@ -506,7 +507,14 @@ function priceDetails(){
     layer2();
     $('.popup-header2').text('Pricing');
     $('.popup-body2').addClass('prices-table').html(
-      `<div class='table-wrapper'>
+      `
+        <select class='secondary' style='padding:0 15px; line-height:1; margin-bottom:20px'>
+          <option> $0.00 - $1000.00</option>
+          <option> $1000.00 - $5000.00</option>
+        </select>
+
+
+        <div class='table-wrapper'>
         <table class='pp'>
           <tr>
             <th>Item </th>
@@ -514,7 +522,7 @@ function priceDetails(){
           </tr>
         </table>
       </div>`);
-    $('.pp').append(data.map(e =>`<tr><td width="99%">${e} </td><td align="right" style="white-space: nowrap;">$ ${Math.floor(Math.random()*6+1)}</td>`))
+    $('.pp').append(data.map(e =>`<tr><td width="99%">${e} </td><td align="right" style="white-space: nowrap; text-align:right; right:0;">$ ${Math.floor(Math.random()*6+1)}.00</td>`))
   });
 }
 

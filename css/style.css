@@ -507,9 +507,13 @@ select span {
   height: 40px;
 }
 
+.prices-table tr:last-child td {
+  border-bottom: none;
+}
+
 .table-wrapper {
   border-radius: 4px;
-  border: 1px solid #F2F4F6;
+  border: 1px solid #D5DAE0;
 }
 
 /* ==========================================================================
@@ -1176,6 +1180,7 @@ input[type="file"] {
 
 .upload-file {
   width: 100%;
+  position: relative;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1215,6 +1220,12 @@ input[type="file"] {
   display: block;
   font-weight: 500;
   line-height: 9pt;
+}
+
+.upload-file .discount {
+  position: absolute;
+  right: 0px;
+  top: -16px;
 }
 
 .upload-file input#path2.path {
