@@ -517,10 +517,12 @@ function priceDetails(){
           Depending on your commitment ammount you can get order discounts.
         </h3>
 
-        <label>Commitment ammount</label>
+        <label>Commitment ammount in Dollars</label>
         <select class='secondary' style='padding:0 15px; line-height:1; margin-bottom:20px; margin-top:0px;'>
-          <option> $2000.00 - $10000.00 (15% discount)</option>
-          <option> $10000.00 - $50000.00 (30% discount)</option>
+          <option> 0 - 2000.00 (No discount)</option>
+          <option> 2000.00 - 10000.00 (15% discount)</option>
+          <option> 10000.00 - 50000.00 (30% discount)</option>
+          <option> Partner discount (45% on cpu)</option>
         </select>
 
         <div class='table-wrapper'>
