@@ -259,15 +259,22 @@ const popupData ={
       </h1>
       <p style="margin-bottom:20px;">Select an ammount for your minimum commitment plan. For order-specific discounts. <a class='price-details'> See pricing details.</a></p>
 
-      <label>Select Term & ammount per month</label><br>
-      <div class='upload-file'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00">
-        <code class='discount'>15% discount</code>
+
+
+      <label class='terms'>Select Term & ammount per month</label><br>
+
+      <div class='upload-file min-commit-cont'>
+        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'
+          value="2000.00" placeholder="$2000.00" step="1000.00">
+
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
         </select>
       </div>
+      <label style='color:#36D068'>
+        Discount of 15% granted based on ammount
+      </label>
     </div>
       `,
   ],
@@ -508,11 +515,15 @@ function priceDetails(){
     $('.popup-header2').text('Pricing');
     $('.popup-body2').addClass('prices-table').html(
       `
-        <select class='secondary' style='padding:0 15px; line-height:1; margin-bottom:20px'>
-          <option> $0.00 - $1000.00</option>
-          <option> $1000.00 - $5000.00</option>
-        </select>
+        <h3>
+          Depending on your commitment ammount you can get order discounts.
+        </h3>
 
+        <label>Commitment ammount</label>
+        <select class='secondary' style='padding:0 15px; line-height:1; margin-bottom:20px; margin-top:0px;'>
+          <option> $0.00 - $1000.00 (15% discount)</option>
+          <option> $1000.00 - $5000.00 (30% discount)</option>
+        </select>
 
         <div class='table-wrapper'>
         <table class='pp'>
