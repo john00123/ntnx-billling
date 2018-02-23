@@ -133,14 +133,14 @@ const popupData ={
   ],
 
   body: [
-    //credits
+    //0 credits
     `<code class="count money">853</code>
     <h3 style='margin-bottom:0px'>Reedem code</h3>
     <p style='margin-bottom:10px; width:100%'>Get started by adding some funds to your account</p>
     <input type="text" value='' id='redeem-input' autocomplete='off'>
     `,
 
-    //tax data
+    //1 tax data
     `<h1 class='initial-tax'>
     Nutanix is required to collect sales tax in some US states.</h1>
 
@@ -158,7 +158,7 @@ const popupData ={
     <p style='margin: 22px 0 -8px 0;' class='consult'>To learn if your cloud consumption is subject to sale taxes, consult your tax advisor.</p>
     `,
 
-    //payment method
+    // 2 payment method
     `
     <h4 style='align-self:left; margin-bottom:10px;'>
     <input type='checkbox' id='invoice-only'
@@ -245,7 +245,7 @@ const popupData ={
 
     `,
 
-    // change plan
+    // 3 change plan
     `
     <div class="section1">
       <h1>
@@ -265,16 +265,14 @@ const popupData ={
 
       <div class='upload-file min-commit-cont'>
         <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'
-          value="2000.00" placeholder="$2000.00" step="1000.00">
+          value="1000" placeholder="$1000" step="1000.00">
 
         <select class='term'>
         <option>3 years</option>
         <option>1 year</option>
         </select>
       </div>
-      <label style='color:#36D068'>
-        Discount of 15% granted based on ammount
-      </label>
+
     </div>
       `,
   ],
@@ -521,8 +519,8 @@ function priceDetails(){
 
         <label>Commitment ammount</label>
         <select class='secondary' style='padding:0 15px; line-height:1; margin-bottom:20px; margin-top:0px;'>
-          <option> $0.00 - $1000.00 (15% discount)</option>
-          <option> $1000.00 - $5000.00 (30% discount)</option>
+          <option> $2000.00 - $10000.00 (15% discount)</option>
+          <option> $10000.00 - $50000.00 (30% discount)</option>
         </select>
 
         <div class='table-wrapper'>
@@ -543,6 +541,19 @@ $(document).ready(function() {
   tableData();
   $('.card:eq(0) a').click(function(){
     popupContent(3)
+    $('.min-commit-val').keyup(function(){
+      if($('.min-commit-val').val() > 2000 ){
+        if($('.discount-banner').hasClass('discount-banner')){
+        }
+        else{
+          $('.min-commit-cont').after(`<label class='discount-banner' style='color:#36D068'>
+            Discount of 15% granted based on ammount
+          </label>`);
+        }
+      } else{
+        $('.discount-banner').remove();
+      };
+    });
     $('.popup-body').css('min-height','300px');
   });
   $('.card:eq(1) a').click(function(){popupContent(2)});
