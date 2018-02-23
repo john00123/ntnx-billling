@@ -542,7 +542,7 @@ $(document).ready(function() {
   $('.card:eq(0) a').click(function(){
     popupContent(3)
     $('.min-commit-val').keyup(function(){
-      if($('.min-commit-val').val() > 2000 ){
+      if($('.min-commit-val').val() > 1999 ){
         if($('.discount-banner').hasClass('discount-banner')){
         }
         else{
