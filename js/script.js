@@ -8,7 +8,7 @@ const cardData ={
 const billingData ={
   Months
   :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
-  Ammounts :['5400.00','2827.00','3100.00','0.00','0.00'],
+  amounts :['5400.00','2827.00','3100.00','0.00','0.00'],
   Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial plan', 'Free Trial plan'],
   Download:[
   '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
@@ -18,12 +18,12 @@ const billingData ={
 const usageData ={
   Title:['CPU hours','Data encryption','Support fees'],
   Numbers :['15000','1000','-'],
-  Ammounts :['750.00','600.00','135.00'],
+  amounts :['750.00','600.00','135.00'],
 }
 
 const creditData ={
   Months:['Sep 15, 2017','Jan 15, 2017'],
-  Ammounts :['3000.00','2000.00'],
+  amounts :['3000.00','2000.00'],
   Plan:['Free Trial plan', 'Free Trial plan'],
   Download:['<a class="link">Download</a>','<a class="link">Download</a>'],
 }
@@ -72,7 +72,7 @@ function chartData(){
 
   $('.x-values p').hover(function(){
     $(this).append(`<kbd class='tooltip-graph'>
-    $${billingData.Ammounts[0]}</kbd>`);
+    $${billingData.amounts[0]}</kbd>`);
     }, function(){
     $(this).find('kbd').remove();}
   );
@@ -90,32 +90,32 @@ function chartData(){
 // adds data to the table and graphs
 
 function tableData(){
-  for(let i=0; i<billingData.Ammounts.length; i++){
+  for(let i=0; i<billingData.amounts.length; i++){
     $('.prev-bills').append(
       `<tr>
         <td>${billingData.Months[i]}</td>
         <td>${billingData.Plan[i]}</td>
-        <td>$ ${billingData.Ammounts[i]}<kbd class='download-dropdown'>•</kbd></td>
+        <td>$ ${billingData.amounts[i]}<kbd class='download-dropdown'>•</kbd></td>
 
     </tr>`);
   }
 
-  $('.balance').append(`$${billingData.Ammounts[0]}`);
-  for(let i=0; i<creditData.Ammounts.length; i++){
+  $('.balance').append(`$${billingData.amounts[0]}`);
+  for(let i=0; i<creditData.amounts.length; i++){
     $('.prev-creds').append(
       `<tr>
         <td>${creditData.Months[i]}</td>
         <td>${creditData.Plan[i]}</td>
-        <td>$ ${creditData.Ammounts[i]}<kbd class='download-dropdown'>•</kbd></td>
+        <td>$ ${creditData.amounts[i]}<kbd class='download-dropdown'>•</kbd></td>
     </tr>`);
   }
 
-  for(let i=0; i<usageData.Ammounts.length; i++){
+  for(let i=0; i<usageData.amounts.length; i++){
     $('.usage').append(
       `<tr>
         <td> ${usageData.Title[i]}</td>
         <td> ${usageData.Numbers[i]}</td>
-        <td> $ ${usageData.Ammounts[i]}</td>
+        <td> $ ${usageData.amounts[i]}</td>
 
     </tr>`);
   }
@@ -257,11 +257,11 @@ const popupData ={
       <h1>
       <input type='radio'  class='radio' > Minimum Commitment
       </h1>
-      <p style="margin-bottom:20px;">Select an ammount for your minimum commitment plan. For order-specific discounts. <a class='price-details'> See pricing details.</a></p>
+      <p style="margin-bottom:20px;">Select an amount for your minimum commitment plan. For order-specific discounts. <a class='price-details'> See pricing details.</a></p>
 
 
 
-      <label class='terms'>Select Term & ammount per month</label><br>
+      <label class='terms'>Select Term & amount per month</label><br>
 
       <div class='upload-file min-commit-cont'>
         <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'
@@ -514,10 +514,10 @@ function priceDetails(){
     $('.popup-body2').addClass('prices-table').html(
       `
         <h3>
-          Depending on your commitment ammount you can get order discounts.
+          Depending on your commitment amount you can get order discounts.
         </h3>
 
-        <label>Commitment ammount in Dollars</label>
+        <label>Commitment amount in Dollars</label>
         <select class='secondary' style='padding:0 15px; line-height:1; margin-bottom:20px; margin-top:0px;'>
           <option> 0 - 2000.00 (No discount)</option>
           <option> 2000.00 - 10000.00 (15% discount)</option>
@@ -549,7 +549,7 @@ $(document).ready(function() {
         }
         else{
           $('.min-commit-cont').after(`<label class='discount-banner' style='color:#36D068'>
-            Discount of 15% granted based on ammount
+            Discount of 15% granted based on amount
           </label>`);
         }
       } else{
