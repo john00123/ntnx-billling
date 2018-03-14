@@ -249,13 +249,13 @@ const popupData ={
     `
     <div class="section1">
       <h1>
-      <input type='radio' class='radio'checked="checked"> Pay as you go plan. <code style="  margin-left: 10px;">Current Plan</code></h1>
+      <input type='radio' class='radio'checked="checked" id='pay'> Pay as you go plan. <code style="  margin-left: 10px;">Current Plan</code></h1>
       <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
 
       <div class='separator'></div>
 
       <h1>
-      <input type='radio'  class='radio' > Minimum Commitment
+      <input type='radio'  class='radio' id='min'> Minimum Commitment
       </h1>
       <p style="margin-bottom:20px;">Select an amount for your minimum commitment plan. For order-specific discounts. <a class='price-details'> See pricing details.</a></p>
 
@@ -273,6 +273,17 @@ const popupData ={
         </select>
       </div>
 
+      <div class='reseller' style='display:none;'>
+      <div class='separator' style='margin:10px 0 20px 0'/>
+        <input type='checkbox' checked style='margin-right:5px;'>
+        <h2 style='display:inline-block'; >I want to play upfront</h2></br>
+
+        </br>
+        <label for='reseller'>Reseller information (Optional)</label>
+        </br></br>
+        <input type='text'
+        style='margin-top:-5px;' placeholder='Reseller email'/>
+      </div>
     </div>
       `,
   ],
@@ -311,6 +322,9 @@ function popAnimate(){
 }
 
 
+
+
+
 //popup
 function popupContent(i){
   if(i==2){
@@ -339,6 +353,9 @@ function popupContent(i){
   invoiceOnly();
   radio();
   priceDetails();
+  $('#min, #pay').click(()=>{
+    $('.reseller').slideToggle();
+  })
 }
 
 $(document).keyup(function(e) {
@@ -541,6 +558,7 @@ $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
+  popupContent(3);
   $('.card:eq(0) a').click(function(){
     popupContent(3)
     $('.min-commit-val').keyup(function(){
