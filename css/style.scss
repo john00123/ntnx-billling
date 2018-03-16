@@ -755,6 +755,8 @@ input[type="file"]{
   }
 }
 
+
+
 .tax-block{
   @include size(14px, 100%);
   @include flex(center, center, row);
@@ -804,6 +806,16 @@ input[type="file"]{
 }
 
 
+.min-commit-cont{
+  position: relative;
+  &::before{
+    content:'$';
+    position: absolute;
+    top:20px;
+    z-index: 10;
+    left: 12px;
+  }
+}
 /* ==========================================================================
 Animation
 ========================================================================== */

@@ -264,8 +264,12 @@ const popupData ={
       <label class='terms'>Select Term & amount per month</label><br>
 
       <div class='upload-file min-commit-cont'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'
-          value="1000" placeholder="$1000" step="1000.00">
+        <input class='min-commit-val'
+          style=" margin: 10px 0;
+          border-radius: 4px 0 0 4px;
+          padding-left: 20px;"
+          type='number'
+          value="1000" placeholder="1000" step="1000.00">
 
         <select class='term'>
         <option>3 years</option>
@@ -276,10 +280,10 @@ const popupData ={
       <div class='reseller' style='display:none;'>
       <div class='separator' style='margin:10px 0 20px 0'/>
         <input type='checkbox' checked style='margin-right:5px;'>
-        <h2 style='display:inline-block'; >I want to play upfront</h2></br>
+        <h2 style='display:inline-block'; >I want to pay upfront</h2></br>
 
         </br>
-        <label for='reseller'>Reseller information (Optional)</label>
+        <label for='reseller'>Reseller code / information (Optional)</label>
         </br></br>
         <input type='text'
         style='margin-top:-5px;' placeholder='Reseller email'/>
