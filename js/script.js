@@ -562,7 +562,6 @@ $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
-  popupContent(3);
   $('.card:eq(0) a').click(function(){
     popupContent(3)
     $('.min-commit-val').keyup(function(){
