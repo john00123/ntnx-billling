@@ -133,7 +133,10 @@ const popupData ={
 
   body: [
     //credits
-    `<div class='container'></div>
+    `<div class='container'>
+
+      <p class='text-low' style='opacity:0.3; line-height:18px; padding:20px; text-align:left'>If you're tax exempt in a particular state, please attach an electronic copy of your valid tax exemption certificate authorized by the appropriate taxing authority.</p>
+    </div>
     `,
 
     //tax data
@@ -513,6 +516,9 @@ if (dots=== '....'){
 $(document).ready(function() {
   $('.trigger-popup').click(function(){
     popupContent(0);
+    setTimeout(function () {
+      $('.text-low').css('opacity','1');
+    }, 3000);
 
     $('.redeem').click(function(){
       $('.primary').html(`Saving <kbd class='dotdotdot'>...</kbd>`);

@@ -19,6 +19,10 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 h1 {
@@ -202,6 +206,7 @@ link {
   padding: 11px 15px;
   color: #FFFFFF;
   font: 400 14px/10px "nutanix_soft", san-serif;
+  font-weight: 500;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
@@ -503,6 +508,11 @@ select span {
 
 .trend ul {
   opacity: 0;
+}
+
+.text-low {
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-duration: 300ms;
 }
 
 .x-values {
@@ -1064,6 +1074,7 @@ Popup
   padding: 11px 15px;
   color: #FFFFFF;
   font: 400 14px/10px "nutanix_soft", san-serif;
+  font-weight: 500;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
@@ -1258,6 +1269,7 @@ Popup
   padding: 11px 15px;
   color: #FFFFFF;
   font: 400 14px/10px "nutanix_soft", san-serif;
+  font-weight: 500;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
