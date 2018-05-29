@@ -71,6 +71,7 @@ header {
   padding: 11px 15px;
   color: #FFFFFF;
   font: 400 14px/10px "nutanix_soft", san-serif;
+  font-weight: 500;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
@@ -481,6 +482,7 @@ Popup
   padding: 11px 15px;
   color: #FFFFFF;
   font: 400 14px/10px "nutanix_soft", san-serif;
+  font-weight: 500;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
@@ -645,6 +647,7 @@ Popup
   padding: 11px 15px;
   color: #FFFFFF;
   font: 400 14px/10px "nutanix_soft", san-serif;
+  font-weight: 500;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
