@@ -173,6 +173,10 @@ link{
     box-sizing: content-box;
 }
 
+.flex-vertical{
+  @include flex(flex-start, stretch, column);
+}
+
 //actions
 .actions {
   @include flex(center, flex-start, row);

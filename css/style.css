@@ -190,6 +190,13 @@ link {
   box-sizing: content-box;
 }
 
+.flex-vertical {
+  display: flex;
+  align-items: flex-start;
+  justify-content: stretch;
+  flex-direction: column;
+}
+
 .actions {
   display: flex;
   align-items: center;
