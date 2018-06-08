@@ -38,7 +38,7 @@ const popupData ={
     <input type="password" id='retype'>`,
 
     `<h3>Enable ADFS by uploading <code>FederationMetadata.xml</code> file.</h3>\
-    <input type="file" id='file' accept=".xml">
+    <input type="file" id='file' >
     <label for='path2'>Select file</label>
     <div class='upload-file'>
     <input class='path' readonly type='text' id='path2'></input>
