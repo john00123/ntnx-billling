@@ -8,6 +8,8 @@ const adData={
   Roles:['Owner','Admin','Owner','User','User','User'],
 }
 
+const adState=[]
+
 // adds data to the table and graphs
 
 function tableData(){
@@ -15,7 +17,7 @@ function tableData(){
     $('.prev-bills').append(
       `<tr>
         <td><input class="checkBox" type="checkbox">${userData.Emails[i]}@nutanix.com</td>
-        <td>${userData.Roles[i]}<kbd>•</kbd></td>
+        <td> </td>
     </tr>`);
   }
 
