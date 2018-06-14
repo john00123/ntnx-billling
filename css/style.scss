@@ -95,6 +95,28 @@ margin-right: 10px;
 }
 
 
+.card{
+  border-radius: 4px;
+  margin-top: 20px;
+  @include size(150px, 100%);
+  .card-header{
+    @include size(40px, 100%);
+    @include flex(center, flex-start, row);
+    border-bottom: 1px solid $border-color-3;
+    background-color: white;
+    border-radius: 4px 4px 0 0 ;
+    padding: 0 15px;
+  }
+
+  .card-body{
+    border-radius: 0 0 4px 4px;
+    padding: 20px 15px;
+    p{white-space: pre-line;
+    line-height:1.5}
+    background-color: white;
+  }
+}
+
 /* ==========================================================================
 Table
 ========================================================================== */
