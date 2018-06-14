@@ -36,10 +36,15 @@ header {
   padding: 20px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: "";
   background-color: #22272E;
   color: transparent;
+}
+
+header .logo {
+  fill: #37414B;
+  height: 16px;
 }
 
 .container {
