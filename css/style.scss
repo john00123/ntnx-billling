@@ -94,26 +94,41 @@ input[type='checkbox']{
 margin-right: 10px;
 }
 
+.card-deck{
+  @include size(auto, 100%);
+  @include flex(center, space-between, row);
+}
+
 
 .card{
   border-radius: 4px;
   margin-top: 20px;
   @include size(150px, 100%);
+  &:not(:first-child){
+    margin-left: 20px;
+  margin-bottom: 20px;
+  }
   .card-header{
     @include size(40px, 100%);
     @include flex(center, flex-start, row);
     border-bottom: 1px solid $border-color-3;
+    font-weight: 500;
     background-color: white;
     border-radius: 4px 4px 0 0 ;
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .card-body{
     border-radius: 0 0 4px 4px;
-    padding: 20px 15px;
+    padding: 20px;
     p{white-space: pre-line;
+      font-weight: 500;
     line-height:1.5}
     background-color: white;
+    kbd{color:$font-color-2;
+    font-weight:400;
+    a{@include link;}
+    }
   }
 }
 

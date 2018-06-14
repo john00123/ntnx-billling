@@ -214,12 +214,27 @@ input[type='checkbox'] {
   margin-right: 10px;
 }
 
+.card-deck {
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 .card {
   border-radius: 4px;
   margin-top: 20px;
   height: 150px;
   width: 100%;
   box-sizing: border-box;
+}
+
+.card:not(:first-child) {
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .card .card-header {
@@ -231,20 +246,38 @@ input[type='checkbox'] {
   justify-content: flex-start;
   flex-direction: row;
   border-bottom: 1px solid #F2F4F6;
+  font-weight: 500;
   background-color: white;
   border-radius: 4px 4px 0 0;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .card .card-body {
   border-radius: 0 0 4px 4px;
-  padding: 20px 15px;
+  padding: 20px;
   background-color: white;
 }
 
 .card .card-body p {
   white-space: pre-line;
+  font-weight: 500;
   line-height: 1.5;
+}
+
+.card .card-body kbd {
+  color: #627386;
+  font-weight: 400;
+}
+
+.card .card-body kbd a {
+  color: #22A5F7;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+}
+
+.card .card-body kbd a:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* ==========================================================================

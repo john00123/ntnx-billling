@@ -19,26 +19,38 @@
   <article class="container">
     <div class="actions">
       <button class="primary invite"><span>Invite users</span></button>
-      <!-- <button class="manage"><span>Add Acitve Directory</span></button> -->
 
-      <button class="manage"><span>Role Mapping</span></button>
 
       <button class="manage"><span>Enable Multifactor</span></button>
 <!--
       <button class="manage"><span>Add AD</span></button> -->
 
     </div>
-    <div class='card'>
-    <div class='card-header'> Active Directory</div>
-    <div class='card-body'>
-      <p>Domain - win-0m6tel93cfn.nutanix.com
-      Federated Authentication Active
-      https://demo-my.nutanix.com/#xinutanix
-      </p>
-    </div>
-    </div>
 
-    <!-- <table class="table ad-groups">
+    <div class='card-deck'>
+      <div class='card'>
+        <div class='card-header'> Active Directory</div>
+        <div class='card-body'>
+          <p>Domain - win-0m6tel93cfn.nutanix.com
+          <kbd>Federated Authentication Active
+          https://demo-my.nutanix.com/#xinutanix
+          <a>Manage </a>
+        </kbd></p>
+        </div>
+      </div>
+
+      <div class='card'>
+        <div class='card-header'> Roles</div>
+        <div class='card-body'>
+          <p>Currently 200 mapping configured
+          <kbd>Using active directory
+            Includes: Super Admin, Admin, Custom Role, and 12 +
+            <a>Manage Roles</a>
+        </kbd></p>
+        </div>
+      </div>
+    </div>
+    <table class="table ad-groups">
       <thead>
         <tr class='table-header'>
           <th><input id="checkBox0" type="checkbox">Active Directory Groups</th>
@@ -46,9 +58,9 @@
         </tr>
       </thead>
       <tbody class='groups'></tbody>
-    </table> -->
+    </table>
 
-    <table class="table tprev-bills">
+    <!-- <table class="table tprev-bills">
       <thead>
         <tr class='table-header'>
           <th><input id="checkBox0" type="checkbox">Users</th>
@@ -56,7 +68,7 @@
         </tr>
       </thead>
       <tbody class='prev-bills'></tbody>
-    </table>
+    </table> -->
   </article>
 
 
