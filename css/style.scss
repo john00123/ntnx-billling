@@ -5,6 +5,7 @@
 span{
   line-height: 10px;
   height: 10px;
+  @include transition(all);
   display: block;
 }
 
