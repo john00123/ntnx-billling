@@ -21,7 +21,7 @@
       <button class="primary invite"><span>Invite users</span></button>
 
 
-      <button class="manage"><span>Enable Multifactor</span></button>
+      <button class="secondary manage"><span>Enable Multifactor</span></button>
 <!--
       <button class="manage"><span>Add AD</span></button> -->
 
@@ -45,34 +45,37 @@
           <p>Currently 200 mapping configured
           <kbd>Using active directory
             Includes: Super Admin, Admin, Custom...
-            <a>Manage Roles</a>
+            <a>Manage User Groups</a>
         </kbd></p>
         </div>
       </div>
     </div>
-    <table class="table ad-groups">
+    <!-- <table class="table ad-groups">
       <thead>
         <tr class='table-header'>
           <th><input id="checkBox0" type="checkbox">Active Directory Groups</th>
           <th>Role Assignment</th>
+          <th>2 Step Verification</th>
         </tr>
       </thead>
       <tbody class='groups'></tbody>
-    </table>
+    </table> -->
 
-    <!-- <table class="table tprev-bills">
+    <table class="table tprev-bills">
       <thead>
         <tr class='table-header'>
           <th><input id="checkBox0" type="checkbox">Users</th>
-          <th></th>
+          <th>Role Assignment</th>
+          <th>2 Step Verification</th>
         </tr>
       </thead>
       <tbody class='prev-bills'></tbody>
-    </table> -->
+    </table>
   </article>
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="js/header.js" charset="utf-8"></script>
   <script src="js/script.js" charset="utf-8"></script>
 </body>
 

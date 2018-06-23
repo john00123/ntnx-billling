@@ -39,9 +39,13 @@ h4{
 header {
   @include size(60px, 100%);
   padding: 20px 20px;
-  @include flex(center, space-between, '');
+  @include flex(center, center, '');
   background-color: $background-color-1;
   color: transparent;
+  svg{
+    fill:$background-color-2;
+    @include size(24px, 24px);
+  }
 }
 
 //container
@@ -67,7 +71,7 @@ header {
     }
   }
 
-  .manage{
+  .secondary{
     @include secondary-alt
     margin-right: 10px;
   }
@@ -173,6 +177,7 @@ th{
   color:$font-color-2;
   font-weight: 500;
 }
+
 th:not(:last-child){
   border-right: 1px solid $border-color-3;
 }
@@ -213,10 +218,13 @@ td:last-child{
   margin-left: -50px;
   position: relative;
   right: 15px;
+  a{
+    @include link();
+  }
 }
 
 th:not(:first-child), td:not(:first-child){
-  width: 100px;
+  width: 140px;
 }
 
 td{

@@ -48,10 +48,17 @@ header {
   padding: 20px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: "";
   background-color: #22272E;
   color: transparent;
+}
+
+header svg {
+  fill: #37414B;
+  height: 24px;
+  width: 24px;
+  box-sizing: border-box;
 }
 
 .container {
@@ -113,7 +120,7 @@ header {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
 }
 
-.actions .manage {
+.actions .secondary {
   background-color: #FFFFFF;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
@@ -128,16 +135,16 @@ header {
   margin-right: 10px;
 }
 
-.actions .manage:hover {
+.actions .secondary:hover {
   color: #22A5F7;
   cursor: pointer;
 }
 
-.actions .manage:active {
+.actions .secondary:active {
   color: #91d2fb;
 }
 
-.actions .manage:hover {
+.actions .secondary:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
 }
 
@@ -336,8 +343,19 @@ td:last-child {
   right: 15px;
 }
 
+td:last-child a {
+  color: #22A5F7;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+}
+
+td:last-child a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 th:not(:first-child), td:not(:first-child) {
-  width: 100px;
+  width: 140px;
 }
 
 td {

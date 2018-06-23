@@ -6,9 +6,16 @@ const userData={
 const adData={
   Groups:['Medical','Technology','Finance','Engineering','Marketing','Design'],
   Roles:['Owner','Admin','Owner','User','User','User'],
+  Verification:[`Active`,'Active','Disabled','Disabled','Disabled','Disabled'],
 }
 
 const adState=[]
+
+let addiontalButtons = `
+  <button class="secondary change-roles added"><span>Change Role</span></button>
+  <button class="secondary change-roles added"><span>Security Options</span></button>
+`
+
 
 // adds data to the table and graphs
 
@@ -17,7 +24,8 @@ function tableData(){
     $('.prev-bills').append(
       `<tr>
         <td><input class="checkBox" type="checkbox">${userData.Emails[i]}@nutanix.com</td>
-        <td> </td>
+        <td>${adData.Roles[i]}</td>
+        <td>${adData.Verification[i]}<kbd>•</kbd></td>
     </tr>`);
   }
 
@@ -25,17 +33,19 @@ function tableData(){
     $('.groups').append(
       `<tr>
         <td><input class="checkBox" type="checkbox">${adData.Groups[i]}</td>
-        <td>${adData.Roles[i]}<kbd>•</kbd></td>
+        <td>${adData.Roles[i]}</td>
+        <td>${adData.Verification[i]}<kbd>•</kbd></td>
     </tr>`);
   }
 }
 
 function selectAll(){
-  $('#checkBox0').click(function(){
-    $(".checkBox").prop('checked', $(this).prop('checked'));
+  $('#checkBox0, .checkBox').click(function(){
+    $("#checkBox0, .checkBox").prop('checked', $(this).prop('checked'));
     if($(".checkBox").prop('checked')){
-      $('#maindrop').removeAttr('disabled');
+      $('.actions').append(addiontalButtons);
     }
+    else{$('.added').remove()}
   });
 };
 
