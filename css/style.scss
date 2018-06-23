@@ -38,7 +38,7 @@ h4{
 
 header {
   @include size(60px, 100%);
-  @include padding();
+  padding: 20px 20px;
   @include flex(center, space-between, '');
   background-color: $background-color-1;
   color: transparent;
@@ -109,6 +109,15 @@ margin-right: 10px;
   margin-top: 20px;
   @include size(150px, 100%);
   min-width: 300px;
+
+  code{
+    border: 1px solid $green-2;
+    color:$dark-green-3;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 0 5px;
+    margin-left: 5px;
+  }
 
   .card-header{
     @include size(40px, 100%);
@@ -308,7 +317,7 @@ td kbd{
 .popup-body{
   @include size(auto,100%);
   @include flex(center, flex-start, column);
-  @include inputs;
+  @include inputStyle;
   padding: 30px 20px;
   background-color: white;
 
