@@ -183,6 +183,7 @@ function layer2(i){
 
 
 $(document).ready(function() {
+  $('.enable-mult-auth').click(function(){popupContent(0)});
   tableData();
   selectAll();
   $('.invite').click(function(){popupContent(0)});
