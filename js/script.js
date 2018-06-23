@@ -13,7 +13,8 @@ const adState=[]
 
 let addiontalButtons = `
   <button class="secondary change-roles added"><span>Change Role</span></button>
-  <button class="secondary change-roles added"><span>Security Options</span></button>
+  <button class="secondary reset-mfa added"><span>Reset Multi-Factor</span></button>
+  <button class="secondary change-roles added"><span>Remove User</span></button>
 `
 
 // adds data to the table and graphs
@@ -43,6 +44,7 @@ function selectAll(){
     $("#checkBox0, .checkBox").prop('checked', $(this).prop('checked'));
     if($(".checkBox").prop('checked')){
       $('.actions').append(addiontalButtons);
+      $('.reset-mfa').click(function(){popupContent(1)});
     }
     else{$('.added').remove()}
   });
@@ -61,6 +63,7 @@ const popupData ={
   ],
 
   body: [
+    //1 step verification
     `
     <div class='dot-parent'>
     </div>
@@ -68,15 +71,12 @@ const popupData ={
 
     <p>Each time you sign in you'll need your password and a verification code sent directly to a phone.</p>`,
 
-    `<label for="other">Company Name</label>
-    <input type="text" value='Nutanix Corporate' id='old-pswd'>
-    <label for="other">Address</label>
-    <input type="Address" value='1740 Technology Drive, San Jose CA' id='new-pswd'>`,
+    //2 Reset Multi-factor
+    `<p> You are going to reset Multifactor authentication for 6 users are you sure you want to continue</p>`,
 
-    `<label for="other">Name</label>
-    <input type="text" value='Istrator Admin' id='old-pswd'>
-    <label for="other">Email</label>
-    <input type="email" value='administrator@nutanix.com' id='new-pswd'>`,
+    //3
+
+    `<p> You are going to reset Multifactor authentication for 6 users are you sure you want to continue</p>`,
 
     `<label for="other">Previous Password</label>
     <input type="password" id='old-pswd'>
@@ -115,7 +115,7 @@ const popupData ={
 
   footer:[
     `<button class="primary save">Enable</button>`,
-    `<button class="primary save">Save</button>`,
+    `<button class="primary save">Confirm</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary save">Save</button>`,
     `<button class="primary upload">Upload</button>`,

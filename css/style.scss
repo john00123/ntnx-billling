@@ -273,11 +273,15 @@ td kbd{
 /*Popup
 ========================================================================== */
 .overlay{
-  @include size(100%, 100vw);
+  @include size(100%, 100%);
   @include flex(center, center, column);
   @include absolute();
+  position: fixed;
+  top:0;
+  left: 0;
   background-color: rgba(0,0,0,0.4);
   overflow: hidden;
+  @include transition(all);
 }
 
 .popup{
@@ -592,6 +596,24 @@ Media Queries
 }
 
 @media (max-width: 420px) {
+  .actions {
+    @include flex(stretch, flex-start, column);
+    .primary{
+      margin-right: 0;
+    }
+    .secondary{
+      margin-top: 10px;
+      margin-right: 0;
+    }
+  }
+
+  .overlay{
+    padding: 20px;
+  }
+  .popup{
+    width: 100%;
+  }
+
   h4 code{display: none;}
   td a{display: none;}
   td code{display: none;}
