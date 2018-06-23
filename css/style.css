@@ -75,8 +75,7 @@ header .logo {
   border-radius: 4px;
   padding: 11px 15px;
   color: #FFFFFF;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  font-weight: 500;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
@@ -103,13 +102,13 @@ header .logo {
 }
 
 .actions .secondary {
+  background-color: #FFFFFF;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
-  background-color: #FFFFFF;
   margin: 0;
   outline: none;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -126,22 +125,8 @@ header .logo {
   color: #91d2fb;
 }
 
-.actions .secondary span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
 .actions .secondary:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
-}
-
-.actions .secondary span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
 }
 
 /* ==========================================================================
@@ -159,13 +144,13 @@ Cards
 }
 
 .card {
+  background-color: #FFFFFF;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
-  background-color: #FFFFFF;
   margin: 0;
   outline: none;
   transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -186,22 +171,17 @@ Cards
   color: #91d2fb;
 }
 
-.card span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
-}
-
 .card:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
 }
 
-.card span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
+.card code {
+  border: 1px solid #68dc8e;
+  color: #31bb67;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 0 5px;
+  margin-left: 5px;
 }
 
 .card:hover {
@@ -404,40 +384,97 @@ Popup
   background-color: white;
 }
 
-.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]) {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=submit]):not([type=reset]) {
   height: 32px;
   width: 100%;
   box-sizing: border-box;
+  padding: 11px 10px;
   border-radius: 4px;
   border: 1px solid #B8BFCA;
-  padding: 11px 10px;
-  color: #22272E;
   font: 400 14px/10px "nutanix_soft", san-serif;
+  color: #22272E;
   position: relative;
 }
 
-.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):not(:last-child) {
-  margin-bottom: 20px;
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=submit]):not([type=reset]):disabled {
+  background-color: #F2F4F6;
 }
 
-.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):focus {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=submit]):not([type=reset]):focus {
   outline: none;
   border-color: #22A5F7;
 }
 
-.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file])::-webkit-input-placeholder {
+.popup-body input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=submit]):not([type=reset])::-webkit-input-placeholder {
   padding-top: 4px;
   vertical-align: middle;
   color: #D5DAE0;
 }
 
-.popup-body label {
-  font: 400 12px/8px "nutanix_soft", san-serif;
+.popup-body label,
+.popup-body legend {
   text-align: left;
   width: 100%;
+}
+
+.popup-body label {
+  font: 400 12px/8px "nutanix_soft", san-serif;
   font-weight: 500;
+  text-align: left;
+  width: 100%;
   color: #627386;
   margin-bottom: 10px;
+}
+
+.popup-body input[type=submit], .popup-body [data-type='primary'] {
+  margin: 0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #FFFFFF;
+  font: 500 14px/10px "nutanix_soft", san-serif;
+  border: none;
+  text-decoration: none;
+  background-color: #22A5F7;
+  outline: none;
+}
+
+.popup-body input[type=submit]:hover, .popup-body [data-type='primary']:hover {
+  color: #FFFFFF;
+  cursor: pointer;
+  background-color: #1f88de;
+}
+
+.popup-body input[type=submit]:active, .popup-body [data-type='primary']:active {
+  color: #FFFFFF;
+  background-color: #1b6dc6;
+}
+
+.popup-body input[type=submit] span, .popup-body [data-type='primary'] span {
+  height: 10px;
+  display: block;
+  font-weight: 500;
+  line-height: 9pt;
+}
+
+.popup-body input[type=reset], .popup-body [data-type='secondary'] {
+  background-color: #FFFFFF;
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  font: 500 14px/10px "nutanix_soft", san-serif;
+  color: #22272E;
+  text-decoration: none;
+  margin: 0;
+  outline: none;
+}
+
+.popup-body input[type=reset]:hover, .popup-body [data-type='secondary']:hover {
+  color: #22A5F7;
+  cursor: pointer;
+}
+
+.popup-body input[type=reset]:active, .popup-body [data-type='secondary']:active {
+  color: #91d2fb;
 }
 
 .popup-body h1 {
@@ -486,8 +523,7 @@ Popup
   border-radius: 4px;
   padding: 11px 15px;
   color: #FFFFFF;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  font-weight: 500;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
@@ -517,13 +553,13 @@ Popup
   height: 32px;
   width: 100%;
   box-sizing: border-box;
+  background-color: #FFFFFF;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
-  background-color: #FFFFFF;
   margin: 0;
   outline: none;
   margin-top: 20px;
@@ -536,13 +572,6 @@ Popup
 
 .popup-body .secondary:active {
   color: #91d2fb;
-}
-
-.popup-body .secondary span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
 }
 
 .popup-body input.confirm-deletion {
@@ -575,13 +604,13 @@ Popup
 }
 
 .popup-body .upload-file .file-button {
+  background-color: #FFFFFF;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
-  background-color: #FFFFFF;
   margin: 0;
   outline: none;
   height: 32px;
@@ -600,13 +629,6 @@ Popup
 
 .popup-body .upload-file .file-button:active {
   color: #91d2fb;
-}
-
-.popup-body .upload-file .file-button span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
 }
 
 .popup-body .upload-file .path {
@@ -651,8 +673,7 @@ Popup
   border-radius: 4px;
   padding: 11px 15px;
   color: #FFFFFF;
-  font: 400 14px/10px "nutanix_soft", san-serif;
-  font-weight: 500;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   border: none;
   text-decoration: none;
   background-color: #22A5F7;
@@ -681,13 +702,13 @@ Popup
 }
 
 .popup-footer .secondary {
+  background-color: #FFFFFF;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
+  font: 500 14px/10px "nutanix_soft", san-serif;
   color: #22272E;
-  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
-  background-color: #FFFFFF;
   margin: 0;
   outline: none;
   height: 32px;
@@ -701,13 +722,6 @@ Popup
 
 .popup-footer .secondary:active {
   color: #91d2fb;
-}
-
-.popup-footer .secondary span {
-  height: 10px;
-  display: block;
-  font-weight: 500;
-  line-height: 9pt;
 }
 
 .dot-parent {
