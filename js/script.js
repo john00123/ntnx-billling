@@ -16,7 +16,6 @@ let addiontalButtons = `
   <button class="secondary change-roles added"><span>Security Options</span></button>
 `
 
-
 // adds data to the table and graphs
 
 function tableData(){
