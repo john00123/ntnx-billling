@@ -8,7 +8,7 @@ const cardData ={
 const billingData ={
   Months
   :['Nov 15, 2017','Oct 15, 2017','Sep 15, 2017','Feb 15, 2017','Jan 15, 2017'],
-  amounts :['5400.00','2827.00','3100.00','0.00','0.00'],
+  amounts :[`${1800+3100+490.00}`,'2827.00','3100.00','0.00','0.00'],
   Plan:['Pay as you go', 'Pay as you go','Pay as you go', 'Free Trial plan', 'Free Trial plan'],
   Download:[
   '<a class="link" href="pdf/004174.pdf" target="_blank">Download</a>',
@@ -16,9 +16,10 @@ const billingData ={
 }
 
 const usageData ={
-  Title:['CPU hours','Data encryption','Support fees'],
-  Numbers :['15000','1000','-'],
-  amounts :['750.00','600.00','135.00'],
+  Title:['Memory/hr US East &nbsp; <code>Diamond</code>','VCPU US East &nbsp; <code>Diamond</code>','Support Fee (10%)'],
+  rate: [`$${12}.00`,`$${31}.00`, '-'],
+  Numbers :[150.00,100,'-'],
+  amounts :[`${(12*150)}.00`,`${(31*100)}.00`,`${((12*150)+(31*100))*0.1}.00`]
 }
 
 const creditData ={
@@ -100,7 +101,7 @@ function tableData(){
     </tr>`);
   }
 
-  $('.balance').append(`$${billingData.amounts[0]}`);
+  $('.balance').append(`$${billingData.amounts[0]}.00`);
   for(let i=0; i<creditData.amounts.length; i++){
     $('.prev-creds').append(
       `<tr>
@@ -114,6 +115,7 @@ function tableData(){
     $('.usage').append(
       `<tr>
         <td> ${usageData.Title[i]}</td>
+        <td> ${usageData.rate[i]}</td>
         <td> ${usageData.Numbers[i]}</td>
         <td> $ ${usageData.amounts[i]}</td>
 

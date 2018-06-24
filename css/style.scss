@@ -45,7 +45,7 @@ span{
 
 header {
   @include size(60px, 100%);
-  @include padding();
+  padding: 20px 20px;
   @include flex(center, space-between, '');
   background-color: $background-color-1;
   color: transparent;
@@ -402,6 +402,7 @@ tr:hover{
 
 td{
   white-space: nowrap;
+  kbd{color:red;}
 }
 
 td:last-child{
@@ -547,7 +548,7 @@ Popup
 .popup-body{
   @include size(auto,100%);
   @include flex(center, flex-start, column);
-  @include inputs;
+  @include inputStyle;
   padding: 30px 20px;
   background-color: white;
   max-height: 500px;
