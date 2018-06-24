@@ -248,6 +248,11 @@ Cards
   padding: 23px 20px;
 }
 
+.card-body p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /* ==========================================================================
 Graph
 ========================================================================== */
@@ -424,7 +429,7 @@ select:active {
   background-color: #22272E;
   border-radius: 4px;
   top: -150px;
-  right: -36px;
+  right: -26px;
   z-index: 99;
   line-height: 10px;
   padding: 11px 15px;

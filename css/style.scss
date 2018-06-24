@@ -137,6 +137,10 @@ Cards
 
 .card-body {
   padding: 23px 20px;
+  p{
+    white-space: nowrap;
+    text-overflow: ellipsis
+  }
 }
 
 /* ==========================================================================
@@ -275,7 +279,7 @@ select{
   background-color: $background-color-1;
   border-radius: 4px;
   top:-150px;
-  right:-36px;
+  right:-26px;
   z-index: 99;
   line-height: 10px;
   padding: 11px 15px;
