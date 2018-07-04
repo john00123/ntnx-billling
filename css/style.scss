@@ -153,10 +153,13 @@ Cards
 
 }
 .profile{
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
+.row{
+  @include flex(center, stretch, row);
+}
 .card-body {
   padding: 20px;
 }

@@ -255,8 +255,15 @@ Cards
 }
 
 .profile {
-  width: 100%;
+  width: 50%;
   height: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  flex-direction: row;
 }
 
 .card-body {
