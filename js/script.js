@@ -30,9 +30,9 @@ const popupData ={
     `<label for="other">Previous Password</label>
     <input type="password" id='old-pswd'>
     <label for="other">New Password</label>
-    <div class='upload-file' style='margin-bottom:20px'>
-      <input class='path' type='password' id='new-pswd'></input>
-      <label class='file-button' for='file' id='show-pswd'>Show</label>
+    <div>
+      <input type="password" id='new-pswd'>
+      <button class='secondary'>See</button>
     </div>
     <label for="other">Retype new password</label>
     <input type="password" id='retype'>`,
@@ -105,14 +105,6 @@ function popAnimate(){
   );
 }
 
-function pswChange(){
-  $('#new-pswd').clone().attr('type','tel').insertAfter('#new-pswd').prev().remove();
-}
-
-function pswChange2(){
-  $('#new-pswd').clone().attr('type','password').insertAfter('#new-pswd').prev().remove();
-}
-
 function popupContent(i){
   $('body').append(
     `<div class="overlay" style='opacity:0'>
@@ -123,18 +115,6 @@ function popupContent(i){
       </div>
     </div>`
   );
-  $('.file-button').click(function(){
-
-    if($('.file-button').text() === 'Show'){
-      pswChange();
-      $('.file-button').text('Hide');
-    } else{
-      pswChange2();
-      $('.file-button').text('Show');
-    }
-
-  }
-  );
 
   popAnimate();
   $('.upload').click(function(){
@@ -142,7 +122,6 @@ function popupContent(i){
     $('.popup').addClass('second');
     layer2(6);
   });
-
 }
 
 function layer2(i){
