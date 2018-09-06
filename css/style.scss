@@ -270,6 +270,39 @@ td kbd{
   margin-left: 0;
 }
 
+.copy{
+  position: relative;
+  &:after{
+    content:'copy to clipboard';
+    opacity: 0;
+    background-color: $background-color-1;
+    padding: 5px 8px ;
+    box-sizing: content-box;
+    position: absolute;
+    left: 50%;
+    top: -16px;
+    border-radius: 3px;
+    color: white;
+    @include transition(all);
+  }
+  &:hover{
+    cursor: pointer;
+    color: $blue-1 !important;
+    code{
+      color:$blue-1;
+      border-color: $blue-1;
+    }
+    &:after{
+      opacity: 1;
+      top: -30px;
+    }
+  }
+  code{
+    color:$font-color-2;
+    border-color: $border-color-2;
+  }
+}
+
 /*Popup
 ========================================================================== */
 .overlay{
