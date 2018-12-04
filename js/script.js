@@ -162,7 +162,7 @@ const popupData ={
 
     // 2 payment method
     `
-    <h4 style='align-self:left; margin-bottom:10px;'>
+    <h4 style='align-self:left; width:100%; margin-bottom:10px;'>
     <input type='checkbox' id='invoice-only'
     style='margin-right:5px;'></input>
     Use invoice billing</h4>
@@ -172,10 +172,10 @@ const popupData ={
 
     <div class='separator'></div>
     <label for="other">Card Number</label>
-    <input type="text"  id='old-pswd' ">
+    <input type="text" id='old-pswd' "><br>
 
     <label for="other">Card Holder's Name</label>
-    <input type="text" id='old-pswd'>
+    <input type="text" id='old-pswd'><br>
 
     <div class='upload-file' style='margin:0 0 30px 0; padding-bottom:30px; border-bottom:1px solid #F2F4F6;'>
       <div class='info-pair'>
@@ -215,7 +215,7 @@ const popupData ={
     <label for="other">Billing Address</label>
     <input type="text" id='old-pswd' style='margin-bottom:20px;'>
     <label for="other">Address 2</label>
-    <input type="text" placeholder='street' id='old-pswd'>
+    <input type="text" placeholder='street' id='old-pswd'><br>
 
 
     <div class='upload-file'>
@@ -564,6 +564,7 @@ $(document).ready(function() {
   cardsData();
   chartData();
   tableData();
+
   $('.card:eq(0) a').click(function(){
     popupContent(3)
     $('.min-commit-val').keyup(function(){
@@ -586,3 +587,5 @@ $(document).ready(function() {
   $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
 });
+
+popupContent(2);
