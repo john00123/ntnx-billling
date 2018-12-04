@@ -587,5 +587,3 @@ $(document).ready(function() {
   $('.card:eq(3) a').click(function(){popupContent(0)});
   $('.prev-bills td:eq(0)').click(pdfContent);
 });
-
-popupContent(2);
